@@ -21,6 +21,7 @@ PHASES = {
     8: ("Validation", lambda: __import__("src.validate", fromlist=["run"]).run()),
     9: ("RR layer, outputs and FINAL.md", lambda: (__import__("src.outputs", fromlist=["run"]).run(),
                                                    __import__("src.final_report", fromlist=["run"]).run())),
+    10: ("Dashboard (docs/index.html)", lambda: __import__("src.make_dashboard", fromlist=["run"]).run()),
 }
 
 if __name__ == "__main__":
@@ -34,5 +35,6 @@ if __name__ == "__main__":
         t = time.time()
         print(f"=== Phase {p}: {name}")
         fn()
-        checks.run(p)                       # stops the pipeline if a sign/sanity check fails
+        if p <= 9:
+            checks.run(p)                   # stops the pipeline if a sign/sanity check fails
         print(f"=== Phase {p} done in {time.time() - t:.1f}s\n")

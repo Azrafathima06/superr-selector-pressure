@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proven Under Pressure</title>
+<meta name="description" content="Pressure reliability ratings for IPL and T20I batters and bowlers, built for the Rajasthan Royals SupeRR Selector.">
+<link rel="icon" href="rr_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#141B3A; --navy-2:#1d2650; --pink:#E4177E; --pink-soft:#fde7f2; --blue:#254AA5; --blue-soft:#e6ecf8;
+  --line:#E3E5EC; --bg:#F6F7FA; --card:#FFFFFF; --ink:#141B3A; --ink-2:#4a5068; --ink-3:#7b8199;
+  --radius:18px; --shadow:0 1px 2px rgba(20,27,58,.05),0 8px 24px rgba(20,27,58,.06);
+  --shadow-h:0 2px 4px rgba(20,27,58,.06),0 14px 34px rgba(20,27,58,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em;font-weight:800}
+h3{font-size:18px;margin:0 0 4px;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 14px}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+.lede{font-size:18px;color:var(--ink-2);max-width:760px;margin-bottom:32px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;border:1px solid var(--line);
+  transition:box-shadow .25s ease,transform .25s ease}
+.card:hover{box-shadow:var(--shadow-h)}
+.chart-title{font-weight:700;font-size:17px;margin:0 0 4px}
+.chart-sub{color:var(--ink-3);font-size:14px;margin:0 0 20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quote{font-family:"Crimson Text",Georgia,serif;font-style:italic;font-size:clamp(22px,2.6vw,28px);line-height:1.35}
+nav.top{position:sticky;top:0;z-index:20;background:rgba(20,27,58,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:blur(10px)}
+nav.top .wrap{display:flex;align-items:center;gap:20px;height:56px;overflow-x:auto;scrollbar-width:none}
+nav.top .wrap::-webkit-scrollbar{display:none}
+nav.top img{height:30px;width:auto;flex:none}
+nav.top a{color:#c9cde0;text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap;transition:color .2s}
+nav.top a:hover,nav.top a.on{color:#fff}
+nav.top a.on{box-shadow:inset 0 -2px 0 var(--pink)}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,rgba(228,23,126,.28),transparent 60%),
+  radial-gradient(900px 500px at -10% 110%,rgba(37,74,165,.45),transparent 60%),var(--navy);color:#fff;padding:72px 0 64px}
+.hero-top{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hero-logo{width:112px;height:auto;filter:drop-shadow(0 6px 20px rgba(0,0,0,.35))}
+.hero h1{font-size:clamp(44px,7.5vw,84px);line-height:1;margin:0;letter-spacing:-.035em;font-weight:800}
+.hero .quote{color:#e9ebf5;max-width:720px;margin:28px 0 18px}
+.halla{font-weight:800;letter-spacing:.2em;color:var(--pink);font-size:18px;margin:0 0 6px}
+.byline{color:#aab0cc;font-size:15px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px 22px;transition:background .25s,transform .25s}
+.tile:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.tile b{display:block;font-size:clamp(26px,3.4vw,38px);line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tile span{color:#aab0cc;font-size:14px}
+/* tabs */
+.tabs{display:inline-flex;background:#eceef4;border-radius:999px;padding:4px;margin-bottom:22px;gap:2px;flex-wrap:wrap}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;font-weight:600;color:var(--ink-2);padding:8px 18px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.tabs button:hover{color:var(--ink)}
+.tabs button.on{background:var(--pink);color:#fff;box-shadow:0 2px 8px rgba(228,23,126,.3)}
+.tabs button:focus-visible,.search input:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+/* bar charts */
+.hbar{position:relative}
+.hrow{display:grid;grid-template-columns:var(--lab,220px) 1fr var(--val,96px);align-items:center;gap:14px;padding:7px 8px;border-radius:10px;transition:background .15s;cursor:default}
+.hrow:hover,.hrow.hl{background:#f3f4f8}
+.hlab{display:flex;align-items:baseline;gap:10px;min-width:0}
+.hlab .rk{color:var(--pink);font-weight:800;font-variant-numeric:tabular-nums;width:22px;text-align:right;flex:none}
+.hlab .nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hlab .sm{color:var(--ink-3);font-size:13px;white-space:nowrap}
+.track{position:relative;height:22px}
+.bar{position:absolute;top:4px;height:14px;border-radius:0 4px 4px 0;background:var(--blue);transition:width .6s cubic-bezier(.2,.8,.2,1),left .6s cubic-bezier(.2,.8,.2,1)}
+.bar.neg{border-radius:4px 0 0 4px}
+.bar.pink{background:var(--pink)}
+.whisk{position:absolute;top:10px;height:2px;background:var(--navy);opacity:.75}
+.whisk::before,.whisk::after{content:"";position:absolute;top:-4px;width:2px;height:10px;background:var(--navy)}
+.whisk::before{left:0}.whisk::after{right:0}
+.hval{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-size:14px;white-space:nowrap}
+.hval small{color:var(--ink-3);font-weight:500}
+.axis{display:grid;grid-template-columns:var(--lab,220px) 1fr var(--val,96px);gap:14px;padding:0 8px;margin-top:6px}
+.axis .ticks{position:relative;height:20px;border-top:1px solid var(--line)}
+.axis .ticks span{position:absolute;top:4px;transform:translateX(-50%);font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.zero{position:absolute;top:0;bottom:0;width:1px;background:#c9ccd8}
+.gridl{position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
+.note{color:var(--ink-3);font-size:13px;margin-top:14px}
+/* tooltip */
+#tip{position:fixed;z-index:50;pointer-events:none;background:var(--navy);color:#fff;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5;
+  box-shadow:0 10px 30px rgba(20,27,58,.3);max-width:290px;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s}
+#tip.on{opacity:1;transform:none}
+#tip b{font-size:14px}
+#tip .k{color:#aab0cc}
+#tip .pk{color:#ff7cbc;font-weight:700}
+/* explorer */
+.search{position:relative;max-width:520px}
+.search input{width:100%;font:inherit;font-size:16px;padding:14px 18px 14px 46px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);box-shadow:var(--shadow);transition:border-color .2s}
+.search input:focus{border-color:var(--pink);outline:none}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--ink-3)}
+.results{position:absolute;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-h);max-height:320px;overflow:auto;z-index:10;display:none;padding:6px}
+.results.on{display:block}
+.results button{display:flex;width:100%;justify-content:space-between;align-items:center;gap:12px;border:0;background:none;font:inherit;text-align:left;padding:10px 12px;border-radius:10px;cursor:pointer;color:var(--ink)}
+.results button:hover,.results button.act{background:var(--pink-soft)}
+.results .tag{font-size:12px;color:var(--ink-3);white-space:nowrap}
+.pcard{margin-top:24px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px}
+.pname{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:4px 0 6px}
+.prank{display:inline-flex;align-items:center;gap:8px;background:var(--pink-soft);color:var(--pink);font-weight:700;border-radius:999px;padding:4px 12px;font-size:14px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+.fact{background:var(--bg);border-radius:12px;padding:12px 14px}
+.fact span{display:block;font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.fact b{font-size:18px;font-variant-numeric:tabular-nums}
+.proc .hrow{--lab:150px;--val:62px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer;color:var(--ink-2);transition:all .2s}
+.chip:hover{border-color:var(--pink);color:var(--pink)}
+/* finding */
+.big{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.bignum{font-size:clamp(56px,9vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.bignum.grey{color:#9aa0b6}
+.bignum.pink{color:var(--pink)}
+.big .card p{color:var(--ink-2);margin:12px 0 0}
+.dotrow{display:grid;grid-template-columns:var(--lab,250px) 1fr var(--val,70px);gap:14px;align-items:center;padding:8px;border-radius:10px;cursor:default;transition:background .15s}
+.dotrow:hover{background:#f3f4f8}
+.dotrow .lb{font-size:14px;font-weight:500}
+.dotrow.ours .lb{color:var(--pink);font-weight:700}
+.ci{position:absolute;top:10px;height:2px;background:#9aa0b6;border-radius:2px}
+.dot{position:absolute;top:5px;width:12px;height:12px;border-radius:50%;background:var(--blue);transform:translateX(-50%);box-shadow:0 0 0 2px #fff}
+.ours .ci{background:var(--pink);height:3px;top:9.5px}
+.ours .dot{background:var(--pink);width:14px;height:14px;top:4px}
+.facet{margin-bottom:26px}
+.facet h4{margin:0 0 6px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+/* pressure */
+.formula{background:var(--navy);color:#fff;border-radius:14px;padding:18px 22px;font-size:clamp(15px,1.8vw,18px);overflow-x:auto;margin:16px 0;
+  font-family:"DM Sans",sans-serif;font-variant-numeric:tabular-nums;line-height:1.9}
+.formula i{font-style:italic}
+.formula .op{color:#ff7cbc;padding:0 4px}
+.formula sub,.formula sup{font-size:.7em}
+.figure img{width:100%;height:auto;border-radius:12px;display:block;border:1px solid var(--line)}
+.figure figcaption{color:var(--ink-3);font-size:13px;margin-top:10px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.kpi{background:var(--bg);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:24px;color:var(--blue);letter-spacing:-.02em}
+.kpi span{font-size:13px;color:var(--ink-2)}
+/* RR */
+.rrsec{background:var(--navy);color:#fff}
+.rrsec .lede{color:#c9cde0}
+.rrsec .card{color:var(--ink)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);margin:-8px 0 16px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.best{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.best .card{padding:22px}
+.best ol{list-style:none;padding:0;margin:12px 0 0}
+.best li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.best li b{color:var(--pink);font-variant-numeric:tabular-nums}
+.recs{counter-reset:r;display:grid;gap:16px;margin-top:28px}
+.rec{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px;transition:background .25s}
+.rec:hover{background:rgba(255,255,255,.1)}
+.rec .n{width:44px;height:44px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-weight:800;font-size:18px}
+.rec h3{color:#fff}
+.rec p{color:#c9cde0;margin:4px 0 0}
+#rrChart .hrow,#rrChart .axis{--lab:290px}
+#topChart .hrow,#topChart .axis{--lab:230px}
+#gapChart .hrow,#gapChart .axis{--lab:290px}
+.rr-note{margin-top:28px;color:#e9ebf5}
+/* method */
+details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:12px;box-shadow:var(--shadow);transition:box-shadow .25s}
+details:hover{box-shadow:var(--shadow-h)}
+summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:700;font-size:18px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary .pl{width:28px;height:28px;border-radius:50%;background:var(--bg);display:grid;place-items:center;flex:none;transition:transform .25s,background .25s,color .25s;color:var(--ink-2)}
+details[open] summary .pl{transform:rotate(45deg);background:var(--pink);color:#fff}
+.dbody{padding:0 24px 22px;color:var(--ink-2)}
+.dbody .formula{color:#fff}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tscroll{overflow-x:auto}
+footer{background:var(--navy);color:#c9cde0;padding:56px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer a{color:#fff;font-weight:600;text-decoration:none;border-bottom:2px solid var(--pink);padding-bottom:2px}
+footer a:hover{color:#ff7cbc}
+footer .halla{font-size:22px;margin:0}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media (max-width:900px){
+  .grid2,.pcard,.best{grid-template-columns:1fr}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  section{padding:52px 0}
+  .card{padding:20px 16px}
+  .hrow,.axis{--lab:130px;--val:74px;gap:8px;padding-left:4px;padding-right:4px}
+  .hlab .sm{display:none}
+  .hlab{gap:6px}.hlab .rk{width:18px}
+  .hlab .nm{font-size:14px}
+  .dotrow{--lab:118px;--val:44px;gap:8px}
+  .dotrow .lb{font-size:12.5px;line-height:1.3}
+  .big{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .proc .hrow{--lab:118px;--val:54px}
+  .stack .hrow{grid-template-columns:1fr var(--val);row-gap:2px}
+  .stack .hrow .hlab{grid-column:1 / -1}
+  .stack .axis{grid-template-columns:1fr var(--val)}
+  .stack .axis > div:first-child{display:none}
+  .stack .hlab .sm{display:inline}
+  .hero-logo{width:84px}
+  .rec{grid-template-columns:1fr}
+  summary{padding:18px 16px;font-size:16px}.dbody{padding:0 16px 18px}
+}
+</style>
+</head>
+<body>
+<nav class="top" aria-label="Sections"><div class="wrap">
+  <img src="rr_logo.png" alt="Rajasthan Royals">
+  <a href="#top10">Top 10</a><a href="#explorer">Explorer</a><a href="#finding">The Finding</a><a href="#pressure">Pressure</a>
+  <a href="#hidden">Hidden value</a><a href="#royals">For the Royals</a><a href="#method">Method</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="hero-top">
+    <img class="hero-logo" src="rr_logo.png" alt="Rajasthan Royals logo">
+    <h1>Proven Under<br>Pressure</h1>
+  </div>
+  <p class="quote">One ball can turn a season. This is about the players who turn it your way.</p>
+  <p class="halla">HALLA BOL.</p>
+  <p class="byline">By Azra Fathima Q, B.Tech Computer Science, VIT Chennai</p>
+  <div class="tiles" id="tiles"></div>
+</div></header>
+
+<main>
+<section id="top10"><div class="wrap">
+  <span class="eyebrow">01 &middot; The lists</span>
+  <h2>The Top 10</h2>
+  <p class="lede">Every player here pairs elite core skill with a record of beating expectation on high-pressure balls. Ratings are runs per 100 high-pressure balls above expectation.</p>
+  <div class="card">
+    <div class="tabs" role="tablist" id="topTabs">
+      <button role="tab" data-k="bat" class="on" aria-selected="true">Batters</button>
+      <button role="tab" data-k="bowl" aria-selected="false">Bowlers</button>
+    </div>
+    <p class="chart-title" id="topTitle"></p>
+    <p class="chart-sub">Rating with &plusmn; one standard error. Ordered by rank score (rating minus one standard error). Hover a row for role and strengths.</p>
+    <div class="hbar stack" id="topChart"></div>
+  </div>
+</div></section>
+
+<section id="explorer" style="padding-top:0"><div class="wrap">
+  <span class="eyebrow">02 &middot; Explorer</span>
+  <h2>Find any ranked player</h2>
+  <p class="lede" id="explorerLede"></p>
+  <div class="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Search a batter or bowler" autocomplete="off" aria-label="Search players" role="combobox" aria-expanded="false" aria-controls="res">
+    <div class="results" id="res" role="listbox"></div>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="card pcard" id="pcard"></div>
+</div></section>
+
+<section id="finding" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <span class="eyebrow">03 &middot; The Finding</span>
+  <h2>The usual way of measuring pressure doesn't predict who'll deliver next season. This rating does.</h2>
+  <p class="lede">Every rating was rebuilt from 2022&ndash;24 data alone, then tested on how well it predicted each player's 2025&ndash;26 performance on high-pressure balls.</p>
+  <div class="big">
+    <div class="card"><div class="bignum grey" id="bnDelta"></div><p><b>"Pressure economy minus normal economy"</b>, the standard pressure metric</p></div>
+    <div class="card"><div class="bignum pink" id="bnOurs"></div><p><b>This rating</b>, same test <span id="bnCi"></span></p></div>
+  </div>
+  <div class="card">
+    <p class="chart-title">Among bowlers, this rating predicts next season's pressure performance; the standard delta does not</p>
+    <p class="chart-sub">Correlation (Pearson r) between each 2022&ndash;24 measure and 2025&ndash;26 run value on high-pressure balls, with 95% intervals.</p>
+    <div id="valChart"></div>
+  </div>
+  <p class="lede" style="margin:28px 0 0" id="findingText"></p>
+</div></section>
+
+<section id="pressure"><div class="wrap">
+  <span class="eyebrow">04 &middot; Defining pressure</span>
+  <h2>How pressure is measured</h2>
+  <p class="lede">A ball is under pressure when it can swing the result. So instead of guessing which situations feel tense, the analysis measures that swing for every single delivery.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Win probability</h3>
+      <p>A model of the batting side's chance of winning from any point in a match. In a chase it reads runs needed, balls left, wickets in hand, the required rate against the venue's usual scoring, and a ball-by-ball simulation of how the rest of the chase could unfold. In the first innings it compares the score with par for that stage, using only matches played before.</p>
+      <h3 style="margin-top:22px">Leverage Index</h3>
+      <p>For each ball, a second model gives the chance of every result: dot, one, two, three, four, six, wicket, wide or no-ball. Leverage is how far the win probability is expected to move on that one ball.</p>
+      <div class="formula">LI<sub>raw</sub> = &Sigma;<sub><i>o</i></sub> <i>p</i>(<i>o</i> | state) <span class="op">&times;</span> | WP(after <i>o</i>) &minus; expected WP after the ball |<br>LI = LI<sub>raw</sub> <span class="op">&divide;</span> average LI<sub>raw</sub></div>
+      <p>An average ball scores 1. The top 25% of balls by leverage within each innings form the pressure set, <b>H</b>; the rest form the comparison set, <b>L</b>.</p>
+      <div class="kpis" id="pkpis"></div>
+    </div>
+    <figure class="card figure" style="margin:0">
+      <p class="chart-title">The steep swings are the high-pressure balls</p>
+      <p class="chart-sub">Pakistan's win probability through the 2025 Asia Cup final against India. Each dot is a wicket.</p>
+      <img src="img/wp_curve_45513.png" alt="Win probability curve of the 2025 Asia Cup final, Pakistan against India" decoding="async">
+    </figure>
+  </div>
+</div></section>
+
+<section id="hidden" style="padding-top:0"><div class="wrap">
+  <span class="eyebrow">05 &middot; Hidden value</span>
+  <h2>The players the usual numbers miss</h2>
+  <p class="lede">Each player's pressure rank set against his rank on conventional stats (average and strike rate, or economy and wickets). The Pressure Value Gap is how many places higher he ranks on pressure.</p>
+  <div class="card">
+    <div class="tabs" role="tablist" id="gapTabs">
+      <button role="tab" data-k="top" class="on" aria-selected="true">Top 10 picks</button>
+      <button role="tab" data-k="bat" aria-selected="false">All ranked batters</button>
+      <button role="tab" data-k="bowl" aria-selected="false">All ranked bowlers</button>
+    </div>
+    <p class="chart-title" id="gapTitle"></p>
+    <p class="chart-sub">Places gained: conventional rank minus pressure rank. Only players whose pressure rank beats their conventional rank are shown.</p>
+    <div class="hbar stack" id="gapChart"></div>
+    <p class="note" id="gapNote"></p>
+  </div>
+</div></section>
+
+<section id="royals" class="rrsec"><div class="wrap">
+  <span class="eyebrow">06 &middot; For the Royals</span>
+  <h2 id="rrH"></h2>
+  <p class="lede">Wins gained or lost against a league-average side in each pressure situation since 2022.</p>
+  <div class="card">
+    <p class="chart-title" id="rrTitle"></p>
+    <p class="chart-sub">Total win probability against league average, summed over RR's high-pressure balls in each situation.</p>
+    <div class="legend"><span><i style="background:var(--pink)"></i>below league average</span><span><i style="background:var(--blue)"></i>above league average</span></div>
+    <div class="hbar stack" id="rrChart"></div>
+  </div>
+  <h3 style="margin-top:44px;color:#fff;font-size:22px">The ranked bowlers with the strongest records in exactly those moments</h3>
+  <p style="color:#c9cde0;margin:0">Run value per 100 high-pressure balls in that situation, top-10 ranked bowlers.</p>
+  <div class="best" id="best"></div>
+  <p class="rr-note">And RR already holds the top-ranked batter. Vaibhav Sooryavanshi is in the 2026 squad, and with just two seasons behind him, his pressure record is only getting started.</p>
+  <h3 style="margin-top:44px;color:#fff;font-size:22px">For the 2027 auction</h3>
+  <div class="recs" id="recs"></div>
+  <p class="quote" style="margin-top:44px;color:#fff">The Royals have always backed the ones others overlooked.<br>The data says: back the ones who don't blink.</p>
+</div></section>
+
+<section id="method"><div class="wrap">
+  <span class="eyebrow">07 &middot; Method</span>
+  <h2>How it's built</h2>
+  <p class="lede">The same definitions and formulas as the report. Open any panel.</p>
+  <div id="methodPanels"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div>
+    <p style="margin:0 0 6px;color:#fff;font-weight:700;font-size:18px">Proven Under Pressure</p>
+    <p style="margin:0">Code, outputs and the full write-up: <a href="https://github.com/Azrafathima06/superr-selector-pressure" target="_blank" rel="noopener">github.com/Azrafathima06/superr-selector-pressure</a></p>
+  </div>
+  <p class="halla">Halla Bol.</p>
+</div></footer>
+
+<div id="tip" role="tooltip"></div>
+
+<script id="data" type="application/json">{"hero": {"matches": "843", "deliveries": "199,208", "bat": "82", "bowl": "41"}, "top": {"bat": [{"rank": 1, "name": "Vaibhav Sooryavanshi", "team": "India", "role": "opener", "rating": 52.28, "se": 8.97, "rating_s": "52.3", "se_s": "9.0", "nH": 256, "seasons": "2025–2026 (2 seasons)", "strongest": [{"metric": "strike-rate delta", "sigma": "+2.62", "pos": true}, {"metric": "boundary elevation", "sigma": "+2.45", "pos": true}, {"metric": "wicket security", "sigma": "−0.26", "pos": false}]}, {"rank": 2, "name": "Abhishek Sharma", "team": "India", "role": "opener", "rating": 35.93, "se": 5.35, "rating_s": "35.9", "se_s": "5.4", "nH": 801, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "strike-rate delta", "sigma": "+1.41", "pos": true}, {"metric": "boundary elevation", "sigma": "+1.15", "pos": true}, {"metric": "dot suppression", "sigma": "+1.03", "pos": true}]}, {"rank": 3, "name": "Finn Allen", "team": "New Zealand", "role": "opener", "rating": 27.33, "se": 5.53, "rating_s": "27.3", "se_s": "5.5", "nH": 239, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "strike-rate delta", "sigma": "+1.28", "pos": true}, {"metric": "boundary elevation", "sigma": "+1.09", "pos": true}, {"metric": "dot suppression", "sigma": "+0.98", "pos": true}]}, {"rank": 4, "name": "Phil Salt", "team": "England", "role": "opener", "rating": 25.66, "se": 4.04, "rating_s": "25.7", "se_s": "4.0", "nH": 436, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "dot suppression", "sigma": "+1.63", "pos": true}, {"metric": "strike-rate delta", "sigma": "+1.04", "pos": true}, {"metric": "boundary elevation", "sigma": "+0.42", "pos": true}]}, {"rank": 5, "name": "Suryakumar Yadav", "team": "Mumbai Indians", "role": "middle order (4-5)", "rating": 24.05, "se": 3.63, "rating_s": "24.1", "se_s": "3.6", "nH": 512, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "boundary elevation", "sigma": "+0.99", "pos": true}, {"metric": "strike-rate delta", "sigma": "+0.63", "pos": true}, {"metric": "wicket security", "sigma": "−0.47", "pos": false}]}, {"rank": 6, "name": "Tim David", "team": "Australia", "role": "finisher (6-7)", "rating": 24.77, "se": 5.27, "rating_s": "24.8", "se_s": "5.3", "nH": 340, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "strike-rate delta", "sigma": "+1.56", "pos": true}, {"metric": "boundary elevation", "sigma": "+1.06", "pos": true}, {"metric": "wicket security", "sigma": "+0.82", "pos": true}]}, {"rank": 7, "name": "Heinrich Klaasen", "team": "Sunrisers Hyderabad", "role": "middle order (4-5)", "rating": 19.73, "se": 3.72, "rating_s": "19.7", "se_s": "3.7", "nH": 190, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "strike-rate delta", "sigma": "+2.17", "pos": true}, {"metric": "boundary elevation", "sigma": "+1.97", "pos": true}, {"metric": "dot suppression", "sigma": "+0.79", "pos": true}]}, {"rank": 8, "name": "Andre Russell", "team": "West Indies", "role": "finisher (6-7)", "rating": 21.11, "se": 5.93, "rating_s": "21.1", "se_s": "5.9", "nH": 195, "seasons": "2022–2025 (4 seasons)", "strongest": [{"metric": "boundary elevation", "sigma": "+1.39", "pos": true}, {"metric": "strike-rate delta", "sigma": "+1.01", "pos": true}, {"metric": "wicket security", "sigma": "+0.23", "pos": true}]}, {"rank": 9, "name": "Travis Head", "team": "Sunrisers Hyderabad", "role": "opener", "rating": 20.43, "se": 6.35, "rating_s": "20.4", "se_s": "6.4", "nH": 479, "seasons": "2023–2026 (4 seasons)", "strongest": [{"metric": "boundary elevation", "sigma": "+1.14", "pos": true}, {"metric": "strike-rate delta", "sigma": "+0.98", "pos": true}, {"metric": "dot suppression", "sigma": "+0.89", "pos": true}]}, {"rank": 10, "name": "Priyansh Arya", "team": "Punjab Kings", "role": "opener", "rating": 22.57, "se": 8.82, "rating_s": "22.6", "se_s": "8.8", "nH": 200, "seasons": "2025–2026 (2 seasons)", "strongest": [{"metric": "dot suppression", "sigma": "+2.49", "pos": true}, {"metric": "strike-rate delta", "sigma": "+2.22", "pos": true}, {"metric": "boundary elevation", "sigma": "+1.48", "pos": true}]}], "bowl": [{"rank": 1, "name": "Jasprit Bumrah", "team": "India", "role": "pace, mainly powerplay", "rating": 25.27, "se": 5.05, "rating_s": "25.3", "se_s": "5.1", "nH": 539, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "boundary suppression", "sigma": "+2.00", "pos": true}, {"metric": "economy suppression", "sigma": "+1.46", "pos": true}, {"metric": "dot rate", "sigma": "+1.42", "pos": true}]}, {"rank": 2, "name": "Sunil Narine", "team": "Kolkata Knight Riders", "role": "spin, mainly middle", "rating": 20.86, "se": 3.64, "rating_s": "20.9", "se_s": "3.6", "nH": 203, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "dot rate", "sigma": "+1.74", "pos": true}, {"metric": "economy suppression", "sigma": "+1.54", "pos": true}, {"metric": "boundary suppression", "sigma": "+1.18", "pos": true}]}, {"rank": 3, "name": "Matheesha Pathirana", "team": "Kolkata Knight Riders", "role": "pace, mainly death", "rating": 16.36, "se": 4.09, "rating_s": "16.4", "se_s": "4.1", "nH": 331, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "economy suppression", "sigma": "+0.91", "pos": true}, {"metric": "boundary suppression", "sigma": "+0.77", "pos": true}, {"metric": "wicket-taking", "sigma": "+0.41", "pos": true}]}, {"rank": 4, "name": "Nathan Ellis", "team": "Australia", "role": "pace, mainly death", "rating": 15.4, "se": 3.23, "rating_s": "15.4", "se_s": "3.2", "nH": 344, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "boundary suppression", "sigma": "+1.70", "pos": true}, {"metric": "economy suppression", "sigma": "+1.25", "pos": true}, {"metric": "dot rate", "sigma": "−0.31", "pos": false}]}, {"rank": 5, "name": "Rashid Khan (Afghanistan)", "team": "Afghanistan", "role": "spin, mainly middle", "rating": 12.24, "se": 3.88, "rating_s": "12.2", "se_s": "3.9", "nH": 424, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "boundary suppression", "sigma": "+0.77", "pos": true}, {"metric": "economy suppression", "sigma": "+0.34", "pos": true}, {"metric": "wicket-taking", "sigma": "−0.13", "pos": false}]}, {"rank": 6, "name": "Eshan Malinga", "team": "Sri Lanka", "role": "pace, mainly middle", "rating": 11.94, "se": 4.36, "rating_s": "11.9", "se_s": "4.4", "nH": 227, "seasons": "2024–2026 (3 seasons)", "strongest": [{"metric": "boundary suppression", "sigma": "+1.91", "pos": true}, {"metric": "economy suppression", "sigma": "+1.50", "pos": true}, {"metric": "dot rate", "sigma": "+0.07", "pos": true}]}, {"rank": 7, "name": "Josh Hazlewood", "team": "Royal Challengers Bengaluru", "role": "pace, mainly powerplay", "rating": 11.91, "se": 4.63, "rating_s": "11.9", "se_s": "4.6", "nH": 570, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "wicket-taking", "sigma": "+1.26", "pos": true}, {"metric": "dot rate", "sigma": "+1.06", "pos": true}, {"metric": "economy suppression", "sigma": "+0.79", "pos": true}]}, {"rank": 8, "name": "Bhuvneshwar Kumar", "team": "India", "role": "pace, mainly powerplay", "rating": 9.88, "se": 3.99, "rating_s": "9.9", "se_s": "4.0", "nH": 771, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "boundary suppression", "sigma": "+0.42", "pos": true}, {"metric": "economy suppression", "sigma": "−0.02", "pos": false}, {"metric": "wicket-taking", "sigma": "−0.37", "pos": false}]}, {"rank": 9, "name": "Mujeeb Ur Rahman", "team": "Afghanistan", "role": "spin, mainly powerplay", "rating": 9.82, "se": 4.42, "rating_s": "9.8", "se_s": "4.4", "nH": 162, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "dot rate", "sigma": "+2.07", "pos": true}, {"metric": "economy suppression", "sigma": "+2.04", "pos": true}, {"metric": "boundary suppression", "sigma": "+1.20", "pos": true}]}, {"rank": 10, "name": "Varun Chakravarthy", "team": "India", "role": "spin, mainly middle", "rating": 7.61, "se": 3.68, "rating_s": "7.6", "se_s": "3.7", "nH": 367, "seasons": "2022–2026 (5 seasons)", "strongest": [{"metric": "dot rate", "sigma": "+0.51", "pos": true}, {"metric": "economy suppression", "sigma": "0.00", "pos": false}, {"metric": "wicket-taking", "sigma": "−0.33", "pos": false}]}]}, "players": [{"side": "bat", "rank": 1, "name": "Vaibhav Sooryavanshi", "rating_s": "52.3", "se_s": "9.0", "nH": 256, "seasons": "2025–2026 (2 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 2.623, "z_s": "+2.62"}, {"metric": "dot suppression", "z": -1.081, "z_s": "−1.08"}, {"metric": "boundary elevation", "z": 2.4513, "z_s": "+2.45"}, {"metric": "wicket security", "z": -0.2601, "z_s": "−0.26"}]}, {"side": "bat", "rank": 2, "name": "Abhishek Sharma", "rating_s": "35.9", "se_s": "5.4", "nH": 801, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 1.4067, "z_s": "+1.41"}, {"metric": "dot suppression", "z": 1.0297, "z_s": "+1.03"}, {"metric": "boundary elevation", "z": 1.155, "z_s": "+1.15"}, {"metric": "wicket security", "z": -0.7048, "z_s": "−0.70"}]}, {"side": "bat", "rank": 3, "name": "Finn Allen", "rating_s": "27.3", "se_s": "5.5", "nH": 239, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 1.2824, "z_s": "+1.28"}, {"metric": "dot suppression", "z": 0.9815, "z_s": "+0.98"}, {"metric": "boundary elevation", "z": 1.0937, "z_s": "+1.09"}, {"metric": "wicket security", "z": -1.9711, "z_s": "−1.97"}]}, {"side": "bat", "rank": 4, "name": "Phil Salt", "rating_s": "25.7", "se_s": "4.0", "nH": 436, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 1.0448, "z_s": "+1.04"}, {"metric": "dot suppression", "z": 1.6276, "z_s": "+1.63"}, {"metric": "boundary elevation", "z": 0.4177, "z_s": "+0.42"}, {"metric": "wicket security", "z": -0.0213, "z_s": "−0.02"}]}, {"side": "bat", "rank": 5, "name": "Suryakumar Yadav", "rating_s": "24.0", "se_s": "3.6", "nH": 512, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.6266, "z_s": "+0.63"}, {"metric": "dot suppression", "z": -0.6316, "z_s": "−0.63"}, {"metric": "boundary elevation", "z": 0.9865, "z_s": "+0.99"}, {"metric": "wicket security", "z": -0.4674, "z_s": "−0.47"}]}, {"side": "bat", "rank": 6, "name": "Tim David", "rating_s": "24.8", "se_s": "5.3", "nH": 340, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 1.5589, "z_s": "+1.56"}, {"metric": "dot suppression", "z": -0.4813, "z_s": "−0.48"}, {"metric": "boundary elevation", "z": 1.0597, "z_s": "+1.06"}, {"metric": "wicket security", "z": 0.8177, "z_s": "+0.82"}]}, {"side": "bat", "rank": 7, "name": "Heinrich Klaasen", "rating_s": "19.7", "se_s": "3.7", "nH": 190, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 2.1711, "z_s": "+2.17"}, {"metric": "dot suppression", "z": 0.7877, "z_s": "+0.79"}, {"metric": "boundary elevation", "z": 1.9746, "z_s": "+1.97"}, {"metric": "wicket security", "z": -0.7125, "z_s": "−0.71"}]}, {"side": "bat", "rank": 8, "name": "Andre Russell", "rating_s": "21.1", "se_s": "5.9", "nH": 195, "seasons": "2022–2025 (4 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 1.0123, "z_s": "+1.01"}, {"metric": "dot suppression", "z": -2.0042, "z_s": "−2.00"}, {"metric": "boundary elevation", "z": 1.3917, "z_s": "+1.39"}, {"metric": "wicket security", "z": 0.228, "z_s": "+0.23"}]}, {"side": "bat", "rank": 9, "name": "Travis Head", "rating_s": "20.4", "se_s": "6.4", "nH": 479, "seasons": "2023–2026 (4 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 0.9847, "z_s": "+0.98"}, {"metric": "dot suppression", "z": 0.8922, "z_s": "+0.89"}, {"metric": "boundary elevation", "z": 1.1437, "z_s": "+1.14"}, {"metric": "wicket security", "z": -0.3056, "z_s": "−0.31"}]}, {"side": "bat", "rank": 10, "name": "Priyansh Arya", "rating_s": "22.6", "se_s": "8.8", "nH": 200, "seasons": "2025–2026 (2 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 2.2192, "z_s": "+2.22"}, {"metric": "dot suppression", "z": 2.4943, "z_s": "+2.49"}, {"metric": "boundary elevation", "z": 1.4793, "z_s": "+1.48"}, {"metric": "wicket security", "z": -1.8968, "z_s": "−1.90"}]}, {"side": "bat", "rank": 11, "name": "Josh Inglis", "rating_s": "17.9", "se_s": "5.7", "nH": 206, "seasons": "2022–2026 (5 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": 0.4092, "z_s": "+0.41"}, {"metric": "dot suppression", "z": -0.4243, "z_s": "−0.42"}, {"metric": "boundary elevation", "z": 0.5431, "z_s": "+0.54"}, {"metric": "wicket security", "z": -1.3736, "z_s": "−1.37"}]}, {"side": "bat", "rank": 12, "name": "Glenn Maxwell", "rating_s": "17.0", "se_s": "5.0", "nH": 142, "seasons": "2022–2025 (4 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 1.0989, "z_s": "+1.10"}, {"metric": "dot suppression", "z": 0.5206, "z_s": "+0.52"}, {"metric": "boundary elevation", "z": 1.38, "z_s": "+1.38"}, {"metric": "wicket security", "z": -1.6474, "z_s": "−1.65"}]}, {"side": "bat", "rank": 13, "name": "Nicholas Pooran", "rating_s": "15.9", "se_s": "4.6", "nH": 350, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -0.0508, "z_s": "−0.05"}, {"metric": "dot suppression", "z": -1.4591, "z_s": "−1.46"}, {"metric": "boundary elevation", "z": 0.1468, "z_s": "+0.15"}, {"metric": "wicket security", "z": 0.0436, "z_s": "+0.04"}]}, {"side": "bat", "rank": 14, "name": "Romario Shepherd", "rating_s": "15.0", "se_s": "4.7", "nH": 157, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": -0.5326, "z_s": "−0.53"}, {"metric": "dot suppression", "z": -1.626, "z_s": "−1.63"}, {"metric": "boundary elevation", "z": 0.1669, "z_s": "+0.17"}, {"metric": "wicket security", "z": 0.2978, "z_s": "+0.30"}]}, {"side": "bat", "rank": 15, "name": "Jos Buttler", "rating_s": "13.6", "se_s": "3.5", "nH": 759, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.4547, "z_s": "−0.45"}, {"metric": "dot suppression", "z": -0.5521, "z_s": "−0.55"}, {"metric": "boundary elevation", "z": -0.4137, "z_s": "−0.41"}, {"metric": "wicket security", "z": 0.3925, "z_s": "+0.39"}]}, {"side": "bat", "rank": 16, "name": "Mitchell Marsh", "rating_s": "13.8", "se_s": "3.9", "nH": 510, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.845, "z_s": "−0.84"}, {"metric": "dot suppression", "z": -0.6592, "z_s": "−0.66"}, {"metric": "boundary elevation", "z": -0.7637, "z_s": "−0.76"}, {"metric": "wicket security", "z": -0.2102, "z_s": "−0.21"}]}, {"side": "bat", "rank": 17, "name": "Harry Brook", "rating_s": "14.8", "se_s": "5.5", "nH": 121, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 1.2924, "z_s": "+1.29"}, {"metric": "dot suppression", "z": 2.2983, "z_s": "+2.30"}, {"metric": "boundary elevation", "z": 0.4143, "z_s": "+0.41"}, {"metric": "wicket security", "z": -0.9506, "z_s": "−0.95"}]}, {"side": "bat", "rank": 18, "name": "Prabhsimran Singh", "rating_s": "13.6", "se_s": "4.4", "nH": 442, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 0.1671, "z_s": "+0.17"}, {"metric": "dot suppression", "z": -0.5104, "z_s": "−0.51"}, {"metric": "boundary elevation", "z": 0.6277, "z_s": "+0.63"}, {"metric": "wicket security", "z": 0.2612, "z_s": "+0.26"}]}, {"side": "bat", "rank": 19, "name": "Glenn Phillips", "rating_s": "12.7", "se_s": "3.8", "nH": 144, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -1.5446, "z_s": "−1.54"}, {"metric": "dot suppression", "z": -1.0715, "z_s": "−1.07"}, {"metric": "boundary elevation", "z": -2.1653, "z_s": "−2.17"}, {"metric": "wicket security", "z": 1.4783, "z_s": "+1.48"}]}, {"side": "bat", "rank": 20, "name": "Cameron Green", "rating_s": "12.9", "se_s": "4.3", "nH": 234, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -0.444, "z_s": "−0.44"}, {"metric": "dot suppression", "z": -0.0912, "z_s": "−0.09"}, {"metric": "boundary elevation", "z": -0.5881, "z_s": "−0.59"}, {"metric": "wicket security", "z": 0.3651, "z_s": "+0.37"}]}, {"side": "bat", "rank": 21, "name": "Tim Seifert", "rating_s": "14.5", "se_s": "5.9", "nH": 211, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 1.2823, "z_s": "+1.28"}, {"metric": "dot suppression", "z": 1.3353, "z_s": "+1.34"}, {"metric": "boundary elevation", "z": 0.8234, "z_s": "+0.82"}, {"metric": "wicket security", "z": -1.2463, "z_s": "−1.25"}]}, {"side": "bat", "rank": 22, "name": "Naman Dhir", "rating_s": "12.7", "se_s": "4.5", "nH": 112, "seasons": "2024–2026 (3 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 2.3102, "z_s": "+2.31"}, {"metric": "dot suppression", "z": 0.6126, "z_s": "+0.61"}, {"metric": "boundary elevation", "z": 2.6189, "z_s": "+2.62"}, {"metric": "wicket security", "z": -0.1266, "z_s": "−0.13"}]}, {"side": "bat", "rank": 23, "name": "Shashank Singh", "rating_s": "13.5", "se_s": "5.5", "nH": 131, "seasons": "2022–2026 (4 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 0.2109, "z_s": "+0.21"}, {"metric": "dot suppression", "z": -0.5924, "z_s": "−0.59"}, {"metric": "boundary elevation", "z": -0.0285, "z_s": "−0.03"}, {"metric": "wicket security", "z": 2.9537, "z_s": "+2.95"}]}, {"side": "bat", "rank": 24, "name": "Jitesh Sharma", "rating_s": "12.5", "se_s": "4.6", "nH": 241, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": -0.1215, "z_s": "−0.12"}, {"metric": "dot suppression", "z": -1.3069, "z_s": "−1.31"}, {"metric": "boundary elevation", "z": 0.5953, "z_s": "+0.60"}, {"metric": "wicket security", "z": -0.3228, "z_s": "−0.32"}]}, {"side": "bat", "rank": 25, "name": "Shreyas Iyer", "rating_s": "12.2", "se_s": "4.5", "nH": 379, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.3725, "z_s": "+0.37"}, {"metric": "dot suppression", "z": 0.2364, "z_s": "+0.24"}, {"metric": "boundary elevation", "z": -0.0253, "z_s": "−0.03"}, {"metric": "wicket security", "z": -0.6163, "z_s": "−0.62"}]}, {"side": "bat", "rank": 26, "name": "Reeza Hendricks", "rating_s": "11.9", "se_s": "4.6", "nH": 220, "seasons": "2022–2025 (4 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.038, "z_s": "−0.04"}, {"metric": "dot suppression", "z": 1.2402, "z_s": "+1.24"}, {"metric": "boundary elevation", "z": -0.2086, "z_s": "−0.21"}, {"metric": "wicket security", "z": 0.6325, "z_s": "+0.63"}]}, {"side": "bat", "rank": 27, "name": "Ayush Mhatre", "rating_s": "10.8", "se_s": "3.7", "nH": 126, "seasons": "2025–2026 (2 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": 2.5413, "z_s": "+2.54"}, {"metric": "dot suppression", "z": 0.5588, "z_s": "+0.56"}, {"metric": "boundary elevation", "z": 2.6538, "z_s": "+2.65"}, {"metric": "wicket security", "z": 0.3737, "z_s": "+0.37"}]}, {"side": "bat", "rank": 28, "name": "Sanju Samson", "rating_s": "11.0", "se_s": "4.1", "nH": 509, "seasons": "2022–2026 (5 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": -0.4483, "z_s": "−0.45"}, {"metric": "dot suppression", "z": -0.6688, "z_s": "−0.67"}, {"metric": "boundary elevation", "z": 0.2537, "z_s": "+0.25"}, {"metric": "wicket security", "z": -0.4573, "z_s": "−0.46"}]}, {"side": "bat", "rank": 29, "name": "Ashutosh Sharma", "rating_s": "13.3", "se_s": "6.4", "nH": 133, "seasons": "2024–2026 (3 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 0.6325, "z_s": "+0.63"}, {"metric": "dot suppression", "z": 0.7936, "z_s": "+0.79"}, {"metric": "boundary elevation", "z": 0.7561, "z_s": "+0.76"}, {"metric": "wicket security", "z": 1.2046, "z_s": "+1.20"}]}, {"side": "bat", "rank": 30, "name": "Liam Livingstone", "rating_s": "11.2", "se_s": "4.5", "nH": 197, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.3613, "z_s": "+0.36"}, {"metric": "dot suppression", "z": 0.6323, "z_s": "+0.63"}, {"metric": "boundary elevation", "z": -0.0614, "z_s": "−0.06"}, {"metric": "wicket security", "z": -1.8627, "z_s": "−1.86"}]}, {"side": "bat", "rank": 31, "name": "Rovman Powell", "rating_s": "10.2", "se_s": "3.8", "nH": 267, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.189, "z_s": "+0.19"}, {"metric": "dot suppression", "z": 0.7857, "z_s": "+0.79"}, {"metric": "boundary elevation", "z": 0.2122, "z_s": "+0.21"}, {"metric": "wicket security", "z": -0.5609, "z_s": "−0.56"}]}, {"side": "bat", "rank": 32, "name": "Namboori Tilak Varma", "rating_s": "9.8", "se_s": "3.6", "nH": 521, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -0.5118, "z_s": "−0.51"}, {"metric": "dot suppression", "z": -0.2524, "z_s": "−0.25"}, {"metric": "boundary elevation", "z": -0.5108, "z_s": "−0.51"}, {"metric": "wicket security", "z": 0.4555, "z_s": "+0.46"}]}, {"side": "bat", "rank": 33, "name": "Yashasvi Jaiswal", "rating_s": "9.9", "se_s": "3.7", "nH": 686, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.197, "z_s": "−0.20"}, {"metric": "dot suppression", "z": -1.0192, "z_s": "−1.02"}, {"metric": "boundary elevation", "z": 0.6058, "z_s": "+0.61"}, {"metric": "wicket security", "z": -0.6884, "z_s": "−0.69"}]}, {"side": "bat", "rank": 34, "name": "Marcus Stoinis", "rating_s": "10.6", "se_s": "4.5", "nH": 232, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.7553, "z_s": "+0.76"}, {"metric": "dot suppression", "z": -0.4747, "z_s": "−0.47"}, {"metric": "boundary elevation", "z": 0.7955, "z_s": "+0.80"}, {"metric": "wicket security", "z": -1.1161, "z_s": "−1.12"}]}, {"side": "bat", "rank": 35, "name": "Ryan Rickelton", "rating_s": "10.8", "se_s": "4.7", "nH": 320, "seasons": "2024–2026 (3 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.9789, "z_s": "−0.98"}, {"metric": "dot suppression", "z": -0.3104, "z_s": "−0.31"}, {"metric": "boundary elevation", "z": -1.2832, "z_s": "−1.28"}, {"metric": "wicket security", "z": 0.1295, "z_s": "+0.13"}]}, {"side": "bat", "rank": 36, "name": "Daryl Mitchell", "rating_s": "9.7", "se_s": "3.7", "nH": 217, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.424, "z_s": "+0.42"}, {"metric": "dot suppression", "z": 2.3502, "z_s": "+2.35"}, {"metric": "boundary elevation", "z": -0.5061, "z_s": "−0.51"}, {"metric": "wicket security", "z": -1.2023, "z_s": "−1.20"}]}, {"side": "bat", "rank": 37, "name": "Shubman Gill", "rating_s": "9.3", "se_s": "3.4", "nH": 684, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.6708, "z_s": "−0.67"}, {"metric": "dot suppression", "z": 1.093, "z_s": "+1.09"}, {"metric": "boundary elevation", "z": -1.0084, "z_s": "−1.01"}, {"metric": "wicket security", "z": 0.2813, "z_s": "+0.28"}]}, {"side": "bat", "rank": 38, "name": "Rinku Singh", "rating_s": "9.2", "se_s": "3.6", "nH": 229, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 0.2652, "z_s": "+0.27"}, {"metric": "dot suppression", "z": 0.3213, "z_s": "+0.32"}, {"metric": "boundary elevation", "z": 0.4543, "z_s": "+0.45"}, {"metric": "wicket security", "z": 0.4931, "z_s": "+0.49"}]}, {"side": "bat", "rank": 39, "name": "Sahibzada Farhan", "rating_s": "9.3", "se_s": "4.0", "nH": 164, "seasons": "2024–2026 (3 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 0.5618, "z_s": "+0.56"}, {"metric": "dot suppression", "z": 0.1199, "z_s": "+0.12"}, {"metric": "boundary elevation", "z": 0.6008, "z_s": "+0.60"}, {"metric": "wicket security", "z": -1.1913, "z_s": "−1.19"}]}, {"side": "bat", "rank": 40, "name": "Sunil Narine", "rating_s": "10.8", "se_s": "5.9", "nH": 185, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.5124, "z_s": "−0.51"}, {"metric": "dot suppression", "z": -0.8098, "z_s": "−0.81"}, {"metric": "boundary elevation", "z": 0.0645, "z_s": "+0.06"}, {"metric": "wicket security", "z": -0.2596, "z_s": "−0.26"}]}, {"side": "bat", "rank": 41, "name": "Sikandar Raza", "rating_s": "8.3", "se_s": "3.6", "nH": 152, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.3281, "z_s": "+0.33"}, {"metric": "dot suppression", "z": -0.7616, "z_s": "−0.76"}, {"metric": "boundary elevation", "z": 0.1813, "z_s": "+0.18"}, {"metric": "wicket security", "z": -1.3999, "z_s": "−1.40"}]}, {"side": "bat", "rank": 42, "name": "Riyan Parag", "rating_s": "8.5", "se_s": "3.9", "nH": 200, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -0.0695, "z_s": "−0.07"}, {"metric": "dot suppression", "z": -0.549, "z_s": "−0.55"}, {"metric": "boundary elevation", "z": -0.0413, "z_s": "−0.04"}, {"metric": "wicket security", "z": -1.9146, "z_s": "−1.91"}]}, {"side": "bat", "rank": 43, "name": "Shimron Hetmyer", "rating_s": "8.5", "se_s": "4.1", "nH": 278, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -0.4371, "z_s": "−0.44"}, {"metric": "dot suppression", "z": -0.4613, "z_s": "−0.46"}, {"metric": "boundary elevation", "z": -0.5297, "z_s": "−0.53"}, {"metric": "wicket security", "z": 0.3787, "z_s": "+0.38"}]}, {"side": "bat", "rank": 44, "name": "Pathum Nissanka", "rating_s": "7.9", "se_s": "3.7", "nH": 535, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.2768, "z_s": "−0.28"}, {"metric": "dot suppression", "z": 0.7747, "z_s": "+0.77"}, {"metric": "boundary elevation", "z": -0.6168, "z_s": "−0.62"}, {"metric": "wicket security", "z": -0.3554, "z_s": "−0.36"}]}, {"side": "bat", "rank": 45, "name": "Rashid Khan (Afghanistan)", "rating_s": "11.5", "se_s": "7.4", "nH": 155, "seasons": "2022–2026 (5 seasons)", "role": "lower order (8+)", "proc": [{"metric": "strike-rate delta", "z": -0.1355, "z_s": "−0.14"}, {"metric": "dot suppression", "z": -0.6176, "z_s": "−0.62"}, {"metric": "boundary elevation", "z": -0.5049, "z_s": "−0.50"}, {"metric": "wicket security", "z": -0.1974, "z_s": "−0.20"}]}, {"side": "bat", "rank": 46, "name": "Virat Kohli", "rating_s": "6.4", "se_s": "2.7", "nH": 745, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -1.2534, "z_s": "−1.25"}, {"metric": "dot suppression", "z": 0.8301, "z_s": "+0.83"}, {"metric": "boundary elevation", "z": -1.4079, "z_s": "−1.41"}, {"metric": "wicket security", "z": 0.7812, "z_s": "+0.78"}]}, {"side": "bat", "rank": 47, "name": "Kyle Mayers", "rating_s": "8.8", "se_s": "5.1", "nH": 293, "seasons": "2022–2025 (4 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.8834, "z_s": "−0.88"}, {"metric": "dot suppression", "z": -1.7381, "z_s": "−1.74"}, {"metric": "boundary elevation", "z": -0.4476, "z_s": "−0.45"}, {"metric": "wicket security", "z": -0.4301, "z_s": "−0.43"}]}, {"side": "bat", "rank": 48, "name": "Ishan Kishan", "rating_s": "7.7", "se_s": "4.1", "nH": 640, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -1.1225, "z_s": "−1.12"}, {"metric": "dot suppression", "z": -0.2067, "z_s": "−0.21"}, {"metric": "boundary elevation", "z": -0.9821, "z_s": "−0.98"}, {"metric": "wicket security", "z": 0.0756, "z_s": "+0.08"}]}, {"side": "bat", "rank": 49, "name": "Shai Hope", "rating_s": "8.1", "se_s": "4.8", "nH": 252, "seasons": "2022–2026 (5 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": 0.0611, "z_s": "+0.06"}, {"metric": "dot suppression", "z": 0.8086, "z_s": "+0.81"}, {"metric": "boundary elevation", "z": -0.184, "z_s": "−0.18"}, {"metric": "wicket security", "z": 0.2479, "z_s": "+0.25"}]}, {"side": "bat", "rank": 50, "name": "Jonny Bairstow", "rating_s": "7.9", "se_s": "5.0", "nH": 180, "seasons": "2022–2025 (4 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 0.5601, "z_s": "+0.56"}, {"metric": "dot suppression", "z": -0.1765, "z_s": "−0.18"}, {"metric": "boundary elevation", "z": 0.7996, "z_s": "+0.80"}, {"metric": "wicket security", "z": 0.1511, "z_s": "+0.15"}]}, {"side": "bat", "rank": 51, "name": "Tristan Stubbs", "rating_s": "7.1", "se_s": "4.3", "nH": 249, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.1139, "z_s": "+0.11"}, {"metric": "dot suppression", "z": 0.9279, "z_s": "+0.93"}, {"metric": "boundary elevation", "z": -0.2303, "z_s": "−0.23"}, {"metric": "wicket security", "z": 1.2952, "z_s": "+1.30"}]}, {"side": "bat", "rank": 52, "name": "Kamindu Mendis", "rating_s": "5.3", "se_s": "2.9", "nH": 130, "seasons": "2024–2026 (3 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -1.2205, "z_s": "−1.22"}, {"metric": "dot suppression", "z": -0.51, "z_s": "−0.51"}, {"metric": "boundary elevation", "z": -1.0555, "z_s": "−1.06"}, {"metric": "wicket security", "z": 0.5253, "z_s": "+0.53"}]}, {"side": "bat", "rank": 53, "name": "Lokesh Rahul", "rating_s": "5.9", "se_s": "3.5", "nH": 575, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.7872, "z_s": "−0.79"}, {"metric": "dot suppression", "z": 0.4583, "z_s": "+0.46"}, {"metric": "boundary elevation", "z": -0.9341, "z_s": "−0.93"}, {"metric": "wicket security", "z": -0.1965, "z_s": "−0.20"}]}, {"side": "bat", "rank": 54, "name": "Nitish Rana", "rating_s": "7.2", "se_s": "4.8", "nH": 186, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.3722, "z_s": "+0.37"}, {"metric": "dot suppression", "z": -1.1395, "z_s": "−1.14"}, {"metric": "boundary elevation", "z": 0.9757, "z_s": "+0.98"}, {"metric": "wicket security", "z": 0.3697, "z_s": "+0.37"}]}, {"side": "bat", "rank": 55, "name": "Saim Ayub", "rating_s": "6.5", "se_s": "4.5", "nH": 269, "seasons": "2023–2026 (4 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.6753, "z_s": "−0.68"}, {"metric": "dot suppression", "z": -0.0568, "z_s": "−0.06"}, {"metric": "boundary elevation", "z": -0.349, "z_s": "−0.35"}, {"metric": "wicket security", "z": -0.1989, "z_s": "−0.20"}]}, {"side": "bat", "rank": 56, "name": "David Miller", "rating_s": "6.7", "se_s": "4.8", "nH": 358, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -0.846, "z_s": "−0.85"}, {"metric": "dot suppression", "z": 0.0735, "z_s": "+0.07"}, {"metric": "boundary elevation", "z": -0.9672, "z_s": "−0.97"}, {"metric": "wicket security", "z": 1.108, "z_s": "+1.11"}]}, {"side": "bat", "rank": 57, "name": "Kusal Mendis", "rating_s": "5.3", "se_s": "3.7", "nH": 419, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.088, "z_s": "−0.09"}, {"metric": "dot suppression", "z": 0.903, "z_s": "+0.90"}, {"metric": "boundary elevation", "z": -0.203, "z_s": "−0.20"}, {"metric": "wicket security", "z": 0.6995, "z_s": "+0.70"}]}, {"side": "bat", "rank": 58, "name": "Sai Sudharsan", "rating_s": "4.1", "se_s": "2.6", "nH": 495, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -1.8015, "z_s": "−1.80"}, {"metric": "dot suppression", "z": 0.1757, "z_s": "+0.18"}, {"metric": "boundary elevation", "z": -1.6272, "z_s": "−1.63"}, {"metric": "wicket security", "z": 0.733, "z_s": "+0.73"}]}, {"side": "bat", "rank": 59, "name": "Dasun Shanaka", "rating_s": "5.7", "se_s": "4.3", "nH": 223, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": -0.0095, "z_s": "−0.01"}, {"metric": "dot suppression", "z": -0.4585, "z_s": "−0.46"}, {"metric": "boundary elevation", "z": 0.2434, "z_s": "+0.24"}, {"metric": "wicket security", "z": 1.9512, "z_s": "+1.95"}]}, {"side": "bat", "rank": 60, "name": "Mohammad Nabi", "rating_s": "5.8", "se_s": "4.4", "nH": 115, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": -0.1355, "z_s": "−0.14"}, {"metric": "dot suppression", "z": 0.4254, "z_s": "+0.43"}, {"metric": "boundary elevation", "z": 0.0537, "z_s": "+0.05"}, {"metric": "wicket security", "z": 0.0383, "z_s": "+0.04"}]}, {"side": "bat", "rank": 61, "name": "Ruturaj Gaikwad", "rating_s": "4.9", "se_s": "3.7", "nH": 447, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -1.4366, "z_s": "−1.44"}, {"metric": "dot suppression", "z": -0.0557, "z_s": "−0.06"}, {"metric": "boundary elevation", "z": -1.0996, "z_s": "−1.10"}, {"metric": "wicket security", "z": 0.3027, "z_s": "+0.30"}]}, {"side": "bat", "rank": 62, "name": "Fakhar Zaman", "rating_s": "5.3", "se_s": "4.4", "nH": 243, "seasons": "2022–2026 (5 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": -0.3705, "z_s": "−0.37"}, {"metric": "dot suppression", "z": 0.5804, "z_s": "+0.58"}, {"metric": "boundary elevation", "z": -0.1925, "z_s": "−0.19"}, {"metric": "wicket security", "z": 0.3818, "z_s": "+0.38"}]}, {"side": "bat", "rank": 63, "name": "Moeen Ali", "rating_s": "5.0", "se_s": "4.3", "nH": 206, "seasons": "2022–2025 (4 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -0.4171, "z_s": "−0.42"}, {"metric": "dot suppression", "z": -2.1149, "z_s": "−2.11"}, {"metric": "boundary elevation", "z": -0.3528, "z_s": "−0.35"}, {"metric": "wicket security", "z": 0.437, "z_s": "+0.44"}]}, {"side": "bat", "rank": 64, "name": "Jacob Bethell", "rating_s": "5.3", "se_s": "4.7", "nH": 133, "seasons": "2024–2026 (3 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": 0.2741, "z_s": "+0.27"}, {"metric": "dot suppression", "z": 0.2767, "z_s": "+0.28"}, {"metric": "boundary elevation", "z": 0.9104, "z_s": "+0.91"}, {"metric": "wicket security", "z": -0.0478, "z_s": "−0.05"}]}, {"side": "bat", "rank": 65, "name": "Parvez Emon", "rating_s": "6.2", "se_s": "5.7", "nH": 182, "seasons": "2022–2026 (4 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": 0.2755, "z_s": "+0.28"}, {"metric": "dot suppression", "z": 0.3624, "z_s": "+0.36"}, {"metric": "boundary elevation", "z": -0.2548, "z_s": "−0.25"}, {"metric": "wicket security", "z": -1.0951, "z_s": "−1.10"}]}, {"side": "bat", "rank": 66, "name": "Rohit Sharma", "rating_s": "4.3", "se_s": "3.8", "nH": 517, "seasons": "2022–2026 (5 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -0.2817, "z_s": "−0.28"}, {"metric": "dot suppression", "z": -1.1686, "z_s": "−1.17"}, {"metric": "boundary elevation", "z": -0.0386, "z_s": "−0.04"}, {"metric": "wicket security", "z": -0.3257, "z_s": "−0.33"}]}, {"side": "bat", "rank": 67, "name": "Towhid Hridoy", "rating_s": "3.8", "se_s": "3.7", "nH": 128, "seasons": "2023–2026 (4 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": 0.1471, "z_s": "+0.15"}, {"metric": "dot suppression", "z": 0.4025, "z_s": "+0.40"}, {"metric": "boundary elevation", "z": -0.2736, "z_s": "−0.27"}, {"metric": "wicket security", "z": 2.1235, "z_s": "+2.12"}]}, {"side": "bat", "rank": 68, "name": "Mohammad Nawaz", "rating_s": "4.2", "se_s": "4.4", "nH": 133, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 0.5284, "z_s": "+0.53"}, {"metric": "dot suppression", "z": -1.4571, "z_s": "−1.46"}, {"metric": "boundary elevation", "z": 0.8338, "z_s": "+0.83"}, {"metric": "wicket security", "z": 0.5472, "z_s": "+0.55"}]}, {"side": "bat", "rank": 69, "name": "Matthew Short", "rating_s": "3.6", "se_s": "4.6", "nH": 132, "seasons": "2023–2026 (4 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": 0.0226, "z_s": "+0.02"}, {"metric": "dot suppression", "z": -0.3345, "z_s": "−0.33"}, {"metric": "boundary elevation", "z": 0.2164, "z_s": "+0.22"}, {"metric": "wicket security", "z": -0.5822, "z_s": "−0.58"}]}, {"side": "bat", "rank": 70, "name": "Rishabh Pant", "rating_s": "2.4", "se_s": "3.5", "nH": 207, "seasons": "2022–2026 (4 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -1.0704, "z_s": "−1.07"}, {"metric": "dot suppression", "z": -0.4805, "z_s": "−0.48"}, {"metric": "boundary elevation", "z": -0.9777, "z_s": "−0.98"}, {"metric": "wicket security", "z": -0.3595, "z_s": "−0.36"}]}, {"side": "bat", "rank": 71, "name": "M Shahrukh Khan", "rating_s": "3.6", "se_s": "4.8", "nH": 114, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 1.2156, "z_s": "+1.22"}, {"metric": "dot suppression", "z": 0.9202, "z_s": "+0.92"}, {"metric": "boundary elevation", "z": 0.5297, "z_s": "+0.53"}, {"metric": "wicket security", "z": 1.6033, "z_s": "+1.60"}]}, {"side": "bat", "rank": 72, "name": "Sediqullah Atal", "rating_s": "3.2", "se_s": "4.4", "nH": 242, "seasons": "2023–2026 (4 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -1.3397, "z_s": "−1.34"}, {"metric": "dot suppression", "z": -0.2141, "z_s": "−0.21"}, {"metric": "boundary elevation", "z": -1.9213, "z_s": "−1.92"}, {"metric": "wicket security", "z": 0.3051, "z_s": "+0.31"}]}, {"side": "bat", "rank": 73, "name": "Alick Athanaze", "rating_s": "2.6", "se_s": "3.9", "nH": 109, "seasons": "2024–2026 (3 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -1.5142, "z_s": "−1.51"}, {"metric": "dot suppression", "z": -1.652, "z_s": "−1.65"}, {"metric": "boundary elevation", "z": -1.2013, "z_s": "−1.20"}, {"metric": "wicket security", "z": 0.4306, "z_s": "+0.43"}]}, {"side": "bat", "rank": 74, "name": "Mohammad Saif Hassan", "rating_s": "2.9", "se_s": "4.6", "nH": 153, "seasons": "2024–2026 (3 seasons)", "role": "opener", "proc": [{"metric": "strike-rate delta", "z": -1.3631, "z_s": "−1.36"}, {"metric": "dot suppression", "z": -1.3999, "z_s": "−1.40"}, {"metric": "boundary elevation", "z": -1.7134, "z_s": "−1.71"}, {"metric": "wicket security", "z": -0.1686, "z_s": "−0.17"}]}, {"side": "bat", "rank": 75, "name": "Kusal Perera", "rating_s": "3.5", "se_s": "5.8", "nH": 126, "seasons": "2023–2025 (3 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": -0.8351, "z_s": "−0.84"}, {"metric": "dot suppression", "z": 2.1043, "z_s": "+2.10"}, {"metric": "boundary elevation", "z": -0.8178, "z_s": "−0.82"}, {"metric": "wicket security", "z": -0.0401, "z_s": "−0.04"}]}, {"side": "bat", "rank": 76, "name": "Mahendra Singh Dhoni", "rating_s": "2.8", "se_s": "5.3", "nH": 139, "seasons": "2022–2025 (4 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": -0.5756, "z_s": "−0.58"}, {"metric": "dot suppression", "z": -0.0499, "z_s": "−0.05"}, {"metric": "boundary elevation", "z": -0.5752, "z_s": "−0.58"}, {"metric": "wicket security", "z": 1.2376, "z_s": "+1.24"}]}, {"side": "bat", "rank": 77, "name": "Ajinkya Rahane", "rating_s": "1.2", "se_s": "4.0", "nH": 292, "seasons": "2022–2026 (5 seasons)", "role": "No.3", "proc": [{"metric": "strike-rate delta", "z": -1.0167, "z_s": "−1.02"}, {"metric": "dot suppression", "z": -0.5843, "z_s": "−0.58"}, {"metric": "boundary elevation", "z": -0.9659, "z_s": "−0.97"}, {"metric": "wicket security", "z": -0.1086, "z_s": "−0.11"}]}, {"side": "bat", "rank": 78, "name": "Washington Sundar", "rating_s": "1.5", "se_s": "4.6", "nH": 159, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": -0.8638, "z_s": "−0.86"}, {"metric": "dot suppression", "z": 0.606, "z_s": "+0.61"}, {"metric": "boundary elevation", "z": -0.606, "z_s": "−0.61"}, {"metric": "wicket security", "z": -1.9635, "z_s": "−1.96"}]}, {"side": "bat", "rank": 79, "name": "Ravindra Jadeja", "rating_s": "−2.3", "se_s": "2.8", "nH": 224, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": -1.6201, "z_s": "−1.62"}, {"metric": "dot suppression", "z": 0.2635, "z_s": "+0.26"}, {"metric": "boundary elevation", "z": -1.7761, "z_s": "−1.78"}, {"metric": "wicket security", "z": 1.8672, "z_s": "+1.87"}]}, {"side": "bat", "rank": 80, "name": "Harry Tector", "rating_s": "−2.3", "se_s": "3.0", "nH": 153, "seasons": "2022–2026 (5 seasons)", "role": "middle order (4-5)", "proc": [{"metric": "strike-rate delta", "z": -1.5076, "z_s": "−1.51"}, {"metric": "dot suppression", "z": 0.6192, "z_s": "+0.62"}, {"metric": "boundary elevation", "z": -1.1913, "z_s": "−1.19"}, {"metric": "wicket security", "z": 1.3159, "z_s": "+1.32"}]}, {"side": "bat", "rank": 81, "name": "Rahul Tewatia", "rating_s": "−0.4", "se_s": "5.0", "nH": 209, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": 0.1756, "z_s": "+0.18"}, {"metric": "dot suppression", "z": -1.1233, "z_s": "−1.12"}, {"metric": "boundary elevation", "z": 0.7049, "z_s": "+0.70"}, {"metric": "wicket security", "z": 1.8062, "z_s": "+1.81"}]}, {"side": "bat", "rank": 82, "name": "Sam Curran", "rating_s": "−1.2", "se_s": "4.4", "nH": 166, "seasons": "2022–2026 (5 seasons)", "role": "finisher (6-7)", "proc": [{"metric": "strike-rate delta", "z": -0.5734, "z_s": "−0.57"}, {"metric": "dot suppression", "z": 1.1132, "z_s": "+1.11"}, {"metric": "boundary elevation", "z": -0.7135, "z_s": "−0.71"}, {"metric": "wicket security", "z": -1.5651, "z_s": "−1.57"}]}, {"side": "bowl", "rank": 1, "name": "Jasprit Bumrah", "rating_s": "25.3", "se_s": "5.0", "nH": 539, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 1.4206, "z_s": "+1.42"}, {"metric": "boundary suppression", "z": 2.0049, "z_s": "+2.00"}, {"metric": "economy suppression", "z": 1.4621, "z_s": "+1.46"}, {"metric": "wicket-taking", "z": -2.5265, "z_s": "−2.53"}]}, {"side": "bowl", "rank": 2, "name": "Sunil Narine", "rating_s": "20.9", "se_s": "3.6", "nH": 203, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": 1.7364, "z_s": "+1.74"}, {"metric": "boundary suppression", "z": 1.1827, "z_s": "+1.18"}, {"metric": "economy suppression", "z": 1.5372, "z_s": "+1.54"}, {"metric": "wicket-taking", "z": 0.044, "z_s": "+0.04"}]}, {"side": "bowl", "rank": 3, "name": "Matheesha Pathirana", "rating_s": "16.4", "se_s": "4.1", "nH": 331, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly death", "proc": [{"metric": "dot rate", "z": 0.1253, "z_s": "+0.13"}, {"metric": "boundary suppression", "z": 0.7695, "z_s": "+0.77"}, {"metric": "economy suppression", "z": 0.9102, "z_s": "+0.91"}, {"metric": "wicket-taking", "z": 0.413, "z_s": "+0.41"}]}, {"side": "bowl", "rank": 4, "name": "Nathan Ellis", "rating_s": "15.4", "se_s": "3.2", "nH": 344, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly death", "proc": [{"metric": "dot rate", "z": -0.3133, "z_s": "−0.31"}, {"metric": "boundary suppression", "z": 1.6955, "z_s": "+1.70"}, {"metric": "economy suppression", "z": 1.2536, "z_s": "+1.25"}, {"metric": "wicket-taking", "z": -0.8327, "z_s": "−0.83"}]}, {"side": "bowl", "rank": 5, "name": "Rashid Khan (Afghanistan)", "rating_s": "12.2", "se_s": "3.9", "nH": 424, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": -0.2374, "z_s": "−0.24"}, {"metric": "boundary suppression", "z": 0.7657, "z_s": "+0.77"}, {"metric": "economy suppression", "z": 0.3447, "z_s": "+0.34"}, {"metric": "wicket-taking", "z": -0.1343, "z_s": "−0.13"}]}, {"side": "bowl", "rank": 6, "name": "Eshan Malinga", "rating_s": "11.9", "se_s": "4.4", "nH": 227, "seasons": "2024–2026 (3 seasons)", "role": "pace, mainly middle", "proc": [{"metric": "dot rate", "z": 0.0694, "z_s": "+0.07"}, {"metric": "boundary suppression", "z": 1.9132, "z_s": "+1.91"}, {"metric": "economy suppression", "z": 1.4967, "z_s": "+1.50"}, {"metric": "wicket-taking", "z": -0.8587, "z_s": "−0.86"}]}, {"side": "bowl", "rank": 7, "name": "Josh Hazlewood", "rating_s": "11.9", "se_s": "4.6", "nH": 570, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 1.0603, "z_s": "+1.06"}, {"metric": "boundary suppression", "z": 0.2863, "z_s": "+0.29"}, {"metric": "economy suppression", "z": 0.7878, "z_s": "+0.79"}, {"metric": "wicket-taking", "z": 1.2641, "z_s": "+1.26"}]}, {"side": "bowl", "rank": 8, "name": "Bhuvneshwar Kumar", "rating_s": "9.9", "se_s": "4.0", "nH": 771, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.4399, "z_s": "−0.44"}, {"metric": "boundary suppression", "z": 0.418, "z_s": "+0.42"}, {"metric": "economy suppression", "z": -0.0188, "z_s": "−0.02"}, {"metric": "wicket-taking", "z": -0.3671, "z_s": "−0.37"}]}, {"side": "bowl", "rank": 9, "name": "Mujeeb Ur Rahman", "rating_s": "9.8", "se_s": "4.4", "nH": 162, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly powerplay", "proc": [{"metric": "dot rate", "z": 2.0697, "z_s": "+2.07"}, {"metric": "boundary suppression", "z": 1.2041, "z_s": "+1.20"}, {"metric": "economy suppression", "z": 2.042, "z_s": "+2.04"}, {"metric": "wicket-taking", "z": 0.2785, "z_s": "+0.28"}]}, {"side": "bowl", "rank": 10, "name": "Varun Chakravarthy", "rating_s": "7.6", "se_s": "3.7", "nH": 367, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": 0.511, "z_s": "+0.51"}, {"metric": "boundary suppression", "z": -0.4581, "z_s": "−0.46"}, {"metric": "economy suppression", "z": -0.0015, "z_s": "0.00"}, {"metric": "wicket-taking", "z": -0.3315, "z_s": "−0.33"}]}, {"side": "bowl", "rank": 11, "name": "Mohammed Siraj", "rating_s": "8.6", "se_s": "4.8", "nH": 733, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 0.7334, "z_s": "+0.73"}, {"metric": "boundary suppression", "z": -0.413, "z_s": "−0.41"}, {"metric": "economy suppression", "z": 0.1632, "z_s": "+0.16"}, {"metric": "wicket-taking", "z": -0.1763, "z_s": "−0.18"}]}, {"side": "bowl", "rank": 12, "name": "Mitchell Santner", "rating_s": "7.4", "se_s": "4.1", "nH": 157, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": 0.8036, "z_s": "+0.80"}, {"metric": "boundary suppression", "z": 0.9506, "z_s": "+0.95"}, {"metric": "economy suppression", "z": 1.4832, "z_s": "+1.48"}, {"metric": "wicket-taking", "z": 0.1586, "z_s": "+0.16"}]}, {"side": "bowl", "rank": 13, "name": "Joshua Little", "rating_s": "7.4", "se_s": "4.4", "nH": 258, "seasons": "2022–2025 (4 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 1.0622, "z_s": "+1.06"}, {"metric": "boundary suppression", "z": 0.6962, "z_s": "+0.70"}, {"metric": "economy suppression", "z": 1.1677, "z_s": "+1.17"}, {"metric": "wicket-taking", "z": -1.5145, "z_s": "−1.51"}]}, {"side": "bowl", "rank": 14, "name": "Taskin Ahmed", "rating_s": "7.5", "se_s": "4.6", "nH": 400, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.041, "z_s": "−0.04"}, {"metric": "boundary suppression", "z": 0.3467, "z_s": "+0.35"}, {"metric": "economy suppression", "z": 0.6822, "z_s": "+0.68"}, {"metric": "wicket-taking", "z": -0.49, "z_s": "−0.49"}]}, {"side": "bowl", "rank": 15, "name": "Lungi Ngidi", "rating_s": "7.9", "se_s": "5.4", "nH": 297, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 0.7354, "z_s": "+0.74"}, {"metric": "boundary suppression", "z": 0.8376, "z_s": "+0.84"}, {"metric": "economy suppression", "z": 0.7006, "z_s": "+0.70"}, {"metric": "wicket-taking", "z": -0.9126, "z_s": "−0.91"}]}, {"side": "bowl", "rank": 16, "name": "Krunal Pandya", "rating_s": "6.1", "se_s": "4.3", "nH": 194, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": 0.9128, "z_s": "+0.91"}, {"metric": "boundary suppression", "z": 0.6917, "z_s": "+0.69"}, {"metric": "economy suppression", "z": 1.022, "z_s": "+1.02"}, {"metric": "wicket-taking", "z": 1.2046, "z_s": "+1.20"}]}, {"side": "bowl", "rank": 17, "name": "Jason Holder", "rating_s": "4.6", "se_s": "3.6", "nH": 663, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly middle", "proc": [{"metric": "dot rate", "z": -0.6104, "z_s": "−0.61"}, {"metric": "boundary suppression", "z": 0.1008, "z_s": "+0.10"}, {"metric": "economy suppression", "z": -0.4867, "z_s": "−0.49"}, {"metric": "wicket-taking", "z": 0.096, "z_s": "+0.10"}]}, {"side": "bowl", "rank": 18, "name": "Mark Adair", "rating_s": "3.9", "se_s": "3.6", "nH": 365, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.4573, "z_s": "−0.46"}, {"metric": "boundary suppression", "z": 0.1525, "z_s": "+0.15"}, {"metric": "economy suppression", "z": -0.0833, "z_s": "−0.08"}, {"metric": "wicket-taking", "z": -0.8843, "z_s": "−0.88"}]}, {"side": "bowl", "rank": 19, "name": "Haris Rauf", "rating_s": "4.6", "se_s": "4.5", "nH": 397, "seasons": "2022–2025 (4 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.0423, "z_s": "−0.04"}, {"metric": "boundary suppression", "z": -0.364, "z_s": "−0.36"}, {"metric": "economy suppression", "z": -0.3191, "z_s": "−0.32"}, {"metric": "wicket-taking", "z": 1.0419, "z_s": "+1.04"}]}, {"side": "bowl", "rank": 20, "name": "Shaheen Afridi", "rating_s": "5.3", "se_s": "5.2", "nH": 319, "seasons": "2023–2026 (4 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.9591, "z_s": "−0.96"}, {"metric": "boundary suppression", "z": -0.6905, "z_s": "−0.69"}, {"metric": "economy suppression", "z": -0.7056, "z_s": "−0.71"}, {"metric": "wicket-taking", "z": -0.1549, "z_s": "−0.15"}]}, {"side": "bowl", "rank": 21, "name": "Mohsin Khan", "rating_s": "6.1", "se_s": "6.2", "nH": 244, "seasons": "2022–2026 (4 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 1.6217, "z_s": "+1.62"}, {"metric": "boundary suppression", "z": -1.2311, "z_s": "−1.23"}, {"metric": "economy suppression", "z": -0.7132, "z_s": "−0.71"}, {"metric": "wicket-taking", "z": -0.3255, "z_s": "−0.33"}]}, {"side": "bowl", "rank": 22, "name": "Richard Ngarava", "rating_s": "3.2", "se_s": "3.8", "nH": 223, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -1.2949, "z_s": "−1.29"}, {"metric": "boundary suppression", "z": -1.0609, "z_s": "−1.06"}, {"metric": "economy suppression", "z": -1.0655, "z_s": "−1.07"}, {"metric": "wicket-taking", "z": -0.1424, "z_s": "−0.14"}]}, {"side": "bowl", "rank": 23, "name": "Rasikh Salam", "rating_s": "3.6", "se_s": "4.4", "nH": 164, "seasons": "2022–2026 (4 seasons)", "role": "pace, mainly middle", "proc": [{"metric": "dot rate", "z": -0.7036, "z_s": "−0.70"}, {"metric": "boundary suppression", "z": 0.1758, "z_s": "+0.18"}, {"metric": "economy suppression", "z": 0.1194, "z_s": "+0.12"}, {"metric": "wicket-taking", "z": -0.6276, "z_s": "−0.63"}]}, {"side": "bowl", "rank": 24, "name": "Trent Boult", "rating_s": "4.0", "se_s": "4.8", "nH": 492, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 0.0223, "z_s": "+0.02"}, {"metric": "boundary suppression", "z": -0.471, "z_s": "−0.47"}, {"metric": "economy suppression", "z": -0.4357, "z_s": "−0.44"}, {"metric": "wicket-taking", "z": -0.9717, "z_s": "−0.97"}]}, {"side": "bowl", "rank": 25, "name": "Lockie Ferguson", "rating_s": "4.5", "se_s": "5.4", "nH": 357, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly middle", "proc": [{"metric": "dot rate", "z": 0.5629, "z_s": "+0.56"}, {"metric": "boundary suppression", "z": -0.7969, "z_s": "−0.80"}, {"metric": "economy suppression", "z": -0.6982, "z_s": "−0.70"}, {"metric": "wicket-taking", "z": 0.9593, "z_s": "+0.96"}]}, {"side": "bowl", "rank": 26, "name": "Akeal Hosein", "rating_s": "3.1", "se_s": "4.1", "nH": 324, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": -0.0759, "z_s": "−0.08"}, {"metric": "boundary suppression", "z": 0.0124, "z_s": "+0.01"}, {"metric": "economy suppression", "z": -0.217, "z_s": "−0.22"}, {"metric": "wicket-taking", "z": 1.4583, "z_s": "+1.46"}]}, {"side": "bowl", "rank": 27, "name": "Arshdeep Singh", "rating_s": "2.2", "se_s": "3.7", "nH": 1118, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 0.0761, "z_s": "+0.08"}, {"metric": "boundary suppression", "z": -1.1426, "z_s": "−1.14"}, {"metric": "economy suppression", "z": -0.8786, "z_s": "−0.88"}, {"metric": "wicket-taking", "z": 0.1091, "z_s": "+0.11"}]}, {"side": "bowl", "rank": 28, "name": "Axar Patel", "rating_s": "1.2", "se_s": "3.6", "nH": 377, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": -0.2163, "z_s": "−0.22"}, {"metric": "boundary suppression", "z": -0.4433, "z_s": "−0.44"}, {"metric": "economy suppression", "z": -0.4941, "z_s": "−0.49"}, {"metric": "wicket-taking", "z": -0.4888, "z_s": "−0.49"}]}, {"side": "bowl", "rank": 29, "name": "Yuzvendra Chahal", "rating_s": "1.0", "se_s": "3.7", "nH": 440, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": -1.2387, "z_s": "−1.24"}, {"metric": "boundary suppression", "z": -0.6607, "z_s": "−0.66"}, {"metric": "economy suppression", "z": -0.9221, "z_s": "−0.92"}, {"metric": "wicket-taking", "z": 0.9963, "z_s": "+1.00"}]}, {"side": "bowl", "rank": 30, "name": "Avesh Khan", "rating_s": "1.3", "se_s": "4.1", "nH": 659, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly death", "proc": [{"metric": "dot rate", "z": 0.7625, "z_s": "+0.76"}, {"metric": "boundary suppression", "z": -1.0054, "z_s": "−1.01"}, {"metric": "economy suppression", "z": -0.3229, "z_s": "−0.32"}, {"metric": "wicket-taking", "z": -0.9107, "z_s": "−0.91"}]}, {"side": "bowl", "rank": 31, "name": "Nuwan Thushara", "rating_s": "1.7", "se_s": "4.8", "nH": 259, "seasons": "2022–2026 (4 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -2.722, "z_s": "−2.72"}, {"metric": "boundary suppression", "z": 0.6829, "z_s": "+0.68"}, {"metric": "economy suppression", "z": -0.2932, "z_s": "−0.29"}, {"metric": "wicket-taking", "z": 0.1538, "z_s": "+0.15"}]}, {"side": "bowl", "rank": 32, "name": "Jacob Duffy", "rating_s": "2.6", "se_s": "5.8", "nH": 271, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.0257, "z_s": "−0.03"}, {"metric": "boundary suppression", "z": -1.0059, "z_s": "−1.01"}, {"metric": "economy suppression", "z": -0.8281, "z_s": "−0.83"}, {"metric": "wicket-taking", "z": -0.3408, "z_s": "−0.34"}]}, {"side": "bowl", "rank": 33, "name": "Shoriful Islam", "rating_s": "1.0", "se_s": "5.0", "nH": 158, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": 0.9022, "z_s": "+0.90"}, {"metric": "boundary suppression", "z": 1.6019, "z_s": "+1.60"}, {"metric": "economy suppression", "z": 1.6108, "z_s": "+1.61"}, {"metric": "wicket-taking", "z": -1.7076, "z_s": "−1.71"}]}, {"side": "bowl", "rank": 34, "name": "Yash Dayal", "rating_s": "0.9", "se_s": "5.4", "nH": 322, "seasons": "2022–2025 (4 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.6713, "z_s": "−0.67"}, {"metric": "boundary suppression", "z": 0.2707, "z_s": "+0.27"}, {"metric": "economy suppression", "z": -0.6606, "z_s": "−0.66"}, {"metric": "wicket-taking", "z": 0.4502, "z_s": "+0.45"}]}, {"side": "bowl", "rank": 35, "name": "Mukesh Kumar", "rating_s": "−0.2", "se_s": "4.7", "nH": 501, "seasons": "2023–2026 (4 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.1865, "z_s": "−0.19"}, {"metric": "boundary suppression", "z": -0.2897, "z_s": "−0.29"}, {"metric": "economy suppression", "z": -0.0385, "z_s": "−0.04"}, {"metric": "wicket-taking", "z": -1.3517, "z_s": "−1.35"}]}, {"side": "bowl", "rank": 36, "name": "Adam Zampa", "rating_s": "−2.9", "se_s": "4.6", "nH": 168, "seasons": "2022–2026 (5 seasons)", "role": "spin, mainly middle", "proc": [{"metric": "dot rate", "z": -0.1053, "z_s": "−0.11"}, {"metric": "boundary suppression", "z": -0.5774, "z_s": "−0.58"}, {"metric": "economy suppression", "z": -0.5252, "z_s": "−0.53"}, {"metric": "wicket-taking", "z": 1.1425, "z_s": "+1.14"}]}, {"side": "bowl", "rank": 37, "name": "Harshit Rana", "rating_s": "−3.3", "se_s": "4.3", "nH": 377, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.1202, "z_s": "−0.12"}, {"metric": "boundary suppression", "z": -1.3152, "z_s": "−1.32"}, {"metric": "economy suppression", "z": -1.2113, "z_s": "−1.21"}, {"metric": "wicket-taking", "z": 1.1542, "z_s": "+1.15"}]}, {"side": "bowl", "rank": 38, "name": "Alzarri Joseph", "rating_s": "−3.2", "se_s": "4.9", "nH": 464, "seasons": "2022–2025 (4 seasons)", "role": "pace, mainly death", "proc": [{"metric": "dot rate", "z": -0.3769, "z_s": "−0.38"}, {"metric": "boundary suppression", "z": -0.6892, "z_s": "−0.69"}, {"metric": "economy suppression", "z": -1.2377, "z_s": "−1.24"}, {"metric": "wicket-taking", "z": 0.7926, "z_s": "+0.79"}]}, {"side": "bowl", "rank": 39, "name": "Anshul Kamboj", "rating_s": "−2.0", "se_s": "6.2", "nH": 226, "seasons": "2024–2026 (3 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -0.6261, "z_s": "−0.63"}, {"metric": "boundary suppression", "z": -0.1356, "z_s": "−0.14"}, {"metric": "economy suppression", "z": -0.8048, "z_s": "−0.80"}, {"metric": "wicket-taking", "z": 0.2606, "z_s": "+0.26"}]}, {"side": "bowl", "rank": 40, "name": "Shamar Joseph", "rating_s": "−5.2", "se_s": "5.5", "nH": 187, "seasons": "2024–2026 (3 seasons)", "role": "pace, mainly powerplay", "proc": [{"metric": "dot rate", "z": -2.2104, "z_s": "−2.21"}, {"metric": "boundary suppression", "z": -1.7068, "z_s": "−1.71"}, {"metric": "economy suppression", "z": -1.6523, "z_s": "−1.65"}, {"metric": "wicket-taking", "z": 2.0859, "z_s": "+2.09"}]}, {"side": "bowl", "rank": 41, "name": "Marcus Stoinis", "rating_s": "−7.9", "se_s": "4.5", "nH": 214, "seasons": "2022–2026 (5 seasons)", "role": "pace, mainly middle", "proc": [{"metric": "dot rate", "z": -1.5133, "z_s": "−1.51"}, {"metric": "boundary suppression", "z": -2.3023, "z_s": "−2.30"}, {"metric": "economy suppression", "z": -2.1691, "z_s": "−2.17"}, {"metric": "wicket-taking", "z": 1.9865, "z_s": "+1.99"}]}], "counts": {"bat": 82, "bowl": 41}, "val": {"bat": {"n": 61, "rows": [{"label": "This rating", "ours": true, "r": 0.149, "lo": -0.078, "hi": 0.35, "r_s": "0.15", "ci_s": "−0.08 to 0.35", "rho_s": "0.12"}, {"label": "Career average run value", "ours": false, "r": 0.199, "lo": 0.006, "hi": 0.391, "r_s": "0.20", "ci_s": "0.01 to 0.39", "rho_s": "0.21"}, {"label": "Raw death-over strike rate", "ours": false, "r": -0.111, "lo": -0.393, "hi": 0.286, "r_s": "−0.11", "ci_s": "−0.39 to 0.29", "rho_s": "−0.04"}, {"label": "Simple pressure SR delta (H − L)", "ours": false, "r": 0.13, "lo": -0.119, "hi": 0.37, "r_s": "0.13", "ci_s": "−0.12 to 0.37", "rho_s": "0.13"}]}, "bowl": {"n": 50, "rows": [{"label": "This rating", "ours": true, "r": 0.419, "lo": 0.147, "hi": 0.629, "r_s": "0.42", "ci_s": "0.15 to 0.63", "rho_s": "0.35"}, {"label": "Career average run value", "ours": false, "r": 0.455, "lo": 0.204, "hi": 0.677, "r_s": "0.46", "ci_s": "0.20 to 0.68", "rho_s": "0.48"}, {"label": "Raw death-over economy (negated)", "ours": false, "r": 0.39, "lo": 0.166, "hi": 0.585, "r_s": "0.39", "ci_s": "0.17 to 0.59", "rho_s": "0.41"}, {"label": "Simple pressure economy delta (negated)", "ours": false, "r": -0.068, "lo": -0.346, "hi": 0.175, "r_s": "−0.07", "ci_s": "−0.35 to 0.18", "rho_s": "−0.08"}]}}, "finding": {"delta": "−0.07", "ours": "0.42", "ours_ci": "0.15 to 0.63", "death": "0.39"}, "top20": {"bat": {"share": "62.5%", "rand": "56%"}, "bowl": {"share": "72%", "rand": "58%"}}, "gap": {"bat": [{"name": "Vaibhav Sooryavanshi", "pr": 1, "cr": 1, "gap": 0, "side": "bat"}, {"name": "Abhishek Sharma", "pr": 2, "cr": 7, "gap": 5, "side": "bat"}, {"name": "Finn Allen", "pr": 3, "cr": 16, "gap": 13, "side": "bat"}, {"name": "Phil Salt", "pr": 4, "cr": 4, "gap": 0, "side": "bat"}, {"name": "Suryakumar Yadav", "pr": 5, "cr": 5, "gap": 0, "side": "bat"}, {"name": "Tim David", "pr": 6, "cr": 6, "gap": 0, "side": "bat"}, {"name": "Heinrich Klaasen", "pr": 7, "cr": 3, "gap": -4, "side": "bat"}, {"name": "Andre Russell", "pr": 8, "cr": 26, "gap": 18, "side": "bat"}, {"name": "Travis Head", "pr": 9, "cr": 11, "gap": 2, "side": "bat"}, {"name": "Priyansh Arya", "pr": 10, "cr": 33, "gap": 23, "side": "bat"}, {"name": "Josh Inglis", "pr": 11, "cr": 24, "gap": 13, "side": "bat"}, {"name": "Glenn Maxwell", "pr": 12, "cr": 45, "gap": 33, "side": "bat"}, {"name": "Nicholas Pooran", "pr": 13, "cr": 19, "gap": 6, "side": "bat"}, {"name": "Romario Shepherd", "pr": 14, "cr": 47, "gap": 33, "side": "bat"}, {"name": "Jos Buttler", "pr": 15, "cr": 7, "gap": -8, "side": "bat"}, {"name": "Mitchell Marsh", "pr": 16, "cr": 12, "gap": -4, "side": "bat"}, {"name": "Harry Brook", "pr": 17, "cr": 9, "gap": -8, "side": "bat"}, {"name": "Prabhsimran Singh", "pr": 18, "cr": 29, "gap": 11, "side": "bat"}, {"name": "Glenn Phillips", "pr": 19, "cr": 28, "gap": 9, "side": "bat"}, {"name": "Cameron Green", "pr": 20, "cr": 16, "gap": -4, "side": "bat"}, {"name": "Tim Seifert", "pr": 21, "cr": 39, "gap": 18, "side": "bat"}, {"name": "Naman Dhir", "pr": 22, "cr": 31, "gap": 9, "side": "bat"}, {"name": "Shashank Singh", "pr": 23, "cr": 9, "gap": -14, "side": "bat"}, {"name": "Jitesh Sharma", "pr": 24, "cr": 49, "gap": 25, "side": "bat"}, {"name": "Shreyas Iyer", "pr": 25, "cr": 18, "gap": -7, "side": "bat"}, {"name": "Reeza Hendricks", "pr": 26, "cr": 36, "gap": 10, "side": "bat"}, {"name": "Ayush Mhatre", "pr": 27, "cr": 2, "gap": -25, "side": "bat"}, {"name": "Sanju Samson", "pr": 28, "cr": 25, "gap": -3, "side": "bat"}, {"name": "Ashutosh Sharma", "pr": 29, "cr": 35, "gap": 6, "side": "bat"}, {"name": "Liam Livingstone", "pr": 30, "cr": 42, "gap": 12, "side": "bat"}, {"name": "Rovman Powell", "pr": 31, "cr": 52, "gap": 21, "side": "bat"}, {"name": "Namboori Tilak Varma", "pr": 32, "cr": 26, "gap": -6, "side": "bat"}, {"name": "Yashasvi Jaiswal", "pr": 33, "cr": 12, "gap": -21, "side": "bat"}, {"name": "Marcus Stoinis", "pr": 34, "cr": 37, "gap": 3, "side": "bat"}, {"name": "Ryan Rickelton", "pr": 35, "cr": 22, "gap": -13, "side": "bat"}, {"name": "Daryl Mitchell", "pr": 36, "cr": 48, "gap": 12, "side": "bat"}, {"name": "Shubman Gill", "pr": 37, "cr": 20, "gap": -17, "side": "bat"}, {"name": "Rinku Singh", "pr": 38, "cr": 12, "gap": -26, "side": "bat"}, {"name": "Sahibzada Farhan", "pr": 39, "cr": 58, "gap": 19, "side": "bat"}, {"name": "Sunil Narine", "pr": 40, "cr": 46, "gap": 6, "side": "bat"}, {"name": "Sikandar Raza", "pr": 41, "cr": 66, "gap": 25, "side": "bat"}, {"name": "Riyan Parag", "pr": 42, "cr": 43, "gap": 1, "side": "bat"}, {"name": "Shimron Hetmyer", "pr": 43, "cr": 50, "gap": 7, "side": "bat"}, {"name": "Pathum Nissanka", "pr": 44, "cr": 54, "gap": 10, "side": "bat"}, {"name": "Rashid Khan (Afghanistan)", "pr": 45, "cr": 57, "gap": 12, "side": "bat"}, {"name": "Virat Kohli", "pr": 46, "cr": 23, "gap": -23, "side": "bat"}, {"name": "Kyle Mayers", "pr": 47, "cr": 71, "gap": 24, "side": "bat"}, {"name": "Ishan Kishan", "pr": 48, "cr": 44, "gap": -4, "side": "bat"}, {"name": "Shai Hope", "pr": 49, "cr": 41, "gap": -8, "side": "bat"}, {"name": "Jonny Bairstow", "pr": 50, "cr": 34, "gap": -16, "side": "bat"}, {"name": "Tristan Stubbs", "pr": 51, "cr": 31, "gap": -20, "side": "bat"}, {"name": "Kamindu Mendis", "pr": 52, "cr": 78, "gap": 26, "side": "bat"}, {"name": "Lokesh Rahul", "pr": 53, "cr": 29, "gap": -24, "side": "bat"}, {"name": "Nitish Rana", "pr": 54, "cr": 55, "gap": 1, "side": "bat"}, {"name": "Saim Ayub", "pr": 55, "cr": 76, "gap": 21, "side": "bat"}, {"name": "David Miller", "pr": 56, "cr": 20, "gap": -36, "side": "bat"}, {"name": "Kusal Mendis", "pr": 57, "cr": 63, "gap": 6, "side": "bat"}, {"name": "Sai Sudharsan", "pr": 58, "cr": 15, "gap": -43, "side": "bat"}, {"name": "Dasun Shanaka", "pr": 59, "cr": 76, "gap": 17, "side": "bat"}, {"name": "Mohammad Nabi", "pr": 60, "cr": 82, "gap": 22, "side": "bat"}, {"name": "Ruturaj Gaikwad", "pr": 61, "cr": 39, "gap": -22, "side": "bat"}, {"name": "Fakhar Zaman", "pr": 62, "cr": 72, "gap": 10, "side": "bat"}, {"name": "Moeen Ali", "pr": 63, "cr": 67, "gap": 4, "side": "bat"}, {"name": "Jacob Bethell", "pr": 64, "cr": 59, "gap": -5, "side": "bat"}, {"name": "Parvez Emon", "pr": 65, "cr": 80, "gap": 15, "side": "bat"}, {"name": "Rohit Sharma", "pr": 66, "cr": 55, "gap": -11, "side": "bat"}, {"name": "Towhid Hridoy", "pr": 67, "cr": 63, "gap": -4, "side": "bat"}, {"name": "Mohammad Nawaz", "pr": 68, "cr": 74, "gap": 6, "side": "bat"}, {"name": "Matthew Short", "pr": 69, "cr": 75, "gap": 6, "side": "bat"}, {"name": "Rishabh Pant", "pr": 70, "cr": 51, "gap": -19, "side": "bat"}, {"name": "M Shahrukh Khan", "pr": 71, "cr": 61, "gap": -10, "side": "bat"}, {"name": "Sediqullah Atal", "pr": 72, "cr": 60, "gap": -12, "side": "bat"}, {"name": "Alick Athanaze", "pr": 73, "cr": 78, "gap": 5, "side": "bat"}, {"name": "Mohammad Saif Hassan", "pr": 74, "cr": 72, "gap": -2, "side": "bat"}, {"name": "Kusal Perera", "pr": 75, "cr": 68, "gap": -7, "side": "bat"}, {"name": "Mahendra Singh Dhoni", "pr": 76, "cr": 38, "gap": -38, "side": "bat"}, {"name": "Ajinkya Rahane", "pr": 77, "cr": 65, "gap": -12, "side": "bat"}, {"name": "Washington Sundar", "pr": 78, "cr": 68, "gap": -10, "side": "bat"}, {"name": "Ravindra Jadeja", "pr": 79, "cr": 53, "gap": -26, "side": "bat"}, {"name": "Harry Tector", "pr": 80, "cr": 70, "gap": -10, "side": "bat"}, {"name": "Rahul Tewatia", "pr": 81, "cr": 61, "gap": -20, "side": "bat"}, {"name": "Sam Curran", "pr": 82, "cr": 81, "gap": -1, "side": "bat"}], "bowl": [{"name": "Jasprit Bumrah", "pr": 1, "cr": 5, "gap": 4, "side": "bowl"}, {"name": "Sunil Narine", "pr": 2, "cr": 6, "gap": 4, "side": "bowl"}, {"name": "Matheesha Pathirana", "pr": 3, "cr": 22, "gap": 19, "side": "bowl"}, {"name": "Nathan Ellis", "pr": 4, "cr": 21, "gap": 17, "side": "bowl"}, {"name": "Rashid Khan (Afghanistan)", "pr": 5, "cr": 1, "gap": -4, "side": "bowl"}, {"name": "Eshan Malinga", "pr": 6, "cr": 33, "gap": 27, "side": "bowl"}, {"name": "Josh Hazlewood", "pr": 7, "cr": 8, "gap": 1, "side": "bowl"}, {"name": "Bhuvneshwar Kumar", "pr": 8, "cr": 8, "gap": 0, "side": "bowl"}, {"name": "Mujeeb Ur Rahman", "pr": 9, "cr": 13, "gap": 4, "side": "bowl"}, {"name": "Varun Chakravarthy", "pr": 10, "cr": 2, "gap": -8, "side": "bowl"}, {"name": "Mohammed Siraj", "pr": 11, "cr": 16, "gap": 5, "side": "bowl"}, {"name": "Mitchell Santner", "pr": 12, "cr": 4, "gap": -8, "side": "bowl"}, {"name": "Joshua Little", "pr": 13, "cr": 26, "gap": 13, "side": "bowl"}, {"name": "Taskin Ahmed", "pr": 14, "cr": 11, "gap": -3, "side": "bowl"}, {"name": "Lungi Ngidi", "pr": 15, "cr": 31, "gap": 16, "side": "bowl"}, {"name": "Krunal Pandya", "pr": 16, "cr": 14, "gap": -2, "side": "bowl"}, {"name": "Jason Holder", "pr": 17, "cr": 19, "gap": 2, "side": "bowl"}, {"name": "Mark Adair", "pr": 18, "cr": 27, "gap": 9, "side": "bowl"}, {"name": "Haris Rauf", "pr": 19, "cr": 19, "gap": 0, "side": "bowl"}, {"name": "Shaheen Afridi", "pr": 20, "cr": 12, "gap": -8, "side": "bowl"}, {"name": "Mohsin Khan", "pr": 21, "cr": 30, "gap": 9, "side": "bowl"}, {"name": "Richard Ngarava", "pr": 22, "cr": 24, "gap": 2, "side": "bowl"}, {"name": "Rasikh Salam", "pr": 23, "cr": 39, "gap": 16, "side": "bowl"}, {"name": "Trent Boult", "pr": 24, "cr": 18, "gap": -6, "side": "bowl"}, {"name": "Lockie Ferguson", "pr": 25, "cr": 28, "gap": 3, "side": "bowl"}, {"name": "Akeal Hosein", "pr": 26, "cr": 6, "gap": -20, "side": "bowl"}, {"name": "Arshdeep Singh", "pr": 27, "cr": 14, "gap": -13, "side": "bowl"}, {"name": "Axar Patel", "pr": 28, "cr": 3, "gap": -25, "side": "bowl"}, {"name": "Yuzvendra Chahal", "pr": 29, "cr": 10, "gap": -19, "side": "bowl"}, {"name": "Avesh Khan", "pr": 30, "cr": 23, "gap": -7, "side": "bowl"}, {"name": "Nuwan Thushara", "pr": 31, "cr": 36, "gap": 5, "side": "bowl"}, {"name": "Jacob Duffy", "pr": 32, "cr": 24, "gap": -8, "side": "bowl"}, {"name": "Shoriful Islam", "pr": 33, "cr": 29, "gap": -4, "side": "bowl"}, {"name": "Yash Dayal", "pr": 34, "cr": 37, "gap": 3, "side": "bowl"}, {"name": "Mukesh Kumar", "pr": 35, "cr": 34, "gap": -1, "side": "bowl"}, {"name": "Adam Zampa", "pr": 36, "cr": 17, "gap": -19, "side": "bowl"}, {"name": "Harshit Rana", "pr": 37, "cr": 31, "gap": -6, "side": "bowl"}, {"name": "Alzarri Joseph", "pr": 38, "cr": 34, "gap": -4, "side": "bowl"}, {"name": "Anshul Kamboj", "pr": 39, "cr": 40, "gap": 1, "side": "bowl"}, {"name": "Shamar Joseph", "pr": 40, "cr": 41, "gap": 1, "side": "bowl"}, {"name": "Marcus Stoinis", "pr": 41, "cr": 38, "gap": -3, "side": "bowl"}]}, "gapNotes": {"bat_avg_top10": 2, "bowl_wkt_top10": 4}, "rr": [{"label": "Death overs of a chase", "role": "bowling", "balls": "445", "matches": 24, "wins": -1.55, "wins_s": "−1.55"}, {"label": "New batter arriving under pressure", "role": "bowling", "balls": "756", "matches": 52, "wins": -1.23, "wins_s": "−1.23"}, {"label": "The 12 balls after a wicket", "role": "bowling", "balls": "1,070", "matches": 59, "wins": -0.628, "wins_s": "−0.63"}, {"label": "Death overs of a chase", "role": "batting", "balls": "400", "matches": 20, "wins": -0.492, "wins_s": "−0.49"}, {"label": "New batter arriving under pressure", "role": "batting", "balls": "684", "matches": 51, "wins": -0.409, "wins_s": "−0.41"}, {"label": "Powerplay against set openers", "role": "bowling", "balls": "264", "matches": 24, "wins": 0.093, "wins_s": "+0.09"}, {"label": "Dot squeeze, after 3+ dots", "role": "bowling", "balls": "62", "matches": 31, "wins": 0.147, "wins_s": "+0.15"}, {"label": "Powerplay against set openers", "role": "batting", "balls": "323", "matches": 34, "wins": 0.461, "wins_s": "+0.46"}, {"label": "Dot squeeze, after 3+ dots", "role": "batting", "balls": "83", "matches": 39, "wins": 0.921, "wins_s": "+0.92"}, {"label": "The 12 balls after a wicket", "role": "batting", "balls": "1,031", "matches": 60, "wins": 1.837, "wins_s": "+1.84"}], "rrHead": {"label": "death overs of a chase", "wins": "1.55", "balls": 445}, "best": [{"label": "Death overs of a chase", "players": [{"name": "Sunil Narine", "v": "+87", "rank": 2}, {"name": "Varun Chakravarthy", "v": "+69", "rank": 10}, {"name": "Josh Hazlewood", "v": "+53", "rank": 7}, {"name": "Rashid Khan (Afghanistan)", "v": "+53", "rank": 5}]}, {"label": "New batter arriving under pressure", "players": [{"name": "Mujeeb Ur Rahman", "v": "+72", "rank": 9}, {"name": "Josh Hazlewood", "v": "+52", "rank": 7}, {"name": "Matheesha Pathirana", "v": "+46", "rank": 3}, {"name": "Sunil Narine", "v": "+42", "rank": 2}]}, {"label": "The 12 balls after a wicket", "players": [{"name": "Mujeeb Ur Rahman", "v": "+62", "rank": 9}, {"name": "Sunil Narine", "v": "+45", "rank": 2}, {"name": "Varun Chakravarthy", "v": "+44", "rank": 10}, {"name": "Eshan Malinga", "v": "+39", "rank": 6}, {"name": "Bhuvneshwar Kumar", "v": "+33", "rank": 8}]}], "rec2": [17, 27], "method": {"liCut": "1.16", "p": {"bat": ["2.7", "8"], "bowl": ["6.2", "6"]}, "nBoot": "2,000", "thr": {"bat": 108, "bowl": 154}, "recon": [804, 809], "rainUnrec": 8, "rel": [{"label": "Boundary elevation", "r": "0.45", "ci": "0.29 to 0.58"}, {"label": "Strike-rate delta", "r": "0.43", "ci": "0.26 to 0.55"}, {"label": "Dot suppression", "r": "0.42", "ci": "0.26 to 0.54"}, {"label": "Combined process score", "r": "0.41", "ci": "0.23 to 0.52"}], "rob": [{"label": "pressure set to the top 20% or top 33%", "bat": "9 and 8", "bowl": "7 and 7"}, {"label": "eligibility threshold up or down by 25%", "bat": "10 and 10", "bowl": "9 and 9"}, {"label": "a softer delivery condition", "bat": "10", "bowl": "9"}]}}</script>
+<script>
+(function(){
+"use strict";
+var D = JSON.parse(document.getElementById("data").textContent);
+var $ = function(id){return document.getElementById(id);};
+var esc = function(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});};
+var MINUS = "−";
+
+/* tooltip */
+var tip = $("tip");
+function showTip(html, e){ tip.innerHTML = html; tip.classList.add("on"); moveTip(e); }
+function moveTip(e){
+  var x = (e.touches ? e.touches[0].clientX : e.clientX), y = (e.touches ? e.touches[0].clientY : e.clientY);
+  var w = tip.offsetWidth, h = tip.offsetHeight, vw = window.innerWidth;
+  var left = Math.min(Math.max(8, x + 14), vw - w - 8), top = y + 16;
+  if (top + h > window.innerHeight - 8) top = y - h - 14;
+  tip.style.left = left + "px"; tip.style.top = top + "px";
+}
+function hideTip(){ tip.classList.remove("on"); }
+function bindTip(el, fn){
+  el.addEventListener("mouseenter", function(e){ showTip(fn(), e); });
+  el.addEventListener("mousemove", moveTip);
+  el.addEventListener("mouseleave", hideTip);
+  el.addEventListener("touchstart", function(e){ showTip(fn(), e); }, {passive:true});
+}
+document.addEventListener("touchstart", function(e){ if(!e.target.closest(".hrow,.dotrow")) hideTip(); }, {passive:true});
+window.addEventListener("scroll", hideTip, {passive:true});
+
+function niceMax(v){ var steps=[5,10,20,25,50,100]; for(var i=0;i<steps.length;i++){ var s=steps[i]; if(v/s<=6) return Math.ceil(v/s)*s; } return Math.ceil(v/100)*100; }
+function tickStep(max){ return max<=30?5:max<=60?10:max<=120?20:50; }
+function axisHtml(lo, hi, step, fmt){
+  var t = "";
+  for (var v = Math.ceil(lo/step)*step; v <= hi + 1e-9; v += step){
+    var p = (v - lo)/(hi - lo)*100;
+    t += '<span style="left:'+p+'%">'+(fmt?fmt(v):String(v).replace("-",MINUS))+'</span>';
+  }
+  return '<div class="axis"><div></div><div class="ticks">'+t+'</div><div></div></div>';
+}
+function gridHtml(lo, hi, step){
+  var g = "";
+  for (var v = Math.ceil(lo/step)*step; v <= hi + 1e-9; v += step){
+    g += '<div class="'+(Math.abs(v)<1e-9?"zero":"gridl")+'" style="left:'+((v-lo)/(hi-lo)*100)+'%"></div>';
+  }
+  return g;
+}
+
+/* hero */
+$("tiles").innerHTML = [
+  [D.hero.matches,"matches"],[D.hero.deliveries,"deliveries"],[D.hero.bat,"batters ranked"],[D.hero.bowl,"bowlers ranked"]
+].map(function(t){return '<div class="tile"><b>'+t[0]+'</b><span>'+t[1]+'</span></div>';}).join("");
+
+/* tabs helper */
+function tabs(id, cb){
+  var box = $(id);
+  box.addEventListener("click", function(e){
+    var b = e.target.closest("button"); if(!b) return;
+    box.querySelectorAll("button").forEach(function(x){ x.classList.toggle("on", x===b); x.setAttribute("aria-selected", x===b); });
+    cb(b.getAttribute("data-k"));
+  });
+}
+
+/* 1. top 10 */
+var TOP_TITLES = {
+  bat: "Batter #1 stands clear statistically; the ratings below him sit close together",
+  bowl: "Bowlers #1 and #2 stand clear statistically; the ratings below them sit close together"
+};
+function renderTop(k){
+  var rows = D.top[k];
+  var max = niceMax(Math.max.apply(null, rows.map(function(r){return r.rating + r.se;})));
+  var step = tickStep(max);
+  $("topTitle").textContent = TOP_TITLES[k];
+  var h = "";
+  rows.forEach(function(r, i){
+    var w = r.rating/max*100, lo = (r.rating-r.se)/max*100, hi = (r.rating+r.se)/max*100;
+    h += '<div class="hrow" data-i="'+i+'"><div class="hlab"><span class="rk">'+r.rank+'</span><span class="nm">'+esc(r.name)+'</span></div>'+
+      '<div class="track">'+gridHtml(0,max,step)+'<div class="bar" style="left:0;width:0" data-w="'+w+'"></div><div class="whisk" style="left:'+lo+'%;width:'+(hi-lo)+'%"></div></div>'+
+      '<div class="hval">'+r.rating_s+' <small>&plusmn; '+r.se_s+'</small></div></div>';
+  });
+  h += axisHtml(0, max, step);
+  var el = $("topChart"); el.innerHTML = h;
+  requestAnimationFrame(function(){ el.querySelectorAll(".bar").forEach(function(b){ b.style.width = b.getAttribute("data-w")+"%"; }); });
+  el.querySelectorAll(".hrow").forEach(function(row){
+    var r = rows[+row.getAttribute("data-i")];
+    bindTip(row, function(){
+      var s = r.strongest.filter(function(x){return x.pos;}).map(function(x){return esc(x.metric)+' <span class="pk">'+x.sigma+'&sigma;</span>';}).join("<br>");
+      return '<b>'+r.rank+'. '+esc(r.name)+'</b><br><span class="k">'+esc(r.role)+' &middot; '+esc(r.team)+'</span><br>'+
+        'Rating <b>'+r.rating_s+'</b> &plusmn; '+r.se_s+'<br><span class="k">Pressure balls</span> '+r.nH.toLocaleString("en-US")+' &middot; <span class="k">'+esc(r.seasons)+'</span>'+
+        (s ? '<br><br><span class="k">Strongest under pressure</span><br>'+s : '');
+    });
+  });
+}
+tabs("topTabs", renderTop); renderTop("bat");
+
+/* 2. explorer */
+$("explorerLede").textContent = "Search all " + D.counts.bat + " ranked batters and " + D.counts.bowl + " ranked bowlers. Process metrics are on high-pressure balls, in standard deviations against the other ranked players.";
+var P = D.players, q = $("q"), res = $("res"), act = -1, hits = [];
+function norm(s){ return s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase(); }
+function sideName(s){ return s==="bat"?"batters":"bowlers"; }
+function renderResults(){
+  var t = norm(q.value.trim());
+  if (!t){ res.classList.remove("on"); q.setAttribute("aria-expanded","false"); return; }
+  hits = P.filter(function(p){ return norm(p.name).indexOf(t) >= 0; }).slice(0, 12);
+  act = hits.length ? 0 : -1;
+  res.innerHTML = hits.length ? hits.map(function(p, i){
+    return '<button role="option" data-i="'+i+'" class="'+(i===act?"act":"")+'"><span>'+esc(p.name)+'</span><span class="tag">#'+p.rank+' '+(p.side==="bat"?"batter":"bowler")+'</span></button>';
+  }).join("") : '<div style="padding:12px;color:var(--ink-3);font-size:14px">No ranked player by that name</div>';
+  res.classList.add("on"); q.setAttribute("aria-expanded","true");
+}
+q.addEventListener("input", renderResults);
+q.addEventListener("focus", renderResults);
+q.addEventListener("keydown", function(e){
+  if (!hits.length) return;
+  if (e.key==="ArrowDown"||e.key==="ArrowUp"){ e.preventDefault(); act=(act+(e.key==="ArrowDown"?1:-1)+hits.length)%hits.length;
+    res.querySelectorAll("button").forEach(function(b,i){ b.classList.toggle("act", i===act); if(i===act) b.scrollIntoView({block:"nearest"}); }); }
+  if (e.key==="Enter" && act>=0){ e.preventDefault(); pick(hits[act]); }
+  if (e.key==="Escape"){ res.classList.remove("on"); }
+});
+res.addEventListener("mousedown", function(e){ var b=e.target.closest("button"); if(b){ e.preventDefault(); pick(hits[+b.getAttribute("data-i")]); } });
+document.addEventListener("click", function(e){ if(!e.target.closest(".search")) res.classList.remove("on"); });
+function pick(p){ q.value = p.name; res.classList.remove("on"); q.setAttribute("aria-expanded","false"); renderCard(p); }
+
+function renderCard(p){
+  var n = D.counts[p.side];
+  var proc = "";
+  var lim = 3;
+  p.proc.forEach(function(m){
+    var z = Math.max(-lim, Math.min(lim, m.z));
+    var left = z >= 0 ? 50 : 50 + z/lim*50, w = Math.abs(z)/lim*50;
+    proc += '<div class="hrow"><div class="hlab"><span class="nm" style="font-weight:500;font-size:14px">'+esc(m.metric)+'</span></div>'+
+      '<div class="track">'+gridHtml(-lim,lim,1)+'<div class="bar '+(m.z<0?"neg":"")+' '+(m.z>=0?"pink":"")+'" style="left:'+left+'%;width:'+w+'%;'+(m.z<0?"background:#9aa0b6":"")+'"></div></div>'+
+      '<div class="hval">'+m.z_s+'&sigma;</div></div>';
+  });
+  proc += axisHtml(-lim, lim, 1, function(v){ return v%2 ? "" : (v>0?"+":"")+String(v).replace("-",MINUS)+"σ"; });
+  $("pcard").innerHTML =
+    '<div><span class="prank">#'+p.rank+' of '+n+' '+sideName(p.side)+'</span>'+
+    '<div class="pname">'+esc(p.name)+'</div><div style="color:var(--ink-3)">'+esc(p.role)+'</div>'+
+    '<div class="facts">'+
+      '<div class="fact"><span>Rating</span><b>'+p.rating_s+' <small style="color:var(--ink-3);font-weight:500">&plusmn; '+p.se_s+'</small></b></div>'+
+      '<div class="fact"><span>Pressure balls</span><b>'+p.nH.toLocaleString("en-US")+'</b></div>'+
+      '<div class="fact"><span>Seasons</span><b style="font-size:15px">'+esc(p.seasons)+'</b></div>'+
+      '<div class="fact"><span>Role</span><b style="font-size:15px">'+esc(p.role)+'</b></div>'+
+    '</div><p class="note">Rating: runs per 100 high-pressure balls above expectation.</p></div>'+
+    '<div class="proc"><p class="chart-title">Process on pressure balls</p><p class="chart-sub">Standard deviations from the average ranked '+(p.side==="bat"?"batter":"bowler")+'.</p>'+proc+'</div>';
+}
+var chips = D.top.bat.slice(0,3).concat(D.top.bowl.slice(0,3));
+$("chips").innerHTML = '<span style="font-size:13px;color:var(--ink-3);align-self:center">Try</span>' + chips.map(function(c,i){ return '<button class="chip" data-i="'+i+'">'+esc(c.name)+'</button>'; }).join("");
+$("chips").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  var nm = chips[+b.getAttribute("data-i")].name;
+  var p = P.filter(function(x){ return x.name===nm; })[0]; if (p) pick(p);
+});
+renderCard(P.filter(function(x){return x.side==="bat";})[0]);
+
+/* 3. finding */
+$("bnDelta").textContent = D.finding.delta;
+$("bnOurs").textContent = D.finding.ours;
+$("bnCi").textContent = "(95% interval " + D.finding.ours_ci + ")";
+$("findingText").innerHTML = "Take a bowler's normal economy away from his pressure economy and you're left with a number that predicts nothing. This rating predicts bowlers' future pressure performance at <b>r = "+D.finding.ours+"</b>, ahead of raw death-over economy at "+D.finding.death+". The picks held up, too: of the 2022&ndash;24 top-20 bowlers, <b>"+D.top20.bowl.share+"</b> were above average under pressure in 2025&ndash;26, against "+D.top20.bowl.rand+" for a typical eligible bowler. For batters it was "+D.top20.bat.share+" against "+D.top20.bat.rand+".";
+(function(){
+  var lo = -0.5, hi = 0.8, h = "";
+  [["bowl","Bowlers"],["bat","Batters"]].forEach(function(s){
+    var f = D.val[s[0]];
+    h += '<div class="facet"><h4>'+s[1]+' &middot; '+f.n+' players</h4>';
+    f.rows.forEach(function(r, i){
+      var x = (r.r-lo)/(hi-lo)*100, a = (r.lo-lo)/(hi-lo)*100, b = (r.hi-lo)/(hi-lo)*100;
+      h += '<div class="dotrow '+(r.ours?"ours":"")+'" data-s="'+s[0]+'" data-i="'+i+'"><div class="lb">'+esc(r.label)+'</div>'+
+        '<div class="track">'+gridHtml(lo,hi,0.25)+'<div class="ci" style="left:'+a+'%;width:'+(b-a)+'%"></div><div class="dot" style="left:'+x+'%"></div></div>'+
+        '<div class="hval" style="'+(r.ours?"color:var(--pink)":"")+'">'+r.r_s+'</div></div>';
+    });
+    h += '</div>';
+  });
+  var small = window.innerWidth < 640;
+  h += axisHtml(lo, hi, 0.25, function(v){ return (small && Math.abs(v*2 - Math.round(v*2)) > 1e-9) ? "" : v.toFixed(2).replace("-",MINUS); }).replace(/class="axis"/,'class="axis" style="grid-template-columns:var(--lab,250px) 1fr var(--val,70px)"');
+  var el = $("valChart"); el.innerHTML = h;
+  el.querySelectorAll(".dotrow").forEach(function(row){
+    var r = D.val[row.getAttribute("data-s")].rows[+row.getAttribute("data-i")];
+    bindTip(row, function(){ return '<b>'+esc(r.label)+'</b><br>Pearson r <b>'+r.r_s+'</b><br><span class="k">95% interval</span> '+r.ci_s+'<br><span class="k">Spearman</span> '+r.rho_s; });
+  });
+})();
+(function(){ var s = document.createElement("style"); s.textContent = "@media (max-width:640px){#valChart .axis{grid-template-columns:118px 1fr 44px!important;gap:8px}}"; document.head.appendChild(s); })();
+
+/* 4. pressure kpis */
+$("pkpis").innerHTML = [
+  ["1", "the leverage of an average ball"],
+  [D.method.liCut, "where the pressure set starts"],
+  ["25%", "of balls in each innings form H"]
+].map(function(k){ return '<div class="kpi"><b>'+k[0]+'</b><span>'+k[1]+'</span></div>'; }).join("");
+
+/* 5. value gap */
+function renderGap(k){
+  var rows;
+  if (k === "top") rows = D.gap.bat.slice(0,10).concat(D.gap.bowl.slice(0,10));
+  else rows = D.gap[k].slice();
+  rows = rows.filter(function(r){ return r.gap > 0; }).sort(function(a,b){ return b.gap - a.gap || a.pr - b.pr; });
+  if (k !== "top") rows = rows.slice(0, 15);
+  var max = niceMax(rows[0].gap), step = max<=30?5:10, h = "";
+  var t = rows[0];
+  $("gapTitle").textContent = t.name + " ranks " + t.gap + " places higher on pressure than on " + (t.side==="bat"?"average and strike rate":"economy and wickets");
+  rows.forEach(function(r, i){
+    var hl = k==="top" ? i < 6 : r.pr <= 10;
+    h += '<div class="hrow" data-i="'+i+'"><div class="hlab"><span class="rk">'+r.pr+'</span><span class="nm">'+esc(r.name)+'</span><span class="sm">'+(r.side==="bat"?"batter":"bowler")+'</span></div>'+
+      '<div class="track">'+gridHtml(0,max,step)+'<div class="bar '+(hl?"pink":"")+'" style="left:0;width:0" data-w="'+(r.gap/max*100)+'"></div></div>'+
+      '<div class="hval">+'+r.gap+'</div></div>';
+  });
+  h += axisHtml(0, max, step, function(v){ return v ? "+"+v : "0"; });
+  var el = $("gapChart"); el.innerHTML = h;
+  requestAnimationFrame(function(){ el.querySelectorAll(".bar").forEach(function(b){ b.style.width = b.getAttribute("data-w")+"%"; }); });
+  el.querySelectorAll(".hrow").forEach(function(row){
+    var r = rows[+row.getAttribute("data-i")];
+    bindTip(row, function(){ return '<b>'+esc(r.name)+'</b><br><span class="k">Pressure rank</span> <span class="pk">#'+r.pr+'</span><br><span class="k">Conventional rank</span> #'+r.cr+'<br>'+r.gap+' places higher on pressure'; });
+  });
+  $("gapNote").textContent = k==="top"
+    ? "Rank numbers are pressure ranks. Just " + D.gapNotes.bat_avg_top10 + " of the top-10 batters are in the top 10 by batting average, and only " + D.gapNotes.bowl_wkt_top10 + " of the top-10 bowlers are in the top 10 by wickets."
+    : "Rank numbers are pressure ranks. Top-10 pressure picks in pink.";
+}
+tabs("gapTabs", renderGap); renderGap("top");
+
+/* 6. RR */
+$("rrH").textContent = "Since 2022, RR's costliest pressure situation has been bowling at the death of a chase.";
+$("rrTitle").textContent = "About " + D.rrHead.wins + " wins below a league-average side across " + D.rrHead.balls.toLocaleString("en-US") + " high-pressure balls at the death of a chase";
+(function(){
+  var rows = D.rr, m = Math.max.apply(null, rows.map(function(r){return Math.abs(r.wins);}));
+  var lim = Math.ceil(m*2)/2, h = "";
+  rows.forEach(function(r, i){
+    var w = Math.abs(r.wins)/lim*50, left = r.wins >= 0 ? 50 : 50 - w;
+    h += '<div class="hrow" data-i="'+i+'"><div class="hlab"><span class="nm" style="font-weight:600">'+esc(r.label)+'</span><span class="sm">'+esc(r.role)+'</span></div>'+
+      '<div class="track">'+gridHtml(-lim,lim,0.5)+'<div class="bar '+(r.wins<0?"neg pink":"")+'" style="left:'+left+'%;width:'+w+'%"></div></div>'+
+      '<div class="hval">'+r.wins_s+'</div></div>';
+  });
+  var small = window.innerWidth < 640;
+  h += axisHtml(-lim, lim, 0.5, function(v){ return (small && v % 1) ? "" : (v>0?"+":"")+v.toFixed(1).replace("-",MINUS); });
+  var el = $("rrChart"); el.innerHTML = h;
+  el.querySelectorAll(".hrow").forEach(function(row){
+    var r = rows[+row.getAttribute("data-i")];
+    bindTip(row, function(){ return '<b>'+esc(r.label)+'</b><br><span class="k">RR '+esc(r.role)+'</span><br>'+r.wins_s+' wins vs league average<br><span class="k">Pressure balls</span> '+r.balls+' &middot; <span class="k">matches</span> '+r.matches; });
+  });
+})();
+$("best").innerHTML = D.best.map(function(b){
+  return '<div class="card"><h3>'+esc(b.label)+'</h3><span style="font-size:13px;color:var(--ink-3)">RR bowling</span><ol>'+
+    b.players.map(function(p){ return '<li><span>'+esc(p.name)+' <span style="color:var(--ink-3)">#'+p.rank+'</span></span><b>'+p.v+'</b></li>'; }).join("")+'</ol></div>';
+}).join("");
+$("recs").innerHTML = [
+  ["Fix the death and the breakthrough overs first.", "Narine, Hazlewood, Rashid, Pathirana and Mujeeb pair a top-10 rating with strong records in RR's two costliest situations."],
+  ["Start with the value-gap names.", "Eshan Malinga, Matheesha Pathirana and Nathan Ellis rank "+D.rec2[0]+" to "+D.rec2[1]+" places higher on pressure than on economy and wickets."],
+  ["Pay for proven skill, not reputation.", "Core skill in players who've already delivered under pressure is what carries into the next season."]
+].map(function(r,i){ return '<div class="rec"><div class="n">'+(i+1)+'</div><div><h3>'+r[0]+'</h3><p>'+r[1]+'</p></div></div>'; }).join("");
+
+/* 7. method */
+var M = D.method;
+var plus = '<span class="pl" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>';
+var panels = [
+  ["Pressure definition",
+   '<p>Pressure is measured, not guessed: the Leverage Index is how far the batting side\'s win probability is expected to move on a single ball.</p>'+
+   '<div class="formula">LI<sub>raw</sub> = &Sigma;<sub><i>o</i></sub> <i>p</i>(<i>o</i> | state) <span class="op">&times;</span> | WP(after <i>o</i>) &minus; expected WP after the ball |<br>LI = LI<sub>raw</sub> <span class="op">&divide;</span> average LI<sub>raw</sub></div>'+
+   '<p>An average ball scores 1. Required rate, wickets, balls left and how close the contest is all flow through this one number. No weights are picked by hand, and it works in the first innings too, before a target even exists.</p>'+
+   '<p>The top 25% of balls by leverage within each innings form the pressure set, <b>H</b>; the rest form the comparison set, <b>L</b>. Cutting within each innings keeps first-innings specialists in the picture. The pressure set starts at LI '+M.liCut+'.</p>'],
+  ["Scoring every ball",
+   '<p>Every ball is judged against what an average player would have done in exactly that situation, facing exactly that quality of opponent.</p>'+
+   '<div class="formula">RV = (runs &minus; expected runs) <span class="op">&minus;</span> c<sub>w</sub> &times; (wicket &minus; expected wicket chance)</div>'+
+   '<p>c<sub>w</sub> is what a wicket costs in runs at that moment. For bowlers, the sign flips. Expectations account for innings, phase, balls and wickets left, venue scoring, batting hand against bowling type, pace or spin, the level of competition and the opponent.</p>'+
+   '<div class="tscroll"><table><thead><tr><th>Metric</th><th>Formula</th><th>What it shows</th></tr></thead><tbody>'+
+   '<tr><td>Strike-rate delta</td><td>100 &times; &Sigma; (runs &minus; E[runs]) &divide; n</td><td>scoring above what the situation allows</td></tr>'+
+   '<tr><td>Dot suppression</td><td>&Sigma; (E[dot] &minus; dot) &divide; n</td><td>keeping the scoreboard moving</td></tr>'+
+   '<tr><td>Boundary elevation</td><td>&Sigma; (boundary &minus; E[boundary]) &divide; n</td><td>finding the rope when it\'s needed</td></tr>'+
+   '<tr><td>Wicket security</td><td>&Sigma; (E[out] &minus; out) &divide; n</td><td>staying in when it matters</td></tr>'+
+   '<tr><td>Economy suppression</td><td>6 &times; &Sigma; (E[conceded] &minus; conceded) &divide; balls</td><td>runs saved per over</td></tr>'+
+   '<tr><td>Bowler dots, boundaries, wickets</td><td>each one, actual against expected</td><td>how those runs are saved</td></tr>'+
+   '</tbody></table></div>'+
+   '<div class="formula">P = average value on H &nbsp;&nbsp; B = average value on L<br>R = (P &minus; B) <span class="op">&minus;</span> league average of (P &minus; B)</div>'+
+   '<p>R, the retention score, asks whether a player keeps his usual level under pressure compared with his peers. It works as a gate that removes clear fades, not as the ranking itself.</p>'],
+  ["The rating",
+   '<p>The rating is the best estimate of how a player performs on high-pressure balls: his core skill, plus his own pressure record, weighted by how much of that record the data shows is real.</p>'+
+   '<h3 style="color:var(--ink)">Batters</h3><div class="formula">Rating = Prior<sub>L</sub> + <i>k</i> &times; (RV<sub>H</sub> &minus; Prior<sub>L</sub>)<br><i>k</i> = &tau;&sup2;<sub>dev</sub> &divide; (&tau;&sup2;<sub>dev</sub> + &sigma;&sup2;<sub>H</sub> &divide; n<sub>H</sub>)</div>'+
+   '<p>The prior comes from a batter\'s normal balls. &tau;&sup2;<sub>dev</sub> is the true spread of pressure-specific skill between batters, estimated from the data itself. A batter\'s own pressure record moves his rating more as his sample grows.</p>'+
+   '<h3 style="color:var(--ink)">Bowlers</h3><div class="formula">Rating = core skill from every ball + &delta;<br>&delta; = shrunk (RV<sub>H</sub> &minus; RV<sub>L</sub> &minus; league shift)</div>'+
+   '<p>Every ball a bowler sends down is evidence of his skill. &delta; then adds his pressure-specific edge, scaled to how big those edges really are among bowlers.</p>'+
+   '<div class="formula">Rank score = Rating <span class="op">&minus;</span> one standard error</div>'+
+   '<p>The standard error comes from '+M.nBoot+' resamples of each player\'s matches. Ranking on the cautious end rewards players who are strong and consistent. Players really do differ in how they handle pressure: a model that lets each player respond in his own way fits far better (p = '+M.p.bat[0]+' &times; 10<sup>&minus;'+M.p.bat[1]+'</sup> for batters and '+M.p.bowl[0]+' &times; 10<sup>&minus;'+M.p.bowl[1]+'</sup> for bowlers).</p>'],
+  ["Fair play",
+   '<div class="tscroll"><table><thead><tr><th>To be ranked, a player needs</th><th>Batters</th><th>Bowlers</th><th>Why</th></tr></thead><tbody>'+
+   '<tr><td>high-pressure balls</td><td>'+M.thr.bat+' or more</td><td>'+M.thr.bowl+' or more</td><td>about two regular seasons of pressure moments</td></tr>'+
+   '<tr><td>recent cricket</td><td colspan="2">played in 2025 or 2026</td><td>the ranking is for the next auction</td></tr>'+
+   '<tr><td>proven delivery</td><td colspan="2">beat expectation on high-pressure balls</td><td>"deliver when it matters"</td></tr>'+
+   '<tr><td>no clear fade</td><td colspan="2">retention not clearly below peers</td><td>consistency</td></tr>'+
+   '<tr><td><b>Players who qualify</b></td><td><b>'+D.counts.bat+'</b></td><td><b>'+D.counts.bowl+'</b></td><td></td></tr>'+
+   '</tbody></table></div>'+
+   '<p>Every value is pulled toward the league average in proportion to its noise, so a handful of lucky innings can\'t carry anyone to the top. IPL and T20I are pooled, and every model knows the level of competition: IPL, full-member internationals, or associate and A sides.</p>'+
+   '<p>Before any modelling, run totals were reconciled with '+M.recon[0]+' of '+M.recon[1]+' recorded results, and rain-shortened games were kept out of the pressure sets, including '+M.rainUnrec+' that the data never marked as rain-affected.</p>'],
+  ["Holding up",
+   '<p>For each metric, every player\'s matches were split into two random halves and compared, repeated across 50 different splits. The process side of batting under pressure repeats clearly:</p>'+
+   '<div class="tscroll"><table><thead><tr><th>Batting under pressure</th><th class="num">Reliability</th><th class="num">95% interval</th></tr></thead><tbody>'+
+   M.rel.map(function(r){ return '<tr><td>'+r.label+'</td><td class="num">'+r.r+'</td><td class="num">'+r.ci+'</td></tr>'; }).join("")+
+   '</tbody></table></div>'+
+   '<p>The lists were also tested against changes to the analysis\'s own choices. Top-10 players kept:</p>'+
+   '<div class="tscroll"><table><thead><tr><th>If the analysis changes</th><th class="num">Batters kept</th><th class="num">Bowlers kept</th></tr></thead><tbody>'+
+   M.rob.map(function(r){ return '<tr><td>'+r.label+'</td><td class="num">'+r.bat+'</td><td class="num">'+r.bowl+'</td></tr>'; }).join("")+
+   '</tbody></table></div>']
+];
+$("methodPanels").innerHTML = panels.map(function(p, i){
+  return '<details'+(i===0?' open':'')+'><summary>'+p[0]+plus+'</summary><div class="dbody">'+p[1]+'</div></details>';
+}).join("");
+
+/* nav highlight + reveal */
+var links = document.querySelectorAll("nav.top a");
+if ("IntersectionObserver" in window){
+  var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute("href")); });
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ links.forEach(function(a){ a.classList.toggle("on", a.getAttribute("href")==="#"+e.target.id); }); } });
+  }, {rootMargin:"-45% 0px -50% 0px"});
+  secs.forEach(function(s){ if(s) io.observe(s); });
+  var ro = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); ro.unobserve(e.target); } }); }, {threshold:.08});
+  document.querySelectorAll("main .card, main details, .rec").forEach(function(el){ el.classList.add("reveal"); ro.observe(el); });
+}
+})();
+</script>
+</body>
+</html>
