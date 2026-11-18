@@ -1,0 +1,5 @@
+side,rating,oos_r_next_season_rv_H,ci95,pairs
+bat,previous (L-only component prior + H update),0.184,"[-0.018, 0.366]",297
+bat,bivariate (core skill from all deliveries + shrunk H−L deviation),0.103,"[-0.038, 0.246]",297
+bowl,previous (L-only component prior + H update),0.019,"[-0.103, 0.157]",292
+bowl,bivariate (core skill from all deliveries + shrunk H−L deviation),0.028,"[-0.087, 0.140]",292

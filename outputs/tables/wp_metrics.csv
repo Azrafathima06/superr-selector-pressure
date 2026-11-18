@@ -1,0 +1,10 @@
+model,innings,n,log_loss,brier,auc
+CHOSEN: sign-constrained logistic,1,99603,0.6242,0.2178,0.7048
+"Logistic, unconstrained (same features)",1,99603,0.6242,0.2178,0.7048
+Logistic naive (score or runs needed + balls left),1,99603,0.6321,0.2215,0.6909
+Monotonic gradient boosting (HGB),1,99603,0.6395,0.2236,0.688
+"Logistic, unconstrained (same features)",2,91459,0.3837,0.1242,0.9064
+CHOSEN: sign-constrained logistic + endgame blend,2,91459,0.3844,0.1244,0.906
+"Sign-constrained logistic, no endgame model",2,91459,0.3845,0.1244,0.906
+Monotonic gradient boosting (HGB),2,91459,0.393,0.1262,0.9028
+Logistic naive (score or runs needed + balls left),2,91459,0.4749,0.154,0.8562

@@ -1,0 +1,11 @@
+scenario,role,RR_H_deliveries,RR_matches,RR_WP_per_delivery_vs_expectation,league_WP_per_delivery,RR_total_WP_vs_league (wins)
+"death overs, 2nd innings",RR bowling,445,24,-0.00578,-0.00229,-1.55
+entry under pressure,RR bowling,756,52,0.0009,0.00252,-1.23
+post-wicket (12 deliveries after a wicket),RR bowling,1070,59,-0.00014,0.00044,-0.628
+"death overs, 2nd innings",RR batting,400,20,0.00137,0.0026,-0.492
+entry under pressure,RR batting,684,51,-0.00299,-0.00239,-0.409
+powerplay vs set openers,RR bowling,264,24,-0.00044,-0.0008,0.093
+dot squeeze (after 3+ dots),RR bowling,62,31,0.00171,-0.00066,0.147
+powerplay vs set openers,RR batting,323,34,0.00211,0.00068,0.461
+dot squeeze (after 3+ dots),RR batting,83,39,0.01103,-7e-05,0.921
+post-wicket (12 deliveries after a wicket),RR batting,1031,60,0.00128,-0.00051,1.837

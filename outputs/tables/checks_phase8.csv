@@ -1,0 +1,49 @@
+check,passed,detail
+no duplicate deliveries,True,
+result reconciliation ≥ 99%,True,0.9938
+each player_id has one name (striker/bowler),True,
+"WP within [0, 1]",True,
+mean LI = 1 on included deliveries,True,1.00000
+primary H ≈ 25% within each innings,True,"{1: 0.25, 2: 0.25}"
+no duplicate player-season in metrics_batters.csv,True,
+one name per player_id in metrics_batters.csv,True,
+no duplicate player-season in metrics_bowlers.csv,True,
+one name per player_id in metrics_bowlers.csv,True,
+Jasprit Bumrah: economy suppression on H > 0,True,[1.397]
+Heinrich Klaasen: strike-rate delta on H > 0,True,[47.33]
+Tim David: strike-rate delta on H > 0,True,[38.55]
+Andre Russell: strike-rate delta on H > 0,True,[30.72]
+Rinku Singh: strike-rate delta on H > 0,True,[20.01]
+David Miller: strike-rate delta on H > 0,True,[4.07]
+no duplicate player in roles_batters.csv,True,
+no duplicate player in roles_bowlers.csv,True,
+trust table: one row per side × measure,True,
+weights non-negative,True,
+weights sum to 1 per side,True,"{'bat': 1.0, 'bowl': 1.0}"
+only metrics that passed reliability carry weight,True,
+6B summary: one row per method × side × variant,True,
+6B summary covers methods A–E,True,"['A', 'B', 'C', 'D', 'E']"
+standardised feature means ≈ 0,True,0.0
+"top10_batters.csv: 20 rows, unique players",True,20
+top10_batters.csv: all meet H-delivery minimum (108),True,121
+top10_batters.csv: all active in 2025 or 2026,True,
+top10_batters.csv: nobody with R interval entirely below 0,True,
+top10_batters.csv: rank score = rating − SE,True,
+top10_batters.csv: sorted by rank score,True,
+top10_batters.csv: delivery condition (raw H run value > 0) for every listed player,True,6.78
+top10_batters.csv: every name matches the data spelling,True,[]
+top10_batters.csv: names shared by two ids carry a team tag,True,[]
+top10_batters.csv: tiers start at 1 and never decrease down the list,True,
+"top10_bowlers.csv: 20 rows, unique players",True,20
+top10_bowlers.csv: all meet H-delivery minimum (154),True,157
+top10_bowlers.csv: all active in 2025 or 2026,True,
+top10_bowlers.csv: nobody with R interval entirely below 0,True,
+top10_bowlers.csv: rank score = rating − SE,True,
+top10_bowlers.csv: sorted by rank score,True,
+top10_bowlers.csv: delivery condition (raw H run value > 0) for every listed player,True,3.58
+top10_bowlers.csv: every name matches the data spelling,True,[]
+top10_bowlers.csv: names shared by two ids carry a team tag,True,"['Rashid Khan (Afghanistan, Gujarat Titans)']"
+top10_bowlers.csv: tiers start at 1 and never decrease down the list,True,
+bowlers: H-update weight is 0 when pressure-specific variance ≈ 0,True,0.002214
+top10_batters.csv: identical to the LOCKED list (order and players),True,
+top10_bowlers.csv: identical to the LOCKED list (order and players),True,

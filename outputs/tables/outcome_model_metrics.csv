@@ -1,0 +1,4 @@
+model,log_loss
+Base rates (no features),1.6364
+Multinomial logistic,1.5921
+Gradient boosting (HGB),1.5882

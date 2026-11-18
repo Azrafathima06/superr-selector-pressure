@@ -1,0 +1,3 @@
+side,top20_2022_24,top20_with_2025_26_H_data,top20_above_average_on_H_2025_26,share,share_ci95_wilson,share_for_random_eligible_player,"average_used (runs per H ball, eligible test players)",top20_above_expectation_(>0)
+bat,20,16,10,0.625,"[0.39, 0.82]",0.557,0.1001,12
+bowl,20,18,13,0.722,"[0.49, 0.88]",0.58,-0.079,11

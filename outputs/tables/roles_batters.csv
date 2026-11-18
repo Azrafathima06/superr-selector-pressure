@@ -1,0 +1,894 @@
+player_id,player,innings,median_position,mean_entry_over,share_entering_overs_16_20,role
+8,Mahendra Singh Dhoni,49,7.0,16.653,0.776,finisher (6-7)
+23,Piyush Chawla,10,10.0,17.2,0.8,lower order (8+)
+28,Ishant Sharma,3,11.0,18.333,1.0,lower order (8+)
+47,Virat Kohli,92,2.0,1.728,0.0,opener
+88,Faf du Plessis,53,2.0,1.0,0.0,opener
+109,Wriddhiman Saha,37,1.0,1.0,0.0,opener
+126,Rohit Sharma,91,2.0,1.099,0.0,opener
+142,Shikhar Dhawan,30,2.0,1.0,0.0,opener
+143,Dinesh Karthik,61,6.0,14.902,0.508,finisher (6-7)
+147,Pradeep Sangwan,1,8.0,17.0,1.0,lower order (8+)
+152,Ravindra Jadeja,65,6.0,12.738,0.323,finisher (6-7)
+158,Amit Mishra,1,9.0,12.0,0.0,lower order (8+)
+161,Dwayne Bravo,6,8.0,16.833,0.667,lower order (8+)
+167,Ajinkya Rahane,55,3.0,2.745,0.0,No.3
+169,Robin Uthappa,11,2.0,3.273,0.091,opener
+198,Manish Pandey,21,4.0,5.905,0.0,middle order (4-5)
+220,David Warner,45,1.0,1.0,0.0,opener
+223,Steven Smith,12,3.5,5.75,0.0,middle order (4-5)
+232,Tom Cooper,2,4.5,6.0,0.0,middle order (4-5)
+250,Aaron Finch,20,2.0,1.75,0.0,opener
+274,Martin Guptill,9,1.0,1.444,0.0,opener
+278,Tim Southee,16,10.0,18.0,0.75,lower order (8+)
+286,Kane Richardson,1,10.0,20.0,1.0,lower order (8+)
+295,Wayne Parnell,7,7.0,13.857,0.571,finisher (6-7)
+305,Ravichandran Ashwin,39,7.0,13.026,0.487,finisher (6-7)
+332,Angelo Mathews,7,6.0,12.286,0.0,finisher (6-7)
+344,Sheldon Jackson,5,7.0,14.0,0.4,finisher (6-7)
+360,Bhuvneshwar Kumar,35,9.0,17.943,0.829,lower order (8+)
+393,Kedar Jadhav,1,7.0,15.0,0.0,finisher (6-7)
+395,Karn Sharma,6,9.0,18.0,0.833,lower order (8+)
+403,Umesh Yadav,15,9.0,17.267,0.733,lower order (8+)
+418,Richard Berrington,6,4.0,5.5,0.0,middle order (4-5)
+443,Paul Stirling,39,1.0,1.0,0.0,opener
+470,Mohammad Amir,3,10.0,19.0,1.0,lower order (8+)
+478,Eoin Morgan,2,5.5,8.5,0.0,finisher (6-7)
+479,Adil Rashid,21,10.0,16.857,0.81,lower order (8+)
+492,Andre Fletcher,5,5.0,7.0,0.0,middle order (4-5)
+494,Kieron Pollard,18,6.0,13.778,0.222,finisher (6-7)
+499,Shakib Al Hasan,17,4.0,9.412,0.176,middle order (4-5)
+505,Mushfiqur Rahim,2,4.0,6.0,0.0,middle order (4-5)
+507,Mohammad Mahmudullah,13,5.0,8.538,0.077,middle order (4-5)
+535,Ambati Rayudu,23,5.0,10.0,0.13,middle order (4-5)
+722,Liam Dawson,5,8.0,14.4,0.4,lower order (8+)
+728,Dawid Malan,21,3.0,4.381,0.048,No.3
+757,Sybrand Engelbrecht,2,4.0,8.0,0.0,middle order (4-5)
+768,Reeza Hendricks,34,2.0,1.0,0.0,opener
+772,Rilee Rossouw,26,3.0,4.769,0.0,No.3
+773,Shadley Van Schalkwyk,3,8.0,14.333,0.333,lower order (8+)
+778,Darren Bravo,2,5.5,10.5,0.5,finisher (6-7)
+781,Sunil Narine,49,2.0,6.449,0.245,opener
+786,Chris Jordan,20,8.0,16.65,0.55,lower order (8+)
+796,Matthew Wade,30,7.0,9.9,0.233,finisher (6-7)
+813,Jos Buttler,119,2.0,2.857,0.008,opener
+818,Mitchell Marsh,80,2.0,1.925,0.0,opener
+820,Nathan Coulter Nile,1,7.0,20.0,1.0,finisher (6-7)
+829,Mitchell Starc,14,9.0,18.786,1.0,lower order (8+)
+830,Josh Hazlewood,13,11.0,18.077,0.846,lower order (8+)
+838,Glenn Maxwell,73,4.0,8.342,0.068,middle order (4-5)
+914,Krishnappa Gowtham,7,8.0,13.714,0.571,lower order (8+)
+930,Karun Nair,11,3.0,4.636,0.091,No.3
+953,Lokesh Rahul,74,2.0,1.743,0.014,opener
+985,Brendan Taylor,7,3.0,3.857,0.0,No.3
+988,Graeme Cremer,1,10.0,19.0,1.0,lower order (8+)
+992,Mayank Agarwal,30,2.0,3.233,0.0,opener
+1039,Mandeep Singh,6,3.0,3.0,0.0,No.3
+1040,Harpreet Bhatia,5,5.0,6.8,0.0,middle order (4-5)
+1045,David Wiese,3,8.0,18.333,1.0,lower order (8+)
+1071,Jaydev Unadkat,12,9.5,17.917,0.833,lower order (8+)
+1077,David Miller,82,5.0,11.598,0.244,middle order (4-5)
+1100,Dinesh Chandimal,5,5.0,9.0,0.2,middle order (4-5)
+1101,George Dockrell,42,6.0,12.238,0.214,finisher (6-7)
+1107,Mohammad Nabi,50,6.0,11.78,0.28,finisher (6-7)
+1116,Craig Ervine,15,2.0,2.8,0.0,opener
+1159,Tendai Chatara,5,11.0,18.0,1.0,lower order (8+)
+1171,Chris Woakes,8,8.0,17.5,0.75,lower order (8+)
+1183,Alex Hales,8,2.0,1.0,0.0,opener
+1187,Jason Roy,19,1.0,1.368,0.0,opener
+1195,Ben Stokes,4,4.0,9.25,0.0,middle order (4-5)
+1205,Jonny Bairstow,33,2.0,3.273,0.03,opener
+1210,James Vince,5,3.0,3.2,0.0,No.3
+1219,David Willey,10,8.5,14.1,0.4,lower order (8+)
+1233,Gary Ballance,1,4.0,2.0,0.0,middle order (4-5)
+1318,Andre Russell,57,7.0,13.333,0.263,finisher (6-7)
+1327,Johnson Charles,27,2.0,1.778,0.0,opener
+1389,Sean Abbott,11,9.0,16.909,0.727,lower order (8+)
+1440,Rahul Tripathi,43,3.0,3.488,0.0,No.3
+1481,Kusal Perera,32,3.0,5.812,0.0,No.3
+1487,Adam Milne,13,8.0,16.692,0.615,lower order (8+)
+1541,Sean Williams,14,4.0,5.714,0.0,middle order (4-5)
+1556,David Payne,1,10.0,18.0,1.0,lower order (8+)
+1566,Mohammed Shami,15,9.0,18.4,0.933,lower order (8+)
+1568,Kane Williamson,25,3.0,3.68,0.04,No.3
+1596,Moeen Ali,53,5.0,9.887,0.245,middle order (4-5)
+1612,Yuzvendra Chahal,4,10.0,19.0,1.0,lower order (8+)
+1617,Rishi Dhawan,7,7.5,16.571,0.571,lower order (8+)
+1649,Regis Chakabva,5,1.0,5.6,0.2,opener
+1699,Suryakumar Yadav,138,4.0,5.949,0.022,middle order (4-5)
+1701,Swapnil Singh,6,8.0,17.667,0.833,lower order (8+)
+1758,Patrick Cummins,35,8.0,16.686,0.714,lower order (8+)
+1791,Wesley Barresi,2,6.0,14.0,0.5,finisher (6-7)
+1801,Nitish Kumar,3,5.0,9.333,0.0,middle order (4-5)
+1810,Devon Thomas,7,3.5,8.286,0.143,middle order (4-5)
+1813,Deepak Chahar,11,9.0,17.182,0.818,lower order (8+)
+1924,Sam Billings,12,5.0,9.333,0.083,middle order (4-5)
+1941,Devon Conway,61,2.0,1.0,0.0,opener
+1944,Keshav Maharaj,12,9.0,15.0,0.5,lower order (8+)
+2001,Yashodha Lanka,5,1.0,1.0,0.0,opener
+2003,Bhanuka Rajapaksa,31,4.0,8.323,0.129,middle order (4-5)
+2054,Jason Behrendorff,3,10.0,18.333,1.0,lower order (8+)
+2101,Quinton de Kock,66,1.0,1.0,0.0,opener
+2210,Sabbir Rahman,4,2.0,1.0,0.0,opener
+2213,Soumya Sarkar,13,2.0,2.0,0.0,opener
+2214,Gulbadin Naib,14,4.0,8.929,0.143,middle order (4-5)
+2218,Anamul Haque,6,2.5,2.0,0.0,No.3
+2246,Tom Latham,10,2.0,1.8,0.0,opener
+2258,Sanju Samson,122,3.0,3.893,0.016,No.3
+2261,Harshal Patel,30,8.0,16.833,0.767,lower order (8+)
+2296,Safyaan Sharif,2,10.0,19.5,1.0,lower order (8+)
+2304,Tymal Mills,6,10.0,19.0,0.833,lower order (8+)
+2315,Reece Topley,9,11.0,18.556,1.0,lower order (8+)
+2320,Trent Boult,23,9.0,18.043,0.87,lower order (8+)
+2321,Olly Stone,1,10.0,19.0,1.0,lower order (8+)
+2334,Dwaine Pretorius,11,7.0,12.818,0.636,finisher (6-7)
+2351,Danushka Gunathilaka,13,2.0,3.308,0.0,opener
+2361,Temba Bavuma,10,2.0,1.0,0.0,opener
+2364,Ashton Agar,4,5.0,8.25,0.25,middle order (4-5)
+2367,Travis Head,65,2.0,1.0,0.0,opener
+2373,Ashton Turner,3,7.0,15.0,0.333,finisher (6-7)
+2379,Ben Duckett,20,4.0,4.7,0.0,middle order (4-5)
+2382,Jamie Overton,18,8.0,15.111,0.556,lower order (8+)
+2399,Dushmantha Chameera,30,9.0,17.833,0.833,lower order (8+)
+2407,Dhananjaya de Silva,15,4.0,4.933,0.0,middle order (4-5)
+2411,Sandeep Sharma,3,11.0,14.667,0.667,lower order (8+)
+2416,Kyle Mayers,45,2.0,1.267,0.0,opener
+2417,Akeal Hosein,33,9.0,16.152,0.667,lower order (8+)
+2418,Justin Greaves,2,3.5,5.5,0.0,middle order (4-5)
+2436,Dasun Shanaka,62,6.0,12.5,0.29,finisher (6-7)
+2439,Akila Dananjaya,1,9.0,19.0,1.0,lower order (8+)
+2463,Ryan Burl,41,5.0,9.854,0.049,middle order (4-5)
+2483,Lizaad Williams,9,10.0,17.444,0.778,lower order (8+)
+2485,Babar Azam,52,2.0,2.135,0.0,opener
+2490,Mohammad Nawaz,46,7.0,14.348,0.435,finisher (6-7)
+2523,Will Young,11,3.0,2.545,0.0,No.3
+2526,Ish Sodhi,29,9.0,17.517,0.793,lower order (8+)
+2531,Joe Root,1,4.0,2.0,0.0,middle order (4-5)
+2533,Najibullah Zadran,23,5.0,10.565,0.174,middle order (4-5)
+2534,Rahmat Shah,1,4.0,9.0,0.0,middle order (4-5)
+2573,Evin Lewis,18,2.0,3.222,0.056,opener
+2633,Jason Holder,59,7.0,13.983,0.525,finisher (6-7)
+2636,Adam Zampa,15,10.0,17.533,0.8,lower order (8+)
+2639,Marcus Stoinis,87,5.0,10.437,0.172,middle order (4-5)
+2650,Raymon Reifer,2,5.0,8.0,0.0,middle order (4-5)
+2661,Shamarh Brooks,7,2.0,1.286,0.0,opener
+2671,Liton Das,59,3.0,2.322,0.0,No.3
+2680,Nurul Hasan,20,6.0,13.65,0.4,finisher (6-7)
+2681,Taskin Ahmed,17,9.0,16.941,0.706,lower order (8+)
+2687,Roston Chase,36,4.5,9.028,0.111,middle order (4-5)
+2750,Alex Carey,3,5.0,11.667,0.0,middle order (4-5)
+2756,Shashank Singh,42,6.0,12.786,0.286,finisher (6-7)
+2790,Praveen Dubey,1,8.0,11.0,0.0,lower order (8+)
+2847,Shardul Thakur,31,8.0,15.645,0.677,lower order (8+)
+2852,Jagadeesha Suchith,2,7.0,16.5,0.5,finisher (6-7)
+2860,KS Bharat,2,1.5,1.0,0.0,opener
+2876,Axar Patel,103,7.0,12.621,0.359,finisher (6-7)
+2877,Vijay Shankar,26,5.0,9.077,0.154,middle order (4-5)
+2878,Mohit Sharma,6,11.0,18.333,0.833,lower order (8+)
+2884,Manan Vohra,1,3.0,2.0,0.0,No.3
+2887,Harmeet Singh,3,7.0,11.667,0.0,finisher (6-7)
+2892,Asif Ali,13,6.0,16.0,0.538,finisher (6-7)
+2921,Fakhar Zaman,47,3.0,4.638,0.043,No.3
+2930,Rassie van der Dussen,20,4.0,7.0,0.1,middle order (4-5)
+2933,Jasprit Bumrah,17,11.0,18.647,0.941,lower order (8+)
+2972,Yasim Murtaza,14,5.0,8.714,0.214,middle order (4-5)
+2984,Sikandar Raza,55,4.0,7.327,0.055,middle order (4-5)
+2985,Mark Wood,6,11.0,18.0,0.833,lower order (8+)
+2996,Stephanus Myburgh,2,1.5,1.0,0.0,opener
+2997,Paul van Meekeren,5,10.0,18.2,0.8,lower order (8+)
+3024,Mohammad Rizwan,37,1.0,1.162,0.0,opener
+3033,Usman Qadir,3,8.5,18.667,1.0,lower order (8+)
+3038,Hussain Talat,5,5.0,11.0,0.0,middle order (4-5)
+3040,Kashif Daud,2,8.0,19.5,1.0,lower order (8+)
+3056,Iftikhar Ahmed,30,5.0,11.367,0.233,middle order (4-5)
+3077,Usama Mir,4,9.5,18.75,1.0,lower order (8+)
+3091,Sahibzada Farhan,39,1.0,1.692,0.0,opener
+3097,Shan Masood,10,3.0,6.2,0.0,No.3
+3125,Nicholas Pooran,114,4.0,7.939,0.053,middle order (4-5)
+3135,Yannic Cariah,2,10.0,19.5,1.0,lower order (8+)
+3174,Matt Henry,10,9.0,17.3,0.7,lower order (8+)
+3260,Hashmatullah Shahidi,2,3.0,3.5,0.0,No.3
+3272,Fabian Allen,9,7.0,16.444,0.556,finisher (6-7)
+3275,Alzarri Joseph,21,10.0,17.476,0.857,lower order (8+)
+3276,Gudakesh Motie,22,8.0,15.182,0.545,lower order (8+)
+3280,Nazmul Hossain Shanto,28,3.0,4.821,0.036,No.3
+3281,Mosaddek Hossain,11,7.0,13.909,0.364,finisher (6-7)
+3282,Mehidy Hasan Miraz,17,5.0,7.824,0.176,middle order (4-5)
+3285,Abu Haider,2,6.5,13.5,0.0,finisher (6-7)
+3297,Shimron Hetmyer,94,5.0,11.245,0.202,middle order (4-5)
+3298,Jofra Archer,29,8.0,17.069,0.759,lower order (8+)
+3304,Munim Shahriar,2,1.5,1.0,0.0,opener
+3306,Afsar Zazai,1,3.0,4.0,0.0,No.3
+3323,Jimmy Neesham,39,6.0,13.282,0.333,finisher (6-7)
+3330,Hardik Pandya,118,5.0,10.508,0.093,middle order (4-5)
+3361,Michael Leask,6,6.0,11.5,0.0,finisher (6-7)
+3373,Aizaz Khan,11,6.0,12.727,0.273,finisher (6-7)
+3374,Mark Chapman,52,4.5,7.846,0.115,middle order (4-5)
+3377,Babar Hayat,14,3.0,3.857,0.0,No.3
+3382,Nizakat Khan,14,3.0,3.857,0.0,No.3
+3383,Kinchit Shah,10,6.0,12.2,0.5,finisher (6-7)
+3415,Matthew Cross,5,5.0,7.6,0.0,middle order (4-5)
+3451,Baba Indrajith,3,1.0,2.333,0.0,opener
+3469,Shreyas Gopal,1,8.0,17.0,1.0,lower order (8+)
+3489,Salman Agha,42,4.0,6.81,0.048,middle order (4-5)
+3539,Ben McDermott,7,2.0,1.714,0.0,opener
+3543,Shahidullah Kamal,8,5.0,12.5,0.5,middle order (4-5)
+3544,Usman Ghani,7,3.0,3.571,0.0,No.3
+3545,Ihsanullah Janat,1,2.0,1.0,0.0,opener
+3550,Sharafuddin Ashraf,8,7.0,15.625,0.625,finisher (6-7)
+3578,Imad Wasim,11,6.0,12.909,0.273,finisher (6-7)
+3595,Andy McBrine,2,9.0,16.0,0.5,lower order (8+)
+3605,Aiden Markram,94,4.0,5.223,0.053,middle order (4-5)
+3613,Shakeel Ahmed,3,9.0,15.0,0.667,lower order (8+)
+3622,Hayden Walsh,3,10.0,16.333,0.667,lower order (8+)
+3623,Hasan Ali,4,9.0,17.75,1.0,lower order (8+)
+3627,Andile Phehlukwayo,5,7.0,12.4,0.0,finisher (6-7)
+3628,Kagiso Rabada,27,9.0,17.222,0.741,lower order (8+)
+3629,Corbin Bosch,15,8.0,15.133,0.667,lower order (8+)
+3635,Jason Smith,8,5.0,10.875,0.375,middle order (4-5)
+3639,Brandon King,59,1.0,1.051,0.0,opener
+3641,Ben Dwarshuis,9,8.0,14.556,0.444,lower order (8+)
+3644,Kuldeep Yadav,38,9.0,18.079,0.921,lower order (8+)
+3645,Sarfaraz Khan,16,4.0,6.625,0.0,middle order (4-5)
+3647,Shreyas Iyer,94,4.0,5.989,0.021,middle order (4-5)
+3648,Deepak Hooda,55,4.0,8.745,0.182,middle order (4-5)
+3651,Ricky Bhui,2,4.0,7.5,0.0,middle order (4-5)
+3653,Avesh Khan,21,10.0,18.524,0.905,lower order (8+)
+3660,Luke Wood,3,10.0,18.333,0.667,lower order (8+)
+3664,Binura Fernando,7,10.0,17.714,0.857,lower order (8+)
+3669,Sadeera Samarawickrama,8,4.0,7.25,0.125,middle order (4-5)
+3672,Kusal Mendis,67,2.0,1.806,0.0,opener
+3673,Ramesh Mendis,9,7.0,15.556,0.778,finisher (6-7)
+3683,Gavin Main,1,10.0,17.0,1.0,lower order (8+)
+3686,CB Sole,5,9.0,17.6,0.8,lower order (8+)
+3689,Mark Watt,6,7.0,15.0,0.333,finisher (6-7)
+3697,Kyle Jamieson,14,9.0,16.214,0.571,lower order (8+)
+3700,Tim Seifert,41,2.0,1.293,0.0,opener
+3720,Craig Young,9,10.0,17.889,0.889,lower order (8+)
+3727,Matthew Short,30,2.5,3.433,0.0,No.3
+3771,Vivian Kingma,1,11.0,15.0,0.0,lower order (8+)
+3772,Logan van Beek,5,7.0,15.2,0.6,finisher (6-7)
+3775,Sompal Kami,2,8.5,18.5,1.0,lower order (8+)
+3782,M Shahrukh Khan,44,6.0,14.0,0.5,finisher (6-7)
+3802,Anshuman Rath,9,2.0,1.0,0.0,opener
+3832,Rezza Gaznavi,3,3.0,3.667,0.0,No.3
+3839,Amjad Mahboob,3,9.0,17.0,1.0,lower order (8+)
+3858,Jatinder Singh,6,1.0,1.0,0.0,opener
+3871,Aamir Kaleem,6,2.0,1.0,0.0,opener
+3876,Sufyan Mehmood,5,8.0,15.8,0.6,lower order (8+)
+3916,Jitesh Sharma,74,6.0,12.311,0.243,finisher (6-7)
+3926,Rahul Tewatia,58,6.0,16.017,0.638,finisher (6-7)
+3954,Andrew Balbirnie,29,1.0,1.0,0.0,opener
+3967,Tom Kohler,3,2.0,1.0,0.0,opener
+3986,Matthew Renshaw,6,4.0,5.667,0.0,middle order (4-5)
+3995,Donald Tiripano,2,8.5,15.5,0.5,lower order (8+)
+4007,Ryan Rickelton,47,1.0,1.383,0.0,opener
+4101,Mitchell Santner,58,7.0,14.034,0.517,finisher (6-7)
+4102,George Munsey,5,1.0,1.0,0.0,opener
+4106,Daryl Mitchell,67,4.0,8.075,0.075,middle order (4-5)
+4111,Khushdil Shah,18,6.0,12.056,0.389,finisher (6-7)
+4117,Ishan Kishan,119,2.0,2.487,0.017,opener
+4201,Fareed Malik,3,10.0,16.333,0.667,lower order (8+)
+4211,Vishnu Vinod,4,6.0,14.0,0.5,finisher (6-7)
+4219,Krunal Pandya,54,6.0,12.185,0.389,finisher (6-7)
+4221,Chris Green,1,9.0,18.0,1.0,lower order (8+)
+4229,George Linde,13,7.0,13.231,0.308,finisher (6-7)
+4235,Sisanda Magala,1,8.0,9.0,0.0,lower order (8+)
+4237,Tabraiz Shamsi,4,11.0,16.25,0.75,lower order (8+)
+4246,Nitish Rana,50,4.0,5.72,0.02,middle order (4-5)
+4260,Heinrich Klaasen,72,5.0,9.097,0.069,middle order (4-5)
+4265,T Natarajan,1,11.0,20.0,1.0,lower order (8+)
+4288,Navdeep Saini,1,8.0,20.0,1.0,lower order (8+)
+4369,Shai Hope,56,3.0,3.179,0.018,No.3
+4372,Rony Talukder,9,2.0,1.0,0.0,opener
+4373,Mustafizur Rahman,14,11.0,18.714,1.0,lower order (8+)
+4391,Liam Livingstone,68,5.0,9.456,0.088,middle order (4-5)
+4409,Sam Curran,58,6.0,11.0,0.241,finisher (6-7)
+4412,Max ODowd,11,2.0,1.0,0.0,opener
+4417,Karan KC,2,9.5,19.0,1.0,lower order (8+)
+4438,Jasdeep Singh,2,8.5,13.5,0.0,lower order (8+)
+4450,Mehran Khan,2,6.5,17.0,1.0,finisher (6-7)
+4458,Aneurin Donald,3,2.0,1.0,0.0,opener
+4460,Jeffrey Vandersay,3,8.0,14.667,0.333,lower order (8+)
+4486,BR Sharath,1,4.0,8.0,0.0,middle order (4-5)
+4487,Vyshak Kumar,6,9.5,19.0,1.0,lower order (8+)
+4489,Prasidh Krishna,6,10.0,18.833,1.0,lower order (8+)
+4494,Abhinav Manohar,20,6.0,12.35,0.3,finisher (6-7)
+4499,Saqib Mahmood,5,10.0,18.6,1.0,lower order (8+)
+4505,Jhye Richardson,2,9.0,16.0,0.5,lower order (8+)
+4604,Mitchell Swepson,1,11.0,20.0,1.0,lower order (8+)
+4636,Bjorn Fortuin,11,8.0,15.909,0.545,lower order (8+)
+4639,Wellington Masakadza,20,8.0,15.2,0.45,lower order (8+)
+4641,Lungi Ngidi,15,10.0,17.933,0.8,lower order (8+)
+4658,Nasum Ahmed,15,9.0,16.267,0.6,lower order (8+)
+4662,Cole McConchie,9,7.0,12.889,0.333,finisher (6-7)
+4665,Tom Blundell,2,2.0,1.0,0.0,opener
+4684,Dane Cleaver,10,3.0,2.9,0.0,No.3
+4686,Joshua Clarkson,9,7.0,13.778,0.444,finisher (6-7)
+4692,Lockie Ferguson,17,11.0,17.941,0.824,lower order (8+)
+4695,Nick Kelly,7,4.0,7.571,0.143,middle order (4-5)
+4703,Rishabh Pant,72,4.0,7.583,0.069,middle order (4-5)
+4708,Rinku Singh,83,6.0,12.193,0.265,finisher (6-7)
+4716,Mayank Dagar,1,9.0,17.0,1.0,lower order (8+)
+4722,Rashid Khan,72,8.0,16.722,0.708,lower order (8+)
+4736,Josh Inglis,56,3.0,5.054,0.018,No.3
+4755,Shivam Dube,97,5.0,10.928,0.113,middle order (4-5)
+4773,Jaker Ali Anik,33,6.0,11.333,0.242,finisher (6-7)
+4779,Pieter Willem Mulder,10,6.0,8.4,0.1,finisher (6-7)
+4780,Mohammad Saif Hassan,25,1.0,2.92,0.0,opener
+4784,Tony de Zorzi,7,2.0,2.0,0.0,opener
+4790,Lutho Sipamla,3,11.0,15.333,0.667,lower order (8+)
+4793,Dean Foxcroft,6,4.0,8.167,0.167,middle order (4-5)
+4802,Stephen Doheny,3,3.0,4.0,0.0,No.3
+4807,Joshua Little,9,10.0,16.889,0.667,lower order (8+)
+4812,Harry Tector,45,4.0,5.467,0.022,middle order (4-5)
+4814,Lorcan Tucker,40,3.0,4.6,0.0,No.3
+4815,Benjamin White,4,11.0,18.0,1.0,lower order (8+)
+4816,Khaleel Ahmed,5,11.0,18.6,1.0,lower order (8+)
+4817,Anmolpreet Singh,8,2.0,2.75,0.0,opener
+4821,Mahipal Lomror,25,5.0,12.92,0.28,middle order (4-5)
+4823,Washington Sundar,50,6.0,13.7,0.42,finisher (6-7)
+4826,George Garton,1,8.0,18.0,1.0,lower order (8+)
+4830,Keacy Carty,6,4.0,7.5,0.0,middle order (4-5)
+4837,Obed McCoy,8,11.0,17.625,0.875,lower order (8+)
+4838,Keemo Paul,3,7.0,14.0,0.333,finisher (6-7)
+4840,Odean Smith,20,7.5,15.1,0.5,lower order (8+)
+4842,Shamar Springer,7,9.0,14.714,0.286,lower order (8+)
+4847,Finn Allen,50,1.5,1.0,0.0,opener
+4853,Glenn Phillips,55,4.0,8.455,0.109,middle order (4-5)
+4854,Rachin Ravindra,42,2.0,5.333,0.167,opener
+4856,Benjamin Sears,9,10.5,17.667,0.889,lower order (8+)
+4857,Nathan Smith,2,8.0,19.0,1.0,lower order (8+)
+4867,Wesley Madhevere,28,3.0,4.607,0.071,No.3
+4871,Brandon Mavuta,2,8.0,17.0,1.0,lower order (8+)
+4874,Richard Ngarava,21,10.0,17.524,0.762,lower order (8+)
+4876,Milton Shumba,6,6.0,9.833,0.167,finisher (6-7)
+4880,Aarif Sheikh,1,6.0,14.0,0.0,finisher (6-7)
+4881,Dipendra Airee,1,6.0,13.0,0.0,finisher (6-7)
+4882,Kushal Bhurtel,3,1.0,1.0,0.0,opener
+4895,Charith Asalanka,53,5.0,9.075,0.132,middle order (4-5)
+4900,Wanindu Hasaranga,62,7.0,14.629,0.484,finisher (6-7)
+4901,Asitha Fernando,3,10.0,19.333,1.0,lower order (8+)
+4902,Avishka Fernando,9,3.0,5.444,0.111,No.3
+4904,Kamindu Mendis,38,5.0,9.816,0.158,middle order (4-5)
+4926,Shadab Khan,29,6.0,11.655,0.172,finisher (6-7)
+4947,Kasun Rajitha,3,10.0,17.667,1.0,lower order (8+)
+4974,Mohammad Nadeem,4,5.0,10.25,0.25,middle order (4-5)
+4983,Sikander Zulfiqar,1,7.0,10.0,0.0,finisher (6-7)
+4986,Rovman Powell,100,5.0,10.37,0.11,middle order (4-5)
+5029,Prerak Mankad,6,3.0,7.667,0.167,No.3
+5034,Murugan Ashwin,5,8.0,18.0,0.8,lower order (8+)
+5039,Rajat Patidar,48,4.0,7.083,0.021,middle order (4-5)
+5041,Mukesh Kumar,9,11.0,18.778,1.0,lower order (8+)
+5189,Faheem Ashraf,27,8.0,16.741,0.704,lower order (8+)
+5379,Mark Adair,27,8.0,14.593,0.519,lower order (8+)
+5441,Barry McCarthy,15,9.0,15.333,0.6,lower order (8+)
+5547,Nosthush Kenjige,2,10.0,15.5,0.5,lower order (8+)
+5553,Phil Salt,83,1.0,1.88,0.024,opener
+5561,Brad Wheal,2,10.5,17.5,0.5,lower order (8+)
+5562,Richard Gleeson,3,10.0,17.333,0.667,lower order (8+)
+5577,Sai Kishore,5,9.5,18.8,1.0,lower order (8+)
+5608,Narayan Jagadeesan,8,2.0,2.875,0.0,opener
+5665,Sanjay Yadav,1,8.0,19.0,1.0,lower order (8+)
+5738,Xavier Bartlett,14,8.5,16.143,0.643,lower order (8+)
+5750,Ehsan Khan,8,9.0,17.625,0.875,lower order (8+)
+5808,Karim Janat,28,6.0,11.429,0.286,finisher (6-7)
+5809,Naveen ul Haq,13,10.0,17.692,0.692,lower order (8+)
+5837,Mahedi Hasan,26,7.0,13.038,0.308,finisher (6-7)
+5839,Yasir Ali Chowdhury,12,6.0,12.833,0.333,finisher (6-7)
+5866,Patrick Kruger,5,7.0,14.4,0.4,finisher (6-7)
+5877,Andries Gous,3,3.0,3.333,0.0,No.3
+5882,Afif Hossain,19,5.0,8.474,0.053,middle order (4-5)
+5892,Blair Tickner,1,10.0,10.0,0.0,lower order (8+)
+5928,Prithvi Shaw,26,1.0,1.0,0.0,opener
+5939,Cameron Green,62,4.0,6.774,0.129,middle order (4-5)
+5940,Riley Meredith,2,11.0,19.0,1.0,lower order (8+)
+5944,Mohammed Siraj,16,10.0,17.938,0.938,lower order (8+)
+5977,Khary Pierre,3,9.0,18.333,1.0,lower order (8+)
+5979,Abrar Ahmed,6,11.0,18.0,0.833,lower order (8+)
+6025,Henry Shipley,2,9.0,20.0,1.0,lower order (8+)
+6035,Chirag Suri,5,2.0,1.0,0.0,opener
+6059,Ruturaj Gaikwad,77,2.0,1.299,0.0,opener
+6097,Brydon Carse,7,8.0,15.286,0.429,lower order (8+)
+6160,Chamika Karunaratne,17,8.0,15.941,0.647,lower order (8+)
+6161,Rahul Chahar,14,9.0,16.786,0.643,lower order (8+)
+6166,Jack Edwards,1,8.0,13.0,0.0,lower order (8+)
+6172,Lasith Croospulle,5,3.0,2.6,0.0,No.3
+6179,Nipun Ransika,1,10.0,19.0,1.0,lower order (8+)
+6188,Simi Singh,1,,10.0,0.0,lower order (8+)
+6203,Surendran Chandramohan,3,2.0,5.667,0.0,opener
+6256,Varun Chakravarthy,15,10.5,18.0,0.867,lower order (8+)
+6272,William Jacks,55,3.0,6.545,0.164,No.3
+6273,Tom Banton,19,4.0,7.158,0.105,middle order (4-5)
+6280,Harry Brook,55,4.0,7.964,0.091,middle order (4-5)
+6281,Abhishek Sharma,130,2.0,1.362,0.0,opener
+6284,Anukul Roy,14,8.0,14.714,0.429,lower order (8+)
+6286,Shivam Mavi,5,8.0,15.2,0.6,lower order (8+)
+6287,Yash Thakur,1,9.0,17.0,1.0,lower order (8+)
+6288,Shubman Gill,110,2.0,1.0,0.0,opener
+6297,Matthew Parkinson,2,11.0,17.5,1.0,lower order (8+)
+6314,Devdutt Padikkal,60,3.0,4.733,0.017,No.3
+6342,Matthew Breetzke,14,3.0,4.5,0.0,No.3
+6350,Matthew Kuhnemann,2,10.0,15.0,0.0,lower order (8+)
+6354,Spencer Johnson,7,10.0,17.571,0.714,lower order (8+)
+6355,Shaheen Afridi,26,9.0,15.385,0.615,lower order (8+)
+6389,Tanvir Islam,3,10.0,18.667,1.0,lower order (8+)
+6395,Josh Philippe,5,5.0,6.6,0.0,middle order (4-5)
+6396,Tim David,98,6.0,12.806,0.306,finisher (6-7)
+6398,Aaron Hardie,11,7.0,10.455,0.182,finisher (6-7)
+6423,Riyan Parag,69,4.0,10.014,0.188,middle order (4-5)
+6433,Darwish Rasooli,27,4.0,7.481,0.074,middle order (4-5)
+6436,Qais Ahmad,6,8.0,17.833,0.833,lower order (8+)
+6440,Omair Yousuf,8,1.5,1.375,0.0,opener
+6441,Abdullah Shafique,3,3.0,3.333,0.0,No.3
+6443,Rohail Nazir,1,6.0,14.0,0.0,finisher (6-7)
+6448,Ibrahim Zadran,47,3.0,2.638,0.0,No.3
+6450,Mujeeb Ur Rahman,15,9.0,17.333,0.667,lower order (8+)
+6457,Urvil Patel,10,3.0,3.2,0.0,No.3
+6460,Ayush Badoni,59,5.0,10.695,0.237,middle order (4-5)
+6461,Mayank Rawat,1,,20.0,1.0,lower order (8+)
+6464,Arshdeep Singh,42,10.0,18.262,0.905,lower order (8+)
+6466,Atharwa Taide,10,2.0,1.7,0.0,opener
+6467,Anuj Rawat,21,3.0,7.857,0.143,No.3
+6473,Nuwanidu Fernando,11,4.0,5.091,0.0,middle order (4-5)
+6483,Nishan Madushka,4,1.0,1.25,0.0,opener
+6486,Tanush Kotian,1,2.0,1.0,0.0,opener
+6487,Priyam Garg,4,2.5,4.0,0.0,No.3
+6489,Darshan Nalkande,2,7.5,13.5,0.5,lower order (8+)
+6494,Manoj Bhandage,1,8.0,8.0,0.0,lower order (8+)
+6503,Zahoor Khan,1,11.0,19.0,1.0,lower order (8+)
+6506,Mohammad Imran Randhawa,2,7.0,14.5,0.5,finisher (6-7)
+6512,Michael Bracewell,33,6.0,13.545,0.424,finisher (6-7)
+6514,Anil Nidamanuru,5,6.0,10.2,0.4,finisher (6-7)
+6515,Benjamin Lister,3,11.0,15.0,0.333,lower order (8+)
+6518,Daniel Sams,13,7.0,15.462,0.615,finisher (6-7)
+6523,Blessing Muzarabani,16,10.0,16.75,0.75,lower order (8+)
+6526,Himmat Singh,5,7.0,14.8,0.4,finisher (6-7)
+6565,Katene Clarke,4,1.5,1.0,0.0,opener
+6574,Alick Athanaze,14,2.0,1.714,0.0,opener
+6591,KM Asif,1,11.0,11.0,0.0,lower order (8+)
+6628,Gerald Coetzee,18,8.0,15.611,0.444,lower order (8+)
+6643,Hasan Mahmud,7,10.0,17.571,0.714,lower order (8+)
+6644,Mahidul Ankon,4,4.5,9.25,0.25,middle order (4-5)
+6645,Mohammad Sheikh,5,2.0,3.2,0.0,opener
+6651,Towhid Hridoy,52,4.0,7.154,0.019,middle order (4-5)
+6664,Dion Myers,20,3.0,3.55,0.0,No.3
+6669,Mohsin Khan,7,9.0,17.143,0.714,lower order (8+)
+6671,Lalit Yadav,16,5.5,11.312,0.25,finisher (6-7)
+6674,Rahmanullah Gurbaz,68,1.0,1.265,0.0,opener
+6676,Azmatullah Omarzai,53,6.0,10.623,0.151,finisher (6-7)
+6677,Mohammad Hasnain,5,10.5,19.2,1.0,lower order (8+)
+6683,Mayank Markande,3,10.0,19.0,1.0,lower order (8+)
+6697,Shams Mulani,1,9.0,20.0,1.0,lower order (8+)
+6705,Scott McKechnie,3,6.0,12.333,0.333,finisher (6-7)
+6725,Sherfane Rutherford,56,5.0,10.554,0.125,middle order (4-5)
+6726,Romario Shepherd,69,7.0,14.652,0.435,finisher (6-7)
+6739,Amir Jangoo,6,2.0,2.833,0.0,opener
+6772,Chetan Sakariya,2,10.5,20.0,1.0,lower order (8+)
+6783,Azam Khan,10,5.5,11.8,0.0,finisher (6-7)
+6784,Hassan Mohammad,1,11.0,20.0,1.0,lower order (8+)
+6795,Terrance Hinds,1,10.0,20.0,1.0,lower order (8+)
+6797,Dominic Drakes,3,9.0,15.333,0.333,lower order (8+)
+6806,Tushar Deshpande,8,10.0,18.375,0.875,lower order (8+)
+6819,Yashasvi Jaiswal,89,1.0,1.0,0.0,opener
+6881,Scott Edwards,12,4.0,8.75,0.083,middle order (4-5)
+6900,Michael Jones,3,2.0,1.667,0.0,opener
+6919,Tyrone Kane,1,7.0,11.0,0.0,finisher (6-7)
+6922,Abdul Samad,9,7.0,11.556,0.0,finisher (6-7)
+6931,Pathum Nissanka,75,1.0,1.0,0.0,opener
+6932,Pramod Madushan,3,9.0,16.667,0.667,lower order (8+)
+6984,Saqib Zulfiqar,1,,17.0,1.0,lower order (8+)
+6985,Bas de Leede,5,4.0,7.0,0.2,middle order (4-5)
+6995,Saad Zafar,2,8.5,14.0,0.5,lower order (8+)
+7001,Dilon Heyliger,2,8.5,17.5,1.0,lower order (8+)
+7002,Nicholas Kirton,3,4.0,2.667,0.0,middle order (4-5)
+7003,Rayyan Pathan,2,2.5,2.0,0.0,No.3
+7008,Gus Atkinson,2,9.0,15.0,0.5,lower order (8+)
+7044,Jamie Smith,5,1.0,5.2,0.0,opener
+7046,Tinashe Kamunhukamwe,5,1.0,1.0,0.0,opener
+7049,Kamil Mishara,22,3.0,2.5,0.0,No.3
+7052,Dunith Wellalage,11,7.0,13.727,0.364,finisher (6-7)
+7059,Nehal Wadhera,45,5.0,9.8,0.111,middle order (4-5)
+7060,Arjun Tendulkar,2,8.5,18.0,1.0,lower order (8+)
+7094,Curtis Campher,35,5.0,9.4,0.171,middle order (4-5)
+7120,Rohit Paudel,3,3.0,4.333,0.0,No.3
+7140,Senuran Muthusamy,2,8.0,16.5,1.0,lower order (8+)
+7152,Hazratullah Zazai,16,1.0,1.0,0.0,opener
+7155,Sahan Arachchige,11,5.0,9.091,0.0,middle order (4-5)
+7201,Haroon Arshad,2,8.0,12.5,0.5,lower order (8+)
+7216,Prabhsimran Singh,61,2.0,1.344,0.0,opener
+7227,Nijat Masood,1,10.0,19.0,1.0,lower order (8+)
+7240,FazalHaq Farooqi,14,11.0,17.929,0.857,lower order (8+)
+7250,Mukesh Choudhary,3,11.0,15.0,0.333,lower order (8+)
+7260,Dhruv Jurel,54,5.0,10.463,0.259,middle order (4-5)
+7269,Sushant Mishra,1,10.0,20.0,1.0,lower order (8+)
+7270,Anrich Nortje,19,10.0,17.211,0.842,lower order (8+)
+7304,Sanvir Singh,5,8.0,15.2,0.6,lower order (8+)
+7312,Nandre Burger,6,9.5,17.0,0.667,lower order (8+)
+7322,Yash Dayal,4,10.0,17.75,0.75,lower order (8+)
+7325,Harpreet Brar,21,9.0,16.095,0.619,lower order (8+)
+7327,Rasikh Salam,8,9.0,17.125,0.625,lower order (8+)
+7338,Haider Ali,12,4.5,10.0,0.083,middle order (4-5)
+7341,Jake McGurk,23,2.0,1.304,0.0,opener
+7344,Shoriful Islam,16,10.0,17.062,0.688,lower order (8+)
+7355,Tayyab Tahir,7,5.0,6.857,0.0,middle order (4-5)
+7364,Haris Rauf,23,10.0,17.87,0.913,lower order (8+)
+7406,Rizwan CP,4,4.5,6.75,0.0,middle order (4-5)
+7409,Sundeep Jora,3,5.0,12.333,0.333,middle order (4-5)
+7446,Abdul Samad,42,7.0,14.143,0.357,finisher (6-7)
+7472,Shahbaz Ahmed,32,6.0,11.812,0.25,finisher (6-7)
+7473,Akash Deep,5,9.0,18.0,0.8,lower order (8+)
+7498,Abhijeet Tomar,1,2.0,1.0,0.0,opener
+7503,Ravi Bishnoi,31,9.0,18.226,0.871,lower order (8+)
+7533,Simarjeet Singh,6,9.0,17.667,0.833,lower order (8+)
+7544,Venkatesh Iyer,55,3.0,6.036,0.055,No.3
+7545,Kuldeep Sen,1,11.0,20.0,1.0,lower order (8+)
+7566,Ben Curran,4,2.0,1.0,0.0,opener
+7574,Kumar Kartikeya Singh,4,9.5,16.0,0.75,lower order (8+)
+7625,Suryansh Shedge,12,6.5,13.417,0.583,finisher (6-7)
+7634,Aaron Jones,3,4.0,6.667,0.0,middle order (4-5)
+7689,Dilshan Madushanka,6,11.0,18.333,1.0,lower order (8+)
+7690,Saim Ayub,58,2.0,1.931,0.0,opener
+7692,Qasim Akram,5,4.0,5.2,0.0,middle order (4-5)
+7696,Mohammad Wasim,7,9.0,17.857,0.857,lower order (8+)
+7699,Abbas Afridi,16,8.0,15.25,0.625,lower order (8+)
+7702,Chamindu Wickramasinghe,4,7.5,17.5,0.75,lower order (8+)
+7704,Pavan Rathnayake,10,4.0,7.7,0.0,middle order (4-5)
+7709,Ainsley Ndlovu,3,9.0,17.333,1.0,lower order (8+)
+7710,Brandon Glover,1,9.0,20.0,1.0,lower order (8+)
+7741,Gareth Delany,31,7.0,11.742,0.355,finisher (6-7)
+7744,Jordan Cox,4,3.5,4.75,0.0,middle order (4-5)
+7755,Harsh Thaker,3,6.0,8.667,0.0,finisher (6-7)
+7756,Kaleem Sana,1,11.0,20.0,1.0,lower order (8+)
+7761,Ravinderpal Singh,2,7.0,11.5,0.0,finisher (6-7)
+7808,Marco Jansen,34,8.0,14.618,0.412,lower order (8+)
+7894,Tony Munyonga,12,6.0,11.583,0.25,finisher (6-7)
+7897,Namboori Tilak Varma,125,4.0,8.056,0.064,middle order (4-5)
+7900,Tanzid Hasan,44,2.0,1.136,0.0,opener
+7901,Parvez Emon,39,2.0,2.333,0.026,opener
+7903,Shamim Hossain,36,6.0,12.028,0.167,finisher (6-7)
+7904,Mohammad Chowdhury,1,10.0,11.0,0.0,lower order (8+)
+7905,Tanzim Sakib,17,8.0,15.176,0.529,lower order (8+)
+7906,Rakibul Hasan,2,10.0,13.0,0.0,lower order (8+)
+7908,Mohammad Akbar Ali,7,5.0,8.286,0.0,middle order (4-5)
+7911,Oliver Hairs,5,2.0,1.0,0.0,opener
+7912,Vikramjit Singh,11,3.0,4.818,0.0,No.3
+7914,Clayton Floyd,1,11.0,19.0,1.0,lower order (8+)
+7915,Monank Patel,3,1.0,1.0,0.0,opener
+7920,Nathan Ellis,11,9.0,16.545,0.636,lower order (8+)
+7924,Kushal Malla,3,4.0,3.0,0.0,middle order (4-5)
+7925,Rohan Rangarajan,1,1.0,1.0,0.0,opener
+7926,Manpreet Singh,1,5.0,11.0,0.0,middle order (4-5)
+7927,Janak Prakash,3,4.0,7.333,0.0,middle order (4-5)
+7928,Vinoth Baskaran,2,8.0,15.0,0.5,lower order (8+)
+7929,Aryaman Sunil Uchil,3,7.0,14.667,0.333,finisher (6-7)
+7931,Aritra Dutta,3,1.0,1.0,0.0,opener
+7935,Mohammad Ghazanfar,2,10.5,15.5,0.5,lower order (8+)
+7937,Wasim Ali,7,4.0,6.286,0.0,middle order (4-5)
+7938,Sandeep Goud 1,1,7.0,20.0,1.0,finisher (6-7)
+7942,Jay Odedara,1,8.0,12.0,0.0,lower order (8+)
+7945,Nasrulla Rana,5,7.5,19.2,1.0,lower order (8+)
+7966,Farmanullah Safi,3,7.0,11.667,0.0,finisher (6-7)
+7967,Noor Ahmad,28,9.0,17.5,0.821,lower order (8+)
+7978,Johnathan Campbell,9,6.0,10.333,0.111,finisher (6-7)
+7981,Imran Mir,3,1.0,1.0,0.0,opener
+8005,Zawar Farid,5,7.0,15.4,0.4,finisher (6-7)
+8009,Junaid Siddique,12,10.0,18.25,0.917,lower order (8+)
+8014,Avi Dixit,3,6.0,11.333,0.0,finisher (6-7)
+8033,Abdul Rahmani,1,9.0,18.0,1.0,lower order (8+)
+8040,Ripal Patel,5,8.0,14.8,0.4,lower order (8+)
+8049,Naseem Shah,11,10.0,16.0,0.545,lower order (8+)
+8085,Suyash Prabhudessai,10,6.0,10.6,0.2,finisher (6-7)
+8093,Nikhil Chaudhary,2,6.0,13.5,0.0,finisher (6-7)
+8101,Ashutosh Sharma,27,7.0,14.963,0.556,finisher (6-7)
+8141,Auqib Nabi,2,8.5,17.0,0.5,lower order (8+)
+8177,Akash Madhwal,2,11.0,15.5,0.5,lower order (8+)
+8182,Donovan Ferreira,30,6.0,11.867,0.233,finisher (6-7)
+8217,Ansh Tandon,2,5.0,8.0,0.0,middle order (4-5)
+8221,Nitish Reddy,45,5.0,9.956,0.178,middle order (4-5)
+8238,Sameer Rizvi,18,4.0,8.611,0.111,middle order (4-5)
+8241,Lokesh Bam,1,8.0,17.0,1.0,lower order (8+)
+8251,Kumar Kushagra,4,6.5,9.25,0.25,finisher (6-7)
+8266,Sumit Kumar 1,3,8.0,11.667,0.333,lower order (8+)
+8295,Matthew Forde,14,8.0,13.714,0.357,lower order (8+)
+8298,Ramon Simmonds,1,11.0,19.0,1.0,lower order (8+)
+8301,Asif Khan,13,5.0,9.923,0.0,middle order (4-5)
+8311,Dan Mousley,1,7.0,16.0,1.0,finisher (6-7)
+8326,Jayden Seales,3,11.0,18.0,1.0,lower order (8+)
+8380,Mohammad Rishad Hossain,30,8.0,15.1,0.533,lower order (8+)
+8388,Ahan Wickramasinghe,5,6.0,11.4,0.4,finisher (6-7)
+8405,Kanwarpal Tathgur,1,2.0,1.0,0.0,opener
+8408,Shreyas Movva,3,5.0,5.0,0.0,middle order (4-5)
+8424,Tanveer Sangha,1,11.0,17.0,1.0,lower order (8+)
+8530,Kartik Tyagi,5,9.0,17.0,0.8,lower order (8+)
+8580,Yudhvir Singh,4,9.0,17.5,0.5,lower order (8+)
+8600,Tadiwanashe Marumani,38,2.0,2.842,0.026,opener
+8614,William ORourke,1,,20.0,1.0,lower order (8+)
+8623,Kristian Clarke,1,8.0,20.0,1.0,lower order (8+)
+8634,Ashwani Kumar,1,10.0,18.0,1.0,lower order (8+)
+8637,Vriitya Aravind,8,3.0,4.125,0.0,No.3
+8638,Basil Hameed,9,6.0,11.444,0.111,finisher (6-7)
+8639,Kartik Meiyappan,3,9.0,17.667,0.667,lower order (8+)
+8647,Sediqullah Atal,38,2.0,2.447,0.026,opener
+8652,Mohammad Ishaq,13,5.0,11.077,0.308,middle order (4-5)
+8654,Cooper Connolly,21,3.0,5.619,0.048,No.3
+8661,Matheesha Pathirana,9,10.0,18.222,0.889,lower order (8+)
+8664,Victor Nyauchi,1,10.0,20.0,1.0,lower order (8+)
+8719,Aryan Lakra,4,4.0,5.25,0.0,middle order (4-5)
+8723,Mohammed Faraazuddin,4,8.5,17.0,0.75,lower order (8+)
+8726,Alishan Sharafu,14,1.5,3.929,0.0,opener
+8727,Sanchit Sharma,4,8.0,14.5,0.25,lower order (8+)
+8729,Haider Shah,3,5.0,7.333,0.0,middle order (4-5)
+8739,Muhammad Irfan,14,5.5,9.0,0.071,finisher (6-7)
+8741,Mohammad Haris,34,3.0,5.618,0.118,No.3
+8746,Vaibhav Arora,12,10.0,18.25,0.917,lower order (8+)
+8771,Rubin Hermann,5,4.0,5.6,0.0,middle order (4-5)
+8805,Ottneil Baartman,6,11.0,17.667,0.667,lower order (8+)
+15269,Mohammed Aslam,2,6.0,9.0,0.0,finisher (6-7)
+15271,Usmangani Ibrahim Patel,3,4.0,5.333,0.0,middle order (4-5)
+15274,Ravija Sandaruwan,3,2.0,1.0,0.0,opener
+15279,Shiraz Khan,2,6.0,10.0,0.0,finisher (6-7)
+15280,Sayed Monib,3,9.0,14.0,0.667,lower order (8+)
+15303,Bilal Tahir,3,6.0,8.0,0.0,finisher (6-7)
+15551,Ackeem Auguste,9,4.0,4.333,0.0,middle order (4-5)
+15629,Shayan Jahangir,3,6.0,11.0,0.333,finisher (6-7)
+16284,Habibur Rahman Sohan,5,1.0,1.0,0.0,opener
+16498,Sultan Ahmad,2,9.0,18.5,1.0,lower order (8+)
+16559,Alexander Patmore,1,5.0,5.0,0.0,middle order (4-5)
+17413,Neil Rock,6,5.5,13.0,0.167,finisher (6-7)
+17419,Tim Tector,6,2.0,2.833,0.0,opener
+17424,Graham Hume,5,9.0,17.8,0.8,lower order (8+)
+17432,Ross Adair,16,2.0,1.0,0.0,opener
+17898,Bilal Sami,1,11.0,17.0,1.0,lower order (8+)
+17910,Mohammad Akram,3,3.0,1.667,0.0,No.3
+17911,Nangeyalia Kharote,7,8.0,15.429,0.429,lower order (8+)
+17937,Zubaid Akbari,8,1.5,1.5,0.0,opener
+19012,Zeeshan Ali,12,1.0,3.75,0.0,opener
+19020,Ateeq Iqbal,3,11.0,20.0,1.0,lower order (8+)
+19125,Ayush Shukla,2,10.0,14.5,0.5,lower order (8+)
+19145,Aamer Jamal,3,8.0,14.333,0.333,lower order (8+)
+19147,Faraz Akram,5,8.0,15.6,0.4,lower order (8+)
+19307,Tharindu Rathnayake,2,8.0,17.0,1.0,lower order (8+)
+19309,Lahiru Udara,11,2.0,1.273,0.0,opener
+19312,Nuwan Thushara,8,11.0,18.5,1.0,lower order (8+)
+19315,Vijayakanth Viyaskanth,3,10.0,18.333,1.0,lower order (8+)
+19316,Maheesh Theekshana,38,9.0,17.211,0.763,lower order (8+)
+19530,Shahnawaz Dhani,2,11.0,19.5,1.0,lower order (8+)
+19535,Rejaur Rahman Raja,1,10.0,17.0,1.0,lower order (8+)
+19714,Abishek Porel,32,3.0,4.781,0.125,No.3
+19754,Raja Khan,1,10.0,15.0,0.0,lower order (8+)
+19781,Mitchell Owen,12,6.0,8.333,0.0,finisher (6-7)
+19894,Mitchell Hay,9,6.0,11.667,0.111,finisher (6-7)
+19902,Tim Pringle,4,8.0,15.0,0.5,lower order (8+)
+20005,Arshad Khan,14,8.0,16.571,0.643,lower order (8+)
+20006,Ramandeep Singh,33,7.0,14.788,0.485,finisher (6-7)
+20023,Karan Sharma,2,2.5,3.0,0.0,No.3
+20163,Aasif Sheikh,2,2.0,1.0,0.0,opener
+20175,Nandan Yadav,1,10.0,20.0,1.0,lower order (8+)
+20229,Mohammad Ali,2,11.0,19.5,1.0,lower order (8+)
+20310,Ahmed Daniyal,3,9.0,18.0,1.0,lower order (8+)
+20316,Shahab Alam,1,11.0,19.0,1.0,lower order (8+)
+20327,Usman Khan,23,4.0,7.826,0.087,middle order (4-5)
+20702,Tristan Stubbs,68,5.0,10.206,0.132,middle order (4-5)
+20704,Salman Mirza,4,10.0,20.0,1.0,lower order (8+)
+20802,Abdul Basith,1,8.0,20.0,1.0,lower order (8+)
+20894,Aman Khan,10,7.0,13.5,0.4,finisher (6-7)
+20989,Vivrant Sharma,1,1.0,1.0,0.0,opener
+21196,Mohammad Waheed,1,10.0,20.0,1.0,lower order (8+)
+21388,Martin Coetzee,3,6.0,13.667,0.667,finisher (6-7)
+21777,Tafadzwa Tsiga,2,7.0,11.0,0.0,finisher (6-7)
+21780,Ernest Masuku,2,10.0,16.0,0.5,lower order (8+)
+21781,Clive Madande,23,7.0,12.043,0.304,finisher (6-7)
+21784,Brad Evans,17,8.0,16.529,0.765,lower order (8+)
+21790,Tashinga Musekiwa,19,7.0,13.263,0.263,finisher (6-7)
+21791,J Gumbie,3,1.0,1.0,0.0,opener
+22134,Luke Jongwe,17,8.0,15.353,0.529,lower order (8+)
+22137,Fionn Hand,7,9.0,15.143,0.429,lower order (8+)
+22187,Ryan Klein,5,7.0,14.8,0.6,finisher (6-7)
+22188,Aryan Dutt,5,9.0,14.6,0.4,lower order (8+)
+22471,Matthew Humphreys,4,9.0,18.5,1.0,lower order (8+)
+22565,Muhammad Waseem,20,2.0,1.0,0.0,opener
+22920,Jacob Duffy,10,11.0,18.6,0.9,lower order (8+)
+23311,Jacob Bethell,32,3.0,5.688,0.031,No.3
+23450,Sai Sudharsan,57,1.0,2.368,0.0,opener
+23467,Gurjapneet Singh,1,10.0,18.0,1.0,lower order (8+)
+24017,Brian Bennett,42,1.0,2.476,0.024,opener
+24346,Mohamed Shafeeq,2,10.0,19.0,1.0,lower order (8+)
+24372,Muzahir Raza,4,9.0,18.0,0.75,lower order (8+)
+24381,Shariz Ahmad,3,5.0,11.333,0.333,middle order (4-5)
+24475,Rehan Ahmed,8,9.0,17.125,0.875,lower order (8+)
+24767,Ripon Mondol,2,12.0,16.5,0.5,lower order (8+)
+24779,Ijaz Ahmadzai,6,7.0,11.0,0.167,finisher (6-7)
+24803,Gulshan Jha,3,5.0,13.0,0.333,middle order (4-5)
+24812,Chris Greaves,4,7.5,15.5,0.75,lower order (8+)
+24887,Innocent Kaia,10,2.0,1.2,0.0,opener
+24978,Jack Jarvis,2,8.0,16.5,1.0,lower order (8+)
+24982,Charlie Tear,3,3.0,4.333,0.0,No.3
+25011,Liam Mccarthy,3,8.0,18.0,1.0,lower order (8+)
+25030,Zaman Khan,3,10.0,18.667,1.0,lower order (8+)
+25048,Umran Malik,8,10.0,19.25,1.0,lower order (8+)
+25128,Nqabayomzi Peter,4,9.0,17.25,0.75,lower order (8+)
+25132,Praful Hinge,2,10.0,16.5,0.5,lower order (8+)
+25138,Harsh Dubey,8,8.0,16.875,0.75,lower order (8+)
+25139,Shubham Dubey,17,7.0,14.588,0.471,finisher (6-7)
+25213,Dewald Brevis,40,4.0,6.35,0.025,middle order (4-5)
+25216,Andile Simelane,6,8.0,14.667,0.167,lower order (8+)
+25231,Samay Shrivastava,5,11.0,17.6,0.8,lower order (8+)
+25341,Mahfuzur Rabby,3,7.0,12.333,0.333,finisher (6-7)
+25353,Numan Shah,1,3.0,1.0,0.0,No.3
+25501,Meet Bhavsar,3,1.0,1.0,0.0,opener
+25502,Adnan Idrees,2,3.0,4.5,0.0,No.3
+25507,Edson Silva,3,8.0,10.0,0.0,lower order (8+)
+25534,Chad Bowes,10,1.0,1.0,0.0,opener
+25669,Priyansh Arya,33,1.0,1.0,0.0,opener
+25679,Salil Arora,11,6.0,14.545,0.545,finisher (6-7)
+25809,Juanoy Drysdale,1,11.0,16.0,1.0,lower order (8+)
+26514,Nimesh Vimukthi,1,7.0,13.0,0.0,finisher (6-7)
+26519,Janith Liyanage,10,6.0,12.0,0.3,finisher (6-7)
+26530,Treveen Mathew,1,10.0,14.0,0.0,lower order (8+)
+26646,Rahul Chopra,14,4.0,8.571,0.071,middle order (4-5)
+26663,Kwena Maphaka,6,10.0,18.5,1.0,lower order (8+)
+26795,Joel Davies,2,7.0,17.0,1.0,finisher (6-7)
+26830,Nishant Kumar Sindhu,7,4.0,8.286,0.143,middle order (4-5)
+26834,Raj Bawa,4,6.0,13.75,0.5,finisher (6-7)
+26839,Haseebullah Khan,3,3.0,2.0,0.0,No.3
+26843,Maaz Sadaqat,8,2.0,2.75,0.0,opener
+26848,Ghazi Ghouri,3,4.0,3.333,0.0,middle order (4-5)
+26854,SM Meherob Hasan,3,7.0,13.0,0.333,finisher (6-7)
+26906,Angkrish Raghuvanshi,29,3.0,5.276,0.034,No.3
+26909,Yash Dhull,3,4.0,5.333,0.0,middle order (4-5)
+26913,Shaik Rasheed,5,1.0,1.0,0.0,opener
+26916,Yasir Mohammad,2,10.0,16.5,0.5,lower order (8+)
+26988,Jitenkumar Ramanandi,2,7.0,16.5,0.5,finisher (6-7)
+27004,Hassnain Shah,2,9.5,13.5,0.0,lower order (8+)
+27059,Karan Sonavale,6,3.0,4.5,0.0,No.3
+27071,Vinayak Shukla,3,6.0,11.333,0.333,finisher (6-7)
+27137,Hammad Mirza,9,3.0,6.222,0.111,No.3
+27259,Jishan Alam,7,2.0,1.0,0.0,opener
+27364,Simranjeet Kang,2,8.5,14.0,0.5,lower order (8+)
+27373,Muhammad Farooq,3,9.0,12.667,0.0,lower order (8+)
+27380,Harshit Kaushik,10,6.0,11.9,0.2,finisher (6-7)
+27390,Matiullah Khan,2,10.0,19.5,1.0,lower order (8+)
+27391,Vishnu Sukumaran,2,4.0,4.5,0.0,middle order (4-5)
+27460,Ali Naseer,1,7.0,14.0,0.0,finisher (6-7)
+27464,Aayan Afzal Khan,5,8.0,15.4,0.6,lower order (8+)
+27465,Nilansh Keswani,2,5.0,8.5,0.0,middle order (4-5)
+27466,Dhruv Parashar,10,7.0,12.7,0.3,finisher (6-7)
+27469,Aryansh Sharma,8,1.0,3.0,0.125,opener
+27504,Dushan Hemantha,5,8.0,17.8,0.8,lower order (8+)
+27516,Ihsanullah Ihsanullah,1,11.0,18.0,1.0,lower order (8+)
+27517,Yasir Khan,8,2.0,2.25,0.0,opener
+27743,DT Doram,3,10.0,18.333,0.667,lower order (8+)
+27959,Hrithik Shokeen,6,8.0,14.167,0.667,lower order (8+)
+27960,Mayank Yadav,5,11.0,19.0,1.0,lower order (8+)
+27962,Saurav Chauhan,3,5.0,14.0,0.333,middle order (4-5)
+27964,Anshul Kamboj,12,9.0,17.333,0.917,lower order (8+)
+28018,Ashok Sharma,2,10.0,17.0,0.5,lower order (8+)
+28021,Saurabh Dubey,1,11.0,18.0,1.0,lower order (8+)
+28185,Kamil Pooran,3,2.0,1.0,0.0,opener
+28655,Muhammad Rohid,3,11.0,15.0,0.333,lower order (8+)
+28756,Haider Ali,9,9.0,16.889,0.889,lower order (8+)
+28788,Tanish Suri,2,2.5,1.5,0.0,No.3
+28908,Vincent Masekesa,1,11.0,14.0,0.0,lower order (8+)
+28915,Trevor Gwandu,5,11.0,16.2,0.6,lower order (8+)
+28967,Tim Robinson,24,1.5,2.0,0.0,opener
+28970,Connor Esterhuizen,5,3.0,3.2,0.0,No.3
+29066,Zakary Foulkes,13,9.0,16.846,0.692,lower order (8+)
+29075,Aadil Ansari,2,7.0,17.5,0.5,finisher (6-7)
+29080,Muhammad Khan,3,8.0,16.333,1.0,lower order (8+)
+29558,Muhammad Arfan,5,7.0,14.4,0.6,finisher (6-7)
+29699,Ibrahim Takahashi,1,3.0,1.0,0.0,No.3
+29833,Bashir Ahmad,1,11.0,19.0,1.0,lower order (8+)
+29888,Harshit Rana,17,9.0,15.706,0.588,lower order (8+)
+30925,Bradley Currie,3,11.0,18.0,1.0,lower order (8+)
+30927,Saiteja Mukkamalla,2,2.0,1.0,0.0,opener
+31107,Yasin Patel,2,10.0,19.0,1.0,lower order (8+)
+31513,Ethan Dsouza,4,3.0,5.0,0.0,No.3
+31518,Akshat Raghuwanshi,2,6.0,10.5,0.0,finisher (6-7)
+31529,Robin Minz,4,6.5,15.0,0.5,finisher (6-7)
+31835,Akshay Roopak Puri,2,10.5,18.5,1.0,lower order (8+)
+31836,Aman Desai,2,5.0,8.5,0.0,middle order (4-5)
+32399,Aaron Johnson,3,1.0,1.0,0.0,opener
+32401,Akhil Kumar,2,8.5,18.5,1.0,lower order (8+)
+32705,Faridoon Dawoodzai,1,11.0,20.0,1.0,lower order (8+)
+32862,Allah Ghazanfar,4,10.0,16.75,0.75,lower order (8+)
+33067,Ravichandran Smaran,4,4.5,8.75,0.25,middle order (4-5)
+33114,Milan Rathnayake,3,8.0,14.667,0.333,lower order (8+)
+33440,Adwitya Bhargava,2,10.5,18.5,1.0,lower order (8+)
+33443,Sabir Ali,1,,20.0,1.0,lower order (8+)
+33675,Mohammad Naeem,4,1.0,1.0,0.0,opener
+33969,Tinotenda Maposa,10,9.0,17.4,0.8,lower order (8+)
+34466,Arafat Minhas,6,6.5,11.333,0.0,finisher (6-7)
+34485,Sufiyan Muqeem,12,10.0,19.0,1.0,lower order (8+)
+34522,Brandon McMullen,3,3.0,2.333,0.0,No.3
+34527,Jasper John Davidson,1,10.0,19.0,1.0,lower order (8+)
+34546,Aryan Bisht,4,6.0,10.25,0.0,finisher (6-7)
+34880,Saad Masood,3,7.0,12.667,0.333,finisher (6-7)
+34928,Kendel Fleming,1,1.0,1.0,0.0,opener
+34929,Lachlan Lake,1,2.0,1.0,0.0,opener
+34969,Manav Suthar,1,9.0,19.0,1.0,lower order (8+)
+35071,Kunal Rathore,1,3.0,1.0,0.0,No.3
+35102,Zikria Islam,5,7.0,13.6,0.4,finisher (6-7)
+35120,Narayan Saishiv,3,5.0,8.0,0.0,middle order (4-5)
+35122,Shah Faisal,2,6.5,6.5,0.0,finisher (6-7)
+35133,Sufyan Yousuf,2,2.0,1.0,0.0,opener
+35318,Sakib Hussain,1,11.0,18.0,1.0,lower order (8+)
+35506,Quentin Sampson,4,6.0,12.25,0.25,finisher (6-7)
+36153,Syed Haider,3,6.0,7.333,0.0,finisher (6-7)
+36551,Zishan Motara,1,10.0,16.0,1.0,lower order (8+)
+36553,Jediah Blades,3,11.0,18.333,1.0,lower order (8+)
+36982,Suyash Sharma,1,11.0,19.0,1.0,lower order (8+)
+36983,Mohit Rathee,1,11.0,16.0,1.0,lower order (8+)
+37052,Naman Dhir,45,6.0,9.622,0.222,finisher (6-7)
+37201,Jewel Andrew,6,2.0,1.667,0.0,opener
+37311,Shiv Mathur,3,5.0,11.0,0.333,middle order (4-5)
+37572,Shafiq Jan,2,9.5,19.5,1.0,lower order (8+)
+37731,Musheer Khan,1,8.0,9.0,0.0,lower order (8+)
+37879,Khawaja Nafay,4,5.5,10.5,0.25,finisher (6-7)
+37939,Nahid Rana,1,11.0,19.0,1.0,lower order (8+)
+38050,Isitha Wijesundera,2,8.0,16.5,0.5,lower order (8+)
+38855,Mohammad Saifuddin,13,8.0,17.0,0.769,lower order (8+)
+39374,Muhammad Zohaib,10,2.5,3.8,0.0,No.3
+39444,Basil Hameed,3,7.0,9.333,0.0,finisher (6-7)
+39637,Garuka Sanketh,1,11.0,20.0,1.0,lower order (8+)
+39638,Vishen Halambage,4,2.0,1.0,0.0,opener
+39640,Sineth Jayawardena,2,2.0,1.0,0.0,opener
+39657,Eshan Malinga,13,10.0,17.923,0.846,lower order (8+)
+39991,Parveen Kumar,1,6.0,6.0,0.0,finisher (6-7)
+41110,Mayank Kumar,6,2.0,3.0,0.0,opener
+41509,Yayin Rai,2,6.0,9.5,0.0,finisher (6-7)
+42548,Muhammad Jawadullah,4,11.0,17.25,0.5,lower order (8+)
+42810,Noah Croes,5,6.0,12.0,0.2,finisher (6-7)
+42811,Michael Levitt,8,1.0,1.0,0.0,opener
+42845,Arshin Kulkarni,4,2.0,1.0,0.0,opener
+43250,Dilpreet Singh Bajwa,2,2.5,1.0,0.0,No.3
+43774,Shivam Singh,1,7.0,19.0,1.0,finisher (6-7)
+43798,Lhuan Pretorius,9,3.0,3.333,0.0,No.3
+43917,Krish Bhagat,2,8.5,16.0,0.5,lower order (8+)
+45381,PV Satyanarayan Raju,1,11.0,20.0,1.0,lower order (8+)
+45457,Zach Lion Cachet,4,5.0,11.0,0.25,middle order (4-5)
+45749,Mukul Choudhary,10,7.0,14.5,0.2,finisher (6-7)
+45966,Prashant Veer,5,7.0,15.2,0.8,finisher (6-7)
+46066,Vipraj Nigam,9,8.0,15.667,0.667,lower order (8+)
+46137,Kartik Sharma,11,5.0,7.909,0.091,middle order (4-5)
+46378,Kyle Klein,5,8.0,14.2,0.2,lower order (8+)
+46929,Dian Forrester,5,5.0,11.0,0.2,middle order (4-5)
+46982,Shahid Aziz,2,8.0,15.5,0.5,lower order (8+)
+46996,Mohammad Faiq,4,4.0,6.25,0.0,middle order (4-5)
+47017,Mohammad Jnr,1,9.0,17.0,1.0,lower order (8+)
+47050,Shamar Joseph,9,10.0,18.444,1.0,lower order (8+)
+47314,Wafiullah Tarakhil,3,4.0,5.333,0.0,middle order (4-5)
+47370,Aniket Verma,20,6.0,13.4,0.4,finisher (6-7)
+47371,Zuhaid Zubair,1,8.0,17.0,1.0,lower order (8+)
+47403,Newman Nyamhuri,5,9.0,16.6,0.6,lower order (8+)
+47694,Omid Rahman,2,11.0,15.5,0.5,lower order (8+)
+47724,Jahandad Khan,5,8.0,15.2,0.4,lower order (8+)
+48278,Ubaid Shah,2,10.0,19.5,1.0,lower order (8+)
+48504,Ayush Mhatre,13,3.0,2.231,0.0,No.3
+48575,Sahil Parakh,4,3.0,4.75,0.0,No.3
+48616,Abdul Saqlain,3,7.0,14.0,0.667,finisher (6-7)
+48953,Danish Malewar,2,2.0,1.0,0.0,opener
+49003,Hasan Nawaz,27,5.0,8.778,0.074,middle order (4-5)
+49027,Bevon Jacobs,12,5.0,9.833,0.083,middle order (4-5)
+49265,Ahmed Tariq,2,2.5,2.5,0.0,No.3
+49268,Sohaib Khan,4,3.0,4.0,0.0,No.3
+50062,Nqobani Mokoena,2,10.0,14.5,0.0,lower order (8+)
+50284,Vaibhav Sooryavanshi,35,2.0,1.114,0.0,opener
+54404,Benjamin Ito,1,4.0,2.0,0.0,middle order (4-5)
+55747,Benjamin Calitz,6,5.5,9.167,0.0,finisher (6-7)
+56685,Abdullah Ahmadzai,5,9.5,16.8,0.6,lower order (8+)
+56817,Shivang Kumar,6,9.0,16.333,0.667,lower order (8+)
+56830,Madhav Tiwari,2,8.0,16.0,0.5,lower order (8+)
+57747,Charlie Cassell,1,9.0,18.0,1.0,lower order (8+)
+58134,Digvesh Rathi,4,11.0,19.0,1.0,lower order (8+)
+58135,Tejasvi Dahiya,2,7.0,15.0,0.5,finisher (6-7)
+58246,Prince Yadav,9,10.0,17.556,0.778,lower order (8+)
+59045,Jai Moondra,2,9.5,20.0,1.0,lower order (8+)
+60609,Navin Bidaisee,2,7.5,11.5,0.0,lower order (8+)
+60689,Zawad Abrar,4,3.0,5.25,0.0,No.3
+60700,Ravi Singh,1,6.0,15.0,0.0,finisher (6-7)
+64604,Kalhan Challu,2,6.5,11.5,0.5,finisher (6-7)
+66103,Noor Rahman,3,4.0,4.0,0.0,middle order (4-5)
+67036,Brijesh Sharma,2,10.5,18.0,1.0,lower order (8+)
+68410,Rahmatullah Zadran,1,5.0,7.0,0.0,middle order (4-5)
+71727,Razaullah Razaullah,1,9.0,20.0,1.0,lower order (8+)

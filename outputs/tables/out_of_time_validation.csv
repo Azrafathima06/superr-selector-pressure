@@ -1,0 +1,9 @@
+side,predictor,players,pearson_r,pearson_ci95,spearman,spearman_ci95
+bat,Our rating (2022–24 rebuild),61,0.149,"[-0.078, 0.350]",0.124,"[-0.122, 0.358]"
+bat,(a) career average run value,61,0.199,"[0.006, 0.391]",0.214,"[-0.025, 0.426]"
+bat,(b) raw death-over strike rate,61,-0.111,"[-0.393, 0.286]",-0.04,"[-0.305, 0.232]"
+bat,(c) simple pressure SR delta (H − L),61,0.13,"[-0.119, 0.370]",0.126,"[-0.124, 0.376]"
+bowl,Our rating (2022–24 rebuild),50,0.419,"[0.147, 0.629]",0.354,"[0.063, 0.581]"
+bowl,(a) career average run value,50,0.455,"[0.204, 0.677]",0.484,"[0.199, 0.711]"
+bowl,(b) raw death-over economy (negated),50,0.39,"[0.166, 0.585]",0.414,"[0.133, 0.634]"
+bowl,(c) simple pressure economy delta (negated),50,-0.068,"[-0.346, 0.175]",-0.082,"[-0.358, 0.228]"

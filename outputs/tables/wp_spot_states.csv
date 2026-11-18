@@ -1,0 +1,8 @@
+state,final_model,markov_chain,"empirical (need ±1, wkts in hand ±1)"
+"need 2 off 1, 7 wkts in hand",0.822,0.51,1.00 (1 matches)
+"need 1 off 1, 7 wkts in hand",0.953,0.826,1.00 (1 matches)
+"need 5 off 3, 5 wkts in hand",0.824,0.602,0.71 (21 matches)
+"need 9 off 6, 6 wkts in hand",0.925,0.687,0.84 (19 matches)
+"need 12 off 6, 6 wkts in hand",0.823,0.457,0.50 (10 matches)
+"need 16 off 6, 7 wkts in hand",0.695,0.201,0.67 (9 matches)
+"need 30 off 24, 5 wkts in hand",0.868,0.854,1.00 (16 matches)

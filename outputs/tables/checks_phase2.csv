@@ -1,0 +1,5 @@
+check,passed,detail
+no duplicate deliveries,True,
+result reconciliation ≥ 99%,True,0.9938
+each player_id has one name (striker/bowler),True,
+"WP within [0, 1]",True,

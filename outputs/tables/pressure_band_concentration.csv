@@ -1,0 +1,5 @@
+version,share_of_deliveries,mean_LI_in_set,share_of_top25_deliveries_in_set
+H25 (primary),0.25,1.816,1.0
+H33,0.333,1.669,0.75
+H50,0.5,1.465,0.5
+"LI-weighted, LI > median",0.5,2.395,0.62

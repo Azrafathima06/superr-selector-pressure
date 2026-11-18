@@ -1,0 +1,6 @@
+side,metric,ridge_coef,weight,shrinkage_c
+bat,sr_delta,0.029009,0.2285,223.3
+bat,dot_suppression,0.059926,0.472,253.9
+bat,boundary_elevation,0.006558,0.0516,343.6
+bat,runout_avoidance,0.031477,0.2479,17.3
+bowl,variation (entropy H − L),0.006232,1.0,210.3

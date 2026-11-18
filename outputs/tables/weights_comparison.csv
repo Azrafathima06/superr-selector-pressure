@@ -1,0 +1,7 @@
+side,model,player_seasons,players,oof_weighted_r,ci95,oof_R2
+bat,ridge (non-negative),297,140,0.072,"[-0.07, 0.22]",-0.0072
+bat,equal weights (passed metrics),297,140,0.096,"[-0.03, 0.22]",0.0046
+bat,baseline skill only,297,140,0.161,"[0.01, 0.30]",0.0248
+bowl,ridge (non-negative),453,198,-0.123,"[-0.21, -0.05]",-0.013
+bowl,equal weights (passed metrics),453,198,-0.131,"[-0.22, -0.03]",-0.0138
+bowl,baseline skill only,453,198,0.068,"[-0.02, 0.18]",0.0017

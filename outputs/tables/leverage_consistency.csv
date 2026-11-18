@@ -1,0 +1,5 @@
+group,deliveries,mean_abs_gap,mean_LI_as_specified,mean_LI_used
+full matches: 2nd innings,92813,0.0014,1.1392,1.1516
+full matches: last ball of 1st innings,781,0.0573,4.3867,1.2839
+full matches: other 1st-innings balls,100212,0.001,0.8447,0.8574
+rain-shortened matches,5401,0.0026,1.1903,1.1431

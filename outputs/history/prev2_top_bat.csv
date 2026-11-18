@@ -1,0 +1,21 @@
+rank,player,latest_team,role,rating_runs_per_100_H_balls,se_per_100,rank_score_per_100,prior_per_100,raw_H_per_100,k_update,n_H,seasons_played,R,R_ci95,strongest_process_on_H,player_id
+1,Vaibhav Sooryavanshi,India,opener,52.28,9.13,43.15,51.18,59.03,0.14,256.0,2025–2026 (2 seasons),-0.137,"[-0.503, +0.209]",strike-rate delta +2.62σ; boundary elevation +2.45σ; wicket security -0.26σ,50284
+2,Abhishek Sharma,India,opener,35.93,5.86,30.07,36.13,35.54,0.337,801.0,2022–2026 (5 seasons),-0.034,"[-0.211, +0.102]",strike-rate delta +1.41σ; boundary elevation +1.15σ; dot suppression +1.03σ,6281
+3,Finn Allen,New Zealand,opener,27.33,5.18,22.15,28.91,16.94,0.132,239.0,2022–2026 (5 seasons),-0.175,"[-0.460, +0.091]",strike-rate delta +1.28σ; boundary elevation +1.09σ; dot suppression +0.98σ,4847
+4,Phil Salt,England,opener,25.66,3.95,21.71,22.89,35.66,0.217,436.0,2022–2026 (5 seasons),0.01,"[-0.173, +0.209]",dot suppression +1.63σ; strike-rate delta +1.04σ; boundary elevation +0.42σ,5553
+5,Suryakumar Yadav,Mumbai Indians,middle order (4-5),24.05,3.5,20.55,24.09,23.93,0.245,512.0,2022–2026 (5 seasons),-0.114,"[-0.291, +0.053]",boundary elevation +0.99σ; strike-rate delta +0.63σ; wicket security -0.47σ,1699
+6,Tim David,Australia,finisher (6-7),24.77,5.22,19.55,21.66,39.18,0.178,340.0,2022–2026 (5 seasons),-0.008,"[-0.216, +0.168]",strike-rate delta +1.56σ; boundary elevation +1.06σ; wicket security +0.82σ,6396
+7,Heinrich Klaasen,Sunrisers Hyderabad,middle order (4-5),19.73,3.54,16.19,15.86,51.84,0.108,190.0,2022–2026 (5 seasons),0.129,"[-0.059, +0.303]",strike-rate delta +2.17σ; boundary elevation +1.97σ; dot suppression +0.79σ,4260
+8,Andre Russell,West Indies,finisher (6-7),21.11,6.39,14.72,20.53,25.79,0.11,195.0,2022–2025 (4 seasons),-0.129,"[-0.502, +0.157]",boundary elevation +1.39σ; strike-rate delta +1.01σ; wicket security +0.23σ,1318
+9,Travis Head,Sunrisers Hyderabad,opener,20.43,6.61,13.82,17.37,30.52,0.233,479.0,2023–2026 (4 seasons),0.196,"[-0.054, +0.444]",boundary elevation +1.14σ; strike-rate delta +0.98σ; dot suppression +0.89σ,2367
+10,Priyansh Arya,Punjab Kings,opener,22.57,9.11,13.45,21.11,34.06,0.113,200.0,2025–2026 (2 seasons),0.108,"[-0.320, +0.513]",dot suppression +2.49σ; strike-rate delta +2.22σ; boundary elevation +1.48σ,25669
+11,Josh Inglis,Australia,No.3,17.88,5.47,12.4,18.16,15.68,0.116,206.0,2022–2026 (5 seasons),-0.075,"[-0.403, +0.266]",boundary elevation +0.54σ; strike-rate delta +0.41σ; dot suppression -0.42σ,4736
+12,Glenn Maxwell,Australia,middle order (4-5),17.0,4.83,12.16,16.56,21.86,0.083,142.0,2022–2025 (4 seasons),0.024,"[-0.521, +0.434]",boundary elevation +1.38σ; strike-rate delta +1.10σ; dot suppression +0.52σ,838
+13,Nicholas Pooran,Lucknow Super Giants,middle order (4-5),15.95,4.66,11.29,15.93,16.05,0.182,350.0,2022–2026 (5 seasons),-0.0,"[-0.212, +0.189]",boundary elevation +0.15σ; wicket security +0.04σ; strike-rate delta -0.05σ,3125
+14,Romario Shepherd,West Indies,finisher (6-7),15.01,4.28,10.73,15.65,8.53,0.091,157.0,2022–2026 (5 seasons),-0.142,"[-0.455, +0.203]",wicket security +0.30σ; boundary elevation +0.17σ; strike-rate delta -0.53σ,6726
+15,Jos Buttler,England,opener,13.56,3.2,10.35,12.44,15.86,0.325,759.0,2022–2026 (5 seasons),-0.009,"[-0.132, +0.124]",wicket security +0.39σ; boundary elevation -0.41σ; strike-rate delta -0.45σ,813
+16,Mitchell Marsh,Australia,opener,13.75,3.57,10.18,16.01,6.78,0.245,510.0,2022–2026 (5 seasons),-0.1,"[-0.269, +0.088]",wicket security -0.21σ; dot suppression -0.66σ; boundary elevation -0.76σ,818
+17,Harry Brook,England,middle order (4-5),14.81,5.39,9.42,13.69,29.39,0.071,121.0,2022–2026 (5 seasons),-0.032,"[-0.391, +0.326]",dot suppression +2.30σ; strike-rate delta +1.29σ; boundary elevation +0.41σ,6280
+18,Prabhsimran Singh,Punjab Kings,opener,13.63,4.57,9.06,9.46,28.49,0.219,442.0,2022–2026 (5 seasons),0.29,"[+0.038, +0.596]",boundary elevation +0.63σ; wicket security +0.26σ; strike-rate delta +0.17σ,7216
+19,Tim Seifert,New Zealand,opener,14.45,5.47,8.99,13.44,22.02,0.118,211.0,2022–2026 (5 seasons),0.071,"[-0.452, +0.423]",dot suppression +1.34σ; strike-rate delta +1.28σ; boundary elevation +0.82σ,3700
+20,Glenn Phillips,New Zealand,middle order (4-5),12.71,3.8,8.91,13.15,7.83,0.084,144.0,2022–2026 (5 seasons),0.016,"[-0.217, +0.255]",wicket security +1.48σ; dot suppression -1.07σ; strike-rate delta -1.54σ,4853

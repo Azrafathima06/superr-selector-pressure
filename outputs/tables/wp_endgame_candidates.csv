@@ -1,0 +1,7 @@
+candidate,key,log_loss_le30,brier_le30,log_loss_le12,log_loss_full_2nd_inns,brier_full_2nd_inns,cells_mean_abs_error (weighted by matches),cells outside actual 95% CI (of 59)
+Current (logistic + endgame logistic),current,0.2347,0.0724,0.2005,0.3844,0.1244,0.031,6
+Main logistic only,main_only,0.2354,0.0727,0.2042,0.3845,0.1244,0.035,8
+Spline logistic + Markov features,spline_markov,0.2379,0.0727,0.2131,0.3862,0.125,0.034,10
+"Hybrid (Markov ≤12, blend 24→12)",hybrid,0.242,0.0741,0.2216,0.3858,0.1247,0.047,14
+Spline logistic,spline,0.244,0.0736,0.229,0.3874,0.1251,0.037,15
+Markov chain (≤30 balls),markov,0.2592,0.0785,0.2216,0.3892,0.1256,0.065,24
